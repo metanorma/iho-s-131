@@ -1,0 +1,368 @@
+
+[[sec_16]]
+== Association Roles
+
+[[sec_16.1]]
+=== Component of
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A pointer to the aggregate in a whole-part
+relationship.
+|===
+
+[[sec_16.2]]
+=== Constitute
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Reference to a whole of the same type
+as the part feature in the relationship.
+|===
+
+[[sec_16.3]]
+=== The applicable RxN
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The applicable regulation, restriction,
+recommendation or nautical information
+|===
+
+[[sec_16.4]]
+=== Applies in location
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The location in which the information
+item applies
+|===
+
+[[sec_16.5]]
+=== Authority (reference)
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A pointer to an Authority object
+|===
+
+[[sec_16.6]]
+=== Authority service hours
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The authority for which service hours
+are given
+|===
+
+[[sec_16.7]]
+=== Contact details (reference)
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A pointer to an Contact Details object
+|===
+
+[[sec_16.8]]
+=== Auxiliary Facility
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A refernce to a feature that supplements
+or supports the use of the primary feature in an AuxiliaryFacility
+relationship.
+|===
+
+[[sec_16.9]]
+=== Control authority
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The controlling organization or authority
+for a geographically located service
+|===
+
+[[sec_16.10]]
+=== Controlled service
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The service controlled by an organisation
+or authority
+|===
+
+[[sec_16.11]]
+=== Defined for
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A pointer to a specific spatial type(s).
+|===
+
+[[sec_16.12]]
+=== Defines
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A pointer to an information type providing
+spatial quality information.
+|===
+
+[[sec_16.13]]
+=== Demarcated Feature
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Reference to the feature within which
+locations are demarcated.
+|===
+
+[[sec_16.14]]
+=== Demarcation Indicator
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Reference to a feature demarcating
+a location within another feature.
+|===
+
+[[sec_16.15]]
+=== Entrance Reference
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Reference to an information type describing
+the entrance to a limit area.
+|===
+
+[[sec_16.16]]
+=== Entrance To
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A reference to the feature to which
+entrance information pertains.
+|===
+
+[[sec_16.17]]
+=== Has Infrastructure
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Reference to the feature describing
+a particular instance of physical infrastructure.
+|===
+
+[[sec_16.18]]
+=== Identifies
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A pointer to a specific feature(s).
+|===
+
+[[sec_16.19]]
+=== Infrastructure Location
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Reference to the feature within which
+the infrastructure is located.
+|===
+
+[[sec_16.20]]
+=== Information provided for
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A pointer to a specific feature(s)
+for which further information is required.
+|===
+
+[[sec_16.21]]
+=== Is applicable to
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The object or class of objects to which
+the regulation, restriction, recommendation, or nautical information
+applies
+|===
+
+[[sec_16.22]]
+=== Limit Extent
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Reference to a feature demarcating
+the extent to which a coastal State claims or may claim a specific
+jurisdiction.
+|===
+
+[[sec_16.23]]
+=== Limit Reference
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Reference to the feature for which
+a coastal State claims a specific jurisdiction different from the
+feature's geographic boundary.
+|===
+
+[[sec_16.24]]
+=== Location service hours
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Reference to the location for which
+service hours are given.
+|===
+
+[[sec_16.25]]
+=== Layout Unit
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A reference to the diverse units comprising
+a feature of a different type.
+|===
+
+[[sec_16.26]]
+=== Location Served
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Reference to the location (feature)
+where specified services are available.
+|===
+
+[[sec_16.27]]
+=== Facility Operating Hours
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Reference to information about the
+days and times during which a facility operates or may be used.
+|===
+
+[[sec_16.28]]
+=== Partial working day
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The work hours for a non-standard workday
+|===
+
+[[sec_16.29]]
+=== Permission
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The permissions for a location
+|===
+
+[[sec_16.30]]
+=== Positions
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A pointer to a specific cartographically
+positioned location for text.
+|===
+
+[[sec_16.31]]
+=== Primary Facility
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A reference to the primary feature
+in an Auxiliaryfacility relationship.
+|===
+
+[[sec_16.32]]
+=== Provides information
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A pointer to an object that provides
+more information about the referencing feature or information type.
+|===
+
+[[sec_16.33]]
+=== Service Description Reference
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Reference to an information object
+describing services.
+|===
+
+[[sec_16.34]]
+=== The information
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Information related to an organisation
+|===
+
+[[sec_16.35]]
+=== The organisation
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The organisation to which information
+relates
+|===
+
+[[sec_16.36]]
+=== The RxN
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The regulation, restriction, recommendation,
+or nautical information
+|===
+
+[[sec_16.37]]
+=== Service Hours (reference)
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Service hours for an authority or service
+provider
+|===
+
+[[sec_16.38]]
+=== The service hours for a non-standard workday
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The usual service hours to which an
+exception applies
+|===
+
+[[sec_16.39]]
+=== Service place
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Pointer to service or facility
+|===
+
+[[sec_16.40]]
+=== Sub-Unit
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Reference to a part of the same type
+as the whole feature in the relationship.
+|===
+
+[[sec_16.41]]
+=== Vessel location
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The location to which the permission
+statement applies
+|===

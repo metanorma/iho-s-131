@@ -1,0 +1,69 @@
+
+[[sec_14]]
+== Spatial Quality
+
+[[sec_14.1]]
+=== Spatial Quality
+
+[cols="a,a,a,a,a",options="unnumbered"]
+|===
+5+| [underline]#IHO Definition:# The indication of the quality of
+the locational information for features in a dataset.
+5+| *[underline]#S-10x Information Type:# Spatial Quality*
+5+| *[underline]#Super Type:#*
+5+| *[underline]#Primitives:# None*
+
+| _Real World_ 2+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+
+| Quality of Horizontal Measurement
+| (QUAPOS) |
+1: Surveyed +
+2: Unsurveyed +
+3: Inadequately Surveyed +
+4: Approximate +
+5: Position Doubtful +
+6: Unreliable +
+7: Reported (Not Surveyed) +
+8: Reported (Not Confirmed) +
+9: Estimated +
+10: Precisely Known +
+11: Calculated
+| EN | 0, 1
+
+| Spatial Accuracy | | | C | 0, ++*++
+| Fixed date range | | | (S) C | 0, 1
+| Date Start | (DATSTA) | | (S) TD | 0, 1
+| Date End | (DATEND) | | (S) TD | 0, 1
+| Horizontal Position Uncertainty | (POSACC) | | (S) C | 0, 1
+| Uncertainty Fixed
+| (POSACC)
+
+(SOUACC)
+
+(VERACC)
+| | (S) RE | 1, 1
+| Uncertainty Variable Factor | | | (S) RE | 0, 1
+| Vertical Uncertainty | (VERACC) | | (S) C | 0, 1
+| Uncertainty Fixed
+| (POSACC)
+
+(SOUACC)
+
+(VERACC)
+| | (S) RE | 1, 1
+| Uncertainty Variable Factor | | | (S) RE | 0, 1
+
+5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[underline]#Remarks:#
+
+* SpatialQuality is not to be associated with Surface spatial objects.
+
+* SpatialQuality associated to Curve or Composite Curve spatial objects
+cannot have vertical uncertainty attributes.
+
+[underline]#Distinction:#
+
+|===

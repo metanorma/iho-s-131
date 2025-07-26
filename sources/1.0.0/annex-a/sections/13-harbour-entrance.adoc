@@ -1,0 +1,375 @@
+
+[[sec_13]]
+== Harbour Entrance
+
+[[sec_13.1]]
+=== Entrance
+
+[cols="a,a,a,a,a",options="unnumbered"]
+|===
+5+| [underline]#IHO Definition:# The seaward end of a channel, harbour, dock, etc.
+5+| *[underline]#S-10x Information Type:# Entrance*
+5+| *[underline]#Super Type:# InformationType (<<sec_9.2>>)*
+5+| *[underline]#Primitives:# None*
+
+| _Real World_ 2+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+
+| Entrance Description | | | TE | 0, 1
+| Associated Feature Name | | | TE | 0, ++*++
+| Local Knowledge Description | | | TE | 0, 1
+| Approach Description | | | TE | 0, 1
+| Marked By | | | C | 0, ++*++
+| Text Content | | | (S) C | 1, ++*++
+
+| Category of text | |
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+| Information | | | (S) C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+| Text
+| (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+
+| Online Resource | | | (S) C | 0, 1
+| Online Resource Linkage URL | | | (S) UL | 1, 1
+| Protocol | | | (S) TE | 0, 1
+| Application Profile | | | (S) TE | 0, 1
+| Name of Resource | | | (S) TE | 0, 1
+| Online Resource Description | | | (S) TE | 0, 1
+
+| Online Function | |
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+| Protocol request | | | (S) TE | 0, 1
+| Source | | | (S) TE | 0, 1
+
+| Source Type | |
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+| Reported Date | (SORDAT) | | (S) TD | 0, 1
+| Landmark Description | | | C | 0, ++*++
+| Text Content | | | (S) C | 1, ++*++
+
+| Category of text | |
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+| Information | | | (S) C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+| Text | (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+| Online Resource | | | (S) C | 0, 1
+| Online Resource Linkage URL | | | (S) UL | 1, 1
+| Protocol | | | (S) TE | 0, 1
+| Application Profile | | | (S) TE | 0, 1
+| Name of Resource | | | (S) TE | 0, 1
+| Online Resource Description | | | (S) TE | 0, 1
+
+| Online Function | |
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+| Protocol request | | | (S) TE | 0, 1
+| Source | | | (S) TE | 0, 1
+
+| Source Type | |
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+| Reported Date | (SORDAT) | | (S) TD | 0, 1
+| Offshore Mark Description | | | C | 0, ++*++
+| Text Content | | | (S) C | 1, ++*++
+
+| Category of text | |
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+| Information | | | (S) C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+| Text | (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+| Online Resource | | | (S) C | 0, 1
+| Online Resource Linkage URL | | | (S) UL | 1, 1
+| Protocol | | | (S) TE | 0, 1
+| Application Profile | | | (S) TE | 0, 1
+| Name of Resource | | | (S) TE | 0, 1
+| Online Resource Description | | | (S) TE | 0, 1
+
+| Online Function | |
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+| Protocol request | | | (S) TE | 0, 1
+| Source | | | (S) TE | 0, 1
+
+| Source Type | |
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+| Reported Date | (SORDAT) | | (S) TD | 0, 1
+| Major Light Description | | | C | 0, ++*++
+| Text Content | | | (S) C | 1, ++*++
+
+| Category of text | |
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+| Information | | | (S) C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+| Text | (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+
+| Online Resource | | | (S) C | 0, 1
+| Online Resource Linkage URL | | | (S) UL | 1, 1
+| Protocol | | | (S) TE | 0, 1
+| Application Profile | | | (S) TE | 0, 1
+| Name of Resource | | | (S) TE | 0, 1
+| Online Resource Description | | | (S) TE | 0, 1
+
+| Online Function | |
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+| Protocol request | | | (S) TE | 0, 1
+| Source | | | (S) TE | 0, 1
+
+| Source Type | |
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+| Reported Date | (SORDAT) | | (S) TD | 0, 1
+| Useful Mark Description | | | C | 0, ++*++
+| Text Content | | | (S) C | 1, ++*++
+
+| Category of text | |
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+| Information | | | (S) C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+| Text | (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+| Online Resource | | | (S) C | 0, 1
+| Online Resource Linkage URL | | | (S) UL | 1, 1
+| Protocol | | | (S) TE | 0, 1
+| Application Profile | | | (S) TE | 0, 1
+| Name of Resource | | | (S) TE | 0, 1
+| Online Resource Description | | | (S) TE | 0, 1
+
+| Online Function | |
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+| Protocol request | | | (S) TE | 0, 1
+| Source | | | (S) TE | 0, 1
+
+| Source Type | |
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+| Reported Date | (SORDAT) | | (S) TD | 0, 1
+| Text Content | | | C | 0, ++*++
+
+| Category of text | |
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+| Information | | | (S) C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+| Text
+| (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+| Online Resource | | | (S) C | 0, 1
+| Online Resource Linkage URL | | | (S) UL | 1, 1
+| Protocol | | | (S) TE | 0, 1
+| Application Profile | | | (S) TE | 0, 1
+| Name of Resource | | | (S) TE | 0, 1
+| Online Resource Description | | | (S) TE | 0, 1
+
+| Online Function | |
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+| Protocol request | | | (S) TE | 0, 1
+| Source | | | (S) TE | 0, 1
+
+| Source Type | |
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+| Reported Date | (SORDAT) | | (S) TD | 0, 1
+
+5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_13.1.1]]
+==== General
+
+++[Reserved for development in a future edition.]++
+
+[underline]#Remarks:#
+
+* Aids to navigation should not be encoded in the attribute _landmarkDescription_.
+Instead, they should be encoded in the appropriate attribute for describing
+marks (_offshoreMarkDescription_, _majorLightsDescription_, or _usefulMarksDescription_).
+* The attribute _markedBy_ should be used to describe aids to navigation
+used to demarcate the location, for example, by marking a limit line,
+or one of the boundaries of an area.
+
+[underline]#Distinction:#
+
+|===

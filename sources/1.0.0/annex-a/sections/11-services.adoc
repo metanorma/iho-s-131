@@ -1,0 +1,661 @@
+
+[[sec_11]]
+== Services, Organisations, and Work Schedules
+
+[[sec_11.1]]
+=== Introduction
+
+Information about the services available in specific areas is modelled
+by means of an information association from the feature to the
+*AvailablePortServices* information type. This relationship is depicted
+<<fig_11.1>>. This type contains attributes for encoding various types
+of services, in the form of enumeration attributes, details of which
+are provided in <<sec_11.8>>.
+
+[[fig_11.1]]
+.Port Services
+image::figure-18.png[]
+
+[[sec_11.1.1]]
+==== Work schedules and holidays
+
+Operating schedules and business hours of organizations are encoded
+by associating a *ServiceHours* instance to an *Authority*. Partial
+work schedules on holidays or other special days are encoded by associating
+a *NonstandardWorkingDay* instance to the *ServiceHours* instance.
+
+Similarly, operating schedules for a facility are encoded by associating
+a *ServiceHours* to the geo feature representing the facility, and
+associating a *NonstandardWorkingDay* to the *ServiceHours* to encode
+partial working days.
+
+For further guidance and examples, see <<sec_2.4.10.4>>.
+
+[[sec_11.1.2]]
+==== Contact information
+
+Contact information for service operators, controllers or facilities
+should be encoded in instances of the *ContactDetails* information
+type, which may be linked from multiple instances of geographic features
+or information types. Any S-131 geographic feature except meta and
+cartographic features can be associated to an instance of *ContactDetails*.
+S-131 geographic feature inherit the association to ContactDetails
+from the abstract feature type *OrganizationContactArea*, as shown
+in <<fig_11.2>>.
+
+Contact information must not be encoded directly in the feature or
+information type instance using a _textContent_ or _information_ complex
+attribute bound directly to the feature or information type. An instance
+of *ContactDetails* must be created instead. The exception to this
+rule is when contact-related attributes such as _communicationChannel_
+are bound to the feature or information type, in which case a *ContactDetails*
+instance should be created only if it is necessary to provide contact
+information which cannot be coded in the contact-specific attributes
+bound to the feature.
+
+[[fig_11.2]]
+.Associations to contact information
+image::figure-19.png[]
+
+[[sec_11.2]]
+=== Authority
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# A person or organisation having political
+or administrative power and control.
+8+| *[underline]#S-10x Information Type:# Authority*
+8+| *[underline]#Super Type:# InformationType (<<sec_9.2>>)*
+8+| *[underline]#Primitives:# None*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute h| S-57 Acronym 3+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Category of Authority | 3+|
+2: Border Control +
+3: Police +
+4: Port +
+5: Immigration +
+6: Health +
+7: Coast Guard +
+8: Agricultural +
+9: Military +
+10: Private Company +
+11: Maritime Police +
+12: Environmental +
+13: Fishery +
+14: Finance +
+15: Maritime +
+16: Customs
+| EN | 1, 1
+
+2+| Text Content | 3+| | C | 0, 1
+
+2+| Category of text | 3+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information | 3+| | (S) C | 0, ++*++
+2+| File Locator | 3+| | (S) TE | 0, 1
+2+| File Reference | (TXTDSC) 3+| | (S) TE | 0, 1
+2+| Headline | 3+| | (S) TE | 0, ++*++ (ordered)
+2+| Language | 3+| | (S) TE | 0, 1
+
+2+| Text | (INFORM)
+
+(NINFOM)
+3+| | (S) TE | 0, 1
+
+2+| Online Resource | 3+| | (S) C | 0, 1
+2+| Online Resource Linkage URL | 3+| | (S) UL | 1, 1
+2+| Protocol | 3+| | (S) TE | 0, 1
+2+| Application Profile | 3+| | (S) TE | 0, 1
+2+| Name of Resource | 3+| | (S) TE | 0, 1
+2+| Online Resource Description | 3+| | (S) TE | 0, 1
+
+2+| Online Function | 3+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request | 3+| | (S) TE | 0, 1
+2+| Source | 3+| | (S) TE | 0, 1
+
+2+| Source Type | 3+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date | (SORDAT) 3+| | (S) TD | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_11.3]]
+=== General
+
+The Authority information type is used for encoding information about
+organizations, including official authorities (port and other) as
+well as private organizations which control or operate port facilities.
+
+For encoding the contact details for an organization, use an associated
+*ContactDetails* information type (see the information associations
+table below).
+
+For encoding the general operating hours of an organization, use an
+associated *ServiceHours* information type (see clause 4.2.1.7 in
+the main Product Specification).
+
+For encoding the supervisory or operating organization for a facility
+or area, such as a Terminal, use an information association from the
+geo feature to Authority (see <<sec_5.4>> Supervised Area and
+clause 4.2.1.7 in the main Product Specification).
+
+[underline]#Remarks:#
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+| association | Authority Contact | *Authority* | theAuthority | 0, ++*++ | *ContactDetails* | theContactDetails | 0, ++*++
+| association | Authority Hours | *Authority* | theAuthority_srvHrs | 0, ++*++ | *ServiceHours* | theServiceHours | 0, ++*++
+| association | Related Organisation | *Authority* | theOrganisation | 0, ++*++ | *AbstractRxN* | theInformation | 0, ++*++
+
+|===
+
+[[sec_11.4]]
+=== Contact details
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# information on how to reach a person
+or organisation by postal, internet, telephone, telex and radio systems
+8+| *[underline]#S-10x Information Type:# Contact details*
+8+| *[underline]#Super Type:# InformationType (<<sec_9.2>>)*
+8+| *[underline]#Primitives:# None*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute h| S-57 Acronym 3+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Call Name | 3+| | TE | 0, 1
+2+| Call Sign | (CALSGN) 3+| | TE | 0, 1
+
+2+| Category of Communication Preference | 3+|
+1: Preferred Calling +
+2: Alternate Calling +
+3: Preferred Working +
+4: Alternate Working
+| EN | 0, 1
+
+2+| Communication Channel | (COMCHA) 3+| | TE | 0, ++*++
+2+| Contact address | 3+| | C | 0, ++*++
+2+| Delivery Point | 3+| | (S) TE | 0, ++*++ (ordered)
+2+| City Name | 3+| | (S) TE | 0, 1
+2+| Administrative Division | 3+| | (S) TE | 0, 1
+2+| Country Name | 3+| | (S) TE | 0, 1
+2+| Postal code | 3+| | (S) TE | 0, 1
+2+| Contact Instructions | 3+| | TE | 0, 1
+2+| Signal Frequency | (SIGFRQ) 3+| | IN | 0, ++*++
+2+| Frequency pair | 3+| | C | 0, ++*++
+2+| Frequency Shore Station Transmits | 3+| | (S) IN | 0, ++*++ (ordered)
+2+| Frequency Shore Station Receives | 3+| | (S) IN | 0, ++*++ (ordered)
+2+| Contact Instructions | 3+| | (S) TE | 0, ++*++ (ordered)
+2+| Information | 3+| | C | 0, ++*++
+2+| File Locator | 3+| | (S) TE | 0, 1
+2+| File Reference | (TXTDSC) 3+| | (S) TE | 0, 1
+2+| Headline | 3+| | (S) TE | 0, ++*++ (ordered)
+2+| Language | 3+| | (S) TE | 0, 1
+
+2+| Text | (INFORM)
+
+(NINFOM)
+3+| | (S) TE | 0, 1
+
+2+| MMSI Code | 3+| | TE | 0, 1
+2+| Online Resource | 3+| | C | 0, ++*++
+2+| Online Resource Linkage URL | 3+| | (S) UL | 1, 1
+2+| Protocol | 3+| | (S) TE | 0, 1
+2+| Application Profile | 3+| | (S) TE | 0, 1
+2+| Name of Resource | 3+| | (S) TE | 0, 1
+2+| Online Resource Description | 3+| | (S) TE | 0, 1
+
+2+| Online Function | 3+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request | 3+| | (S) TE | 0, 1
+2+| Telecommunications | 3+| | C | 0, ++*++
+
+2+| Category of Communication Preference | 3+|
+1: Preferred Calling +
+2: Alternate Calling +
+3: Preferred Working +
+4: Alternate Working
+| (S) EN | 0, 1
+
+2+| Telecommunication Identifier | 3+| | (S) TE | 1, 1
+2+| Telecommunication Carrier | 3+| | (S) TE | 0, 1
+2+| Contact Instructions | 3+| | (S) TE | 0, 1
+
+2+| Telecommunication Service | 3+|
+1: Voice +
+2: Facsimile +
+3: SMS +
+4: Data +
+5: Streamed Data +
+6: Telex +
+7: Telegraph +
+8: Email
+| (S) EN | 0, ++*++
+
+2+| Schedule by Day of Week | 3+| | (S) C | 0, 1
+
+2+| Category of Schedule | 3+|
+1: Normal Operation +
+2: Closure +
+3: Unmanned Operation
+| (S) EN | 0, 1
+
+2+| Time Intervals by Day of Week | 3+| | (S) C | 1, ++*++
+
+2+| Day of Week | 3+|
+1: Sunday +
+2: Monday +
+3: Tuesday +
+4: Wednesday +
+5: Thursday +
+6: Friday +
+7: Saturday
+| (S) EN | 0, 7 (ordered)
+
+2+| Day of Week is Range | 3+| | (S) BO | 0, 1
+2+| Time of Day Start | 3+| | (S) TI | 0, ++*++ (ordered)
+2+| Time of Day End | 3+| | (S) TI | 0, ++*++ (ordered)
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_11.5]]
+=== General
+
+The *ContactDetails* information type provides several attributes
+for encoding different types of contact details.
+
+*ContactDetails* may be associated to:
+
+* An Authority information type via an information association
+(_AuthorityContact_), in which case it encodes the contact information
+for the organization in general.
+* A geo feature via a feature association _ServiceContact_, inherited
+by geo features from *OrganizationContactArea* (<<sec_5.3>>), in which
+case it encodes contact information particular to the specific feature,
+either because further information about the controlling authority
+is not available or because the contact is specific to the feature.
+[underline]#Remarks:#
+
+* If it is required to encode call name in different languages, this
+must be done by associating an instance of *ContactDetails* per language,
+with the originating instance. The *Language* attribute must be used
+to designate the language of the instance.
+
+* The name of the contact (for example, the name of the agency, pilot
+service, office, etc.) should be encoded in the _featureName_ attribute,
+which is inherited from *InformationType*.
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Authority Contact | *ContactDetails* | theContactDetails | 0, ++*++ | *Authority* | theAuthority | 0, ++*++
+
+|===
+
+[[sec_11.6]]
+=== Service Hours
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# The time when a service is available
+and known exceptions.
+8+| *[underline]#S-10x Information Type:# Service Hours*
+8+| *[underline]#Super Type:# InformationType (<<sec_9.2>>)*
+8+| *[underline]#Primitives:# None*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Schedule by Day of Week 2+| 2+| | C | 1, ++*++
+
+2+| Category of Schedule 2+| 2+|
+1: Normal Operation +
+2: Closure +
+3: Unmanned Operation
+| (S) EN | 0, 1
+
+2+| Time Intervals by Day of Week 2+| 2+| | (S) C | 1, ++*++
+
+2+| Day of Week 2+| 2+|
+1: Sunday +
+2: Monday +
+3: Tuesday +
+4: Wednesday +
+5: Thursday +
+6: Friday +
+7: Saturday
+| (S) EN | 0, 7 (ordered)
+
+2+| Day of Week is Range 2+| 2+| | (S) BO | 0, 1
+2+| Time of Day Start 2+| 2+| | (S) TI | 0, ++*++ (ordered)
+2+| Time of Day End 2+| 2+| | (S) TI | 0, ++*++ (ordered)
+2+| Information 2+| 2+| | C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_11.6.1]]
+==== General
+
+Seasonal variations in service hours can be encoded using multiple
+*Service Hours* instances with appropriate *periodicDateRange* values.
+
+[underline]#Remarks:#
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Authority Hours | *ServiceHours* | theServiceHours | 0, ++*++ | *Authority* | theAuthority_srvHrs | 0, ++*++
+| association | Exceptional Workday | *ServiceHours* | | | *Non-standard Working Day* | partialWorkingDay | 0..*
+
+|===
+
+[[sec_11.7]]
+=== Non-Standard Working Day
+
+[cols="a,a,a,a,a",options="unnumbered"]
+|===
+5+| [underline]#IHO Definition:# Days when many services are not available.
+Often days of festivity or recreation or public holidays when normal
+working hours are limited, especially a national or religious festival,
+etc.
+5+| *[underline]#S-10x Information Type:# Non-Standard Working Day*
+5+| *[underline]#Super Type:# InformationType (<<sec_9.2>>)*
+5+| *[underline]#Primitives:# None*
+
+| _Real World_ 2+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+
+| Date Fixed | | | TD | 0, ++*++
+| Date Variable | | | TE | 0, ++*++
+| Information | | | C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+
+| Text | (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+
+5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[underline]#Remarks:#
+
+* Non-standard workdays which cannot be represented using fixed or
+variable dates should be encoded using the *information* complex attribute,
+preferably as a short description in the *text* sub-attribute of *information*.
+The information attribute can also be used for encoding any additional
+explanatory information if the explanation is essential knowledge
+for specifying the day.
+
+* The two date range attributes (fixed and periodic date range) should
+be used if the non-standard day applies only in specific years or
+periods (e.g., seasonally).
+
+[underline]#Distinction:#
+
+|===
+
+[[sec_11.8]]
+=== Available Port Services
+
+[cols="a,a,a,a,a",options="unnumbered"]
+|===
+5+| [underline]#IHO Definition:# Services that are available for a
+given port.
+5+| *[underline]#S-10x Information Type:# Available Port Services*
+5+| *[underline]#Super Type:# InformationType (<<sec_9.2>>)*
+5+| *[underline]#Primitives:# None*
+
+| _Real World_ 2+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+
+| Firefighting Service | |
+1: Shore-Based Firefighting +
+2: Onboard Firefighting +
+3: Firefighting Boat
+| EN | 0, ++*++
+
+| Medical Service | |
+1: Ambulance +
+2: Fumigation +
+3: Doctor +
+4: Quarantine +
+5: Vaccination Centre
+| EN | 0, ++*++
+
+| Repair Service | |
+1: Compensation of Magnetic Compass +
+2: Diver Service +
+3: Bridge Equipment Repair +
+4: Engine Repair +
+5: Electronic Equipment Repair +
+6: Hull Repair +
+7: Navigational Equipment Repair +
+8: Propeller Repair +
+9: Salvage Gear Repair +
+10: Shaft Repair
+| EN | 0, ++*++
+
+| Technical Port Service | |
+1: Compensation of Magnetic Compass +
+2: Degaussing +
+3: Cargo Surveying +
+4: Vetting
+| EN | 0, ++*++
+
+| Ship Sanitation Control | |
+1: Sanitation Measures Only +
+2: Issue SSCC +
+3: Issue SSCEC
+| EN | 0, ++*++
+
+| Transport Connection | |
+2: Heliport +
+3: Helipad +
+4: Hired Boat +
+5: Bus Station +
+6: Ferry +
+8: Motorway +
+9: Launch +
+11: Inland Waterway Transport +
+12: Short Sea Transportation +
+13: Marine Highway
+| CL | 0, ++*++
+
+| Berthing Assistance | |
+1: Berthing Information +
+2: Line Personnel +
+3: Mooring Boat +
+4: Mule +
+5: Tugboat
+| EN | 0, ++*++
+
+| Cargo Service | |
+1: Stevedoring +
+2: Cargo Surveying +
+3: Cargo Lashing +
+4: Draught Survey
+| EN | 0, ++*++
+
+| Security-Safety-Emergency Service | |
+1: Coast Guard +
+2: Customs +
+3: Environmental Emergency Information Centre +
+4: Emergency Coordination Centre +
+5: Guard and/or Security Service +
+6: Immigration +
+7: Police +
+8: Sea Rescue Control
+| CL | 0, ++*++
+
+| Waste Disposal Service | |
+1: MARPOL Annex I Oily Bilge Water +
+2: MARPOL Annex I Oily Residues +
+3: MARPOL Annex I Oily Tank Washings +
+4: MARPOL Annex I Dirty Ballast Water +
+5: MARPOL Annex I Scale and Sludge from Tank Cleaning +
+6: MARPOL Annex I Other Oily Waste +
+7: MARPOL Annex II Category X +
+8: MARPOL Annex II Category Y +
+9: MARPOL Annex II Category Z +
+10: MARPOL Annex II Category OS +
+11: MARPOL Annex IV Sewage +
+12: MARPOL Annex V Plastics +
+13: MARPOL Annex V Food Wastes +
+14: MARPOL Annex V Domestic Wastes +
+15: MARPOL Annex V Cooking Oil +
+16: MARPOL Annex V Incinerator Ashes +
+17: MARPOL Annex V Operational Wastes +
+18: MARPOL Annex V Animal Carcasses +
+19: MARPOL Annex V Fishing Gear +
+20: MARPOL Annex V E-Waste +
+21: MARPOL Annex V Cargo Residues - non-HME +
+22: MARPOL Annex V Cargo Residues - HME +
+23: MARPOL Annex VI Ozone-Depleting Substances +
+24: MARPOL Annex VI Exhaust Gas-Cleaning Residues
+| EN | 0, ++*++
+
+| Supply Service | |
+1: Shore Power +
+2: Fuel Oil Bunkering +
+3: LNG Bunkering +
+4: Lubricants +
+5: Steam +
+6: Potable Water +
+7: International Shore Connection +
+8: Provisions +
+9: Chandler +
+10: Mechanics Workshop
+| EN | 0, ++*++
+
+| Tug Information | | | TE | 0, 1
+| Text Content | | | C | 0, ++*++
+
+| Category of text | |
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+| Information    |          | | (S) C  | 0, ++*++
+| File Locator   |          | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline       |          | | (S) TE | 0, ++*++ (ordered)
+| Language       |          | | (S) TE | 0, 1
+
+| Text | (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+
+| Online Resource             | | | (S) C  | 0, 1
+| Online Resource Linkage URL | | | (S) UL | 1, 1
+| Protocol                    | | | (S) TE | 0, 1
+| Application Profile         | | | (S) TE | 0, 1
+| Name of Resource            | | | (S) TE | 0, 1
+| Online Resource Description | | | (S) TE | 0, 1
+
+| Online Function | |
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+| Protocol request | | | (S) TE | 0, 1
+
+| Source | | | (S) TE | 0, 1
+
+| Source Type | |
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+| Reported Date | (SORDAT) | | (S) TD | 0, 1
+
+5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[underline]#Remarks:#
+
+[underline]#Distinction:#
+
+|===
