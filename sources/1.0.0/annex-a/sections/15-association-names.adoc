@@ -1,0 +1,423 @@
+
+[[sec_15]]
+== Association Names
+
+[[sec_15.1]]
+=== Additional Information
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# A feature association for the binding
+between at least one instance of a geo feature and an instance of
+an information type.
+
+[underline]#Remarks:#
+
+Role informationProvidedFor encodable only as a generic inverse association
+in feature objects in 3.0.0 datasets
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+
+.2+| Association
+| Information provided for | *Information Type, Feature Type* | 0, ++*++
+| Provides information | *Nautical Information* | 0, ++*++
+
+|===
+
+[[sec_15.2]]
+=== Authority Contact
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# Contact information for an authority
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+.2+| Association | Contact details (reference) | *Contact details* | 0, ++*++
+| Authority (reference) | *Authority* | 0, ++*++
+
+|===
+
+[[sec_15.3]]
+=== Authority Hours
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# Service hours for an authority
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+.2+| Association | Service Hours (reference) | *Service Hours* | 0, ++*++
+| Authority service hours | *Authority* | 0, ++*++
+
+|===
+
+[[sec_15.4]]
+=== Associated RxN
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# Association between a geographic
+location and a regulation, restriction, recommendation, or nautical
+information
+
+[underline]#Remarks:#
+
+Role appliesInLocation encodable only as a generic inverse association
+in 3.0.0 datasets as it is an information->feature link
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+
+.2+| Association
+| The RxN | *AbstractRxN* | 0, ++*++
+| Applies in location | *Feature Type* |
+
+|===
+
+[[sec_15.5]]
+=== Exceptional Workday
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# Exception to the usual working day
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+.2+| Association
+| Partial working day | *Non-Standard Working Day* | 0, ++*++
+| The service hours for a non-standard workday | *Service Hours* |
+
+|===
+
+[[sec_15.6]]
+=== Inclusion Type
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# Association class specifying the
+relationship between the subset of vessels described by an APPLIC
+data object and a regulation (restriction, recommendation, or nautical
+information).
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+.2+| Association
+| Is applicable to | *Applicability* | 0, ++*++
+| The applicable RxN | *AbstractRxN* | 0, ++*++
+
+|===
+
+[[sec_15.7]]
+=== Limit Entrance
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# Association between a limit feature
+and the entrance for the limit.
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+.2+| Association
+| Entrance Reference | | 0, 1
+| Entrance To | *Outer Limit* |
+|===
+
+[[sec_15.8]]
+=== Permission Type
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# Association class for associations
+describing whether the subsets of vessels determined by the ship characteristics
+specified in APPLIC may (or must, etc.) transit, enter, or use a feature.
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+
+.2+| Association
+| Permission | *Applicability* | 0, ++*++
+| Vessel location | *Feature Type* | 0, ++*++
+
+|===
+
+[[sec_15.9]]
+=== Related organisation
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# Related Organisation
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+.2+| Association
+| The organisation | *Authority* | 0, ++*++
+| The information | *AbstractRxN* | 0, ++*++
+
+|===
+
+[[sec_15.10]]
+=== Service Contact
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# Contact details for a service or
+facility
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+.2+| Association
+| Contact details (reference) | *Contact Details* | 0, ++*++
+| Service place | *Organization Contact Area* |
+
+|===
+
+[[sec_15.11]]
+=== Service Control
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# Association between a geographically
+located service and the organisation that controls it
+
+[underline]#Remarks:#
+
+This is an information association linking a location where a service
+is provided with an information type describing the provider. Contrast
+to serviceProvisionArea, which is a feature association linking the
+area served with another feature describing the provider. Role controlledService
+encodable only as a generic inverse association in 3.0.0 datasets
+as it is an information++->++feature link
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+
+.2+| Association
+| Control authority | *Authority* | 0, 1
+| Controlled service | *Supervised Area* |
+
+|===
+
+[[sec_15.12]]
+=== Spatial Association
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# Association for linking spatial quality
+to spatial objects.
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+
+.2+|
+| Defined for | *(spatial primitive)* | 0, ++*++
+| Defines | *Spatial Quality* | 0, 1
+
+|===
+
+[[sec_15.13]]
+=== Location Hours
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# Working hours for a service or facility
+described by a geographic location.
+
+[underline]#Remarks:#
+
+This association links a geo feature to a Service Hours object. Distinction:
+authyHours, which links an information type (Authority) to a Service
+Hours object.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+
+.2+| Association
+| Facility Operating Hours
+| *Anchor Berth, Anchorage Area, Berth, Dock Area, Dry Dock, Dumping
+Ground, Floating Dock, Gridiron, Harbour Area (Administrative), Harbour
+Area Section, Harbour Basin, Harbour Facility, Mooring/Warping Facility,
+Pilot Boarding Place, Seaplane Landing Area, Terminal, Turning Basin,
+Waterway Area* |
+| Location service hours | *Service Hours* | 0, 1
+
+|===
+
+[[sec_15.14]]
+=== Service Availability
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# The services available within a location.
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+
+.2+| Association
+| Service Description Reference | *Available Port Services* | 0, 1
+| Location Served
+| *Anchor Berth, Berth, Dock Area, Harbour Area (Administrative),
+Harbour Area Section, Mooring/Warping Facility, Terminal*
+|
+
+|===
+
+[[sec_15.15]]
+=== Subsection
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# A division of a feature into parts
+of the same type as the whole.
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+.2+| Aggregation | Constitute | *Harbour Area Section* | 0, 1
+| Sub-Unit | *Harbour Area Section* | 0, ++*++
+
+|===
+
+[[sec_15.16]]
+=== Infrastructure
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# The infrastructure facilities in
+an area.
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+.2+| Association | Has Infrastructure | *Harbour Physical Infrastructure* | 0, ++*++
+| Infrastructure Location | *Harbour Area Section, Terminal* | 0, 1
+
+|===
+
+[[sec_15.17]]
+=== Primary/Auxiliary Facility
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# Describes the relationship between
+a primary feature and a feature that plays a supporting role in the
+use of the primary facility by a vessel.
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+.2+| Association | Auxiliary Facility | *Mooring/Warping Facility* | 0, ++*++
+| Primary Facility | *Anchor Berth, Berth Position* | 0, 1
+
+|===
+
+[[sec_15.18]]
+=== Demarcation
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# Demarcation of location(s) within
+a feature by relation to another feature or features
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+.2+| Composition | Demarcated Feature | *Berth* | 1, 1
+| Demarcation Indicator | *Berth Position* | 0, ++*++
+
+|===
+
+[[sec_15.19]]
+=== Jurisdictional Limit
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# The limit(s) of a jurisdiction claimed
+by a coastal State.
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+.2+| Association | Limit Extent | *Outer Limit* | 0, 1
+| Limit Reference | *Harbour Area (Administrative)* | 1, 1
+
+|===
+
+[[sec_15.20]]
+=== Layout Division
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# A division of a feature into parts
+of type(s) different from the type of the whole.
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+
+.2+| Aggregation | Component of | *Harbour Area (Administrative)* | 1, 1
+| Layout Unit
+| *Anchorage Area, Berth, Dock Area, Dumping Ground, Harbour Area
+Section, Harbour Basin, Pilot Boarding Place, Seaplane Landing Area,
+Terminal, Turning Basin, Waterway Area*
+| 0, ++*++
+
+|===
+
+[[sec_15.21]]
+=== Text Association
+
+[cols="a,a,a,a",options="unnumbered"]
+|===
+4+| [underline]#IHO Definition:# A feature association for the binding
+between a geo feature and the cartographically positioned location
+for text.
+
+[underline]#Remarks:#
+
+* No remarks.
+
+h| Role Type h| Role h| Associated With h| Multiplicity
+.2+| Association | Positions | *Text Placement* | 0, 1
+| Identifies | *Feature Type* | 0, ++*++
+
+|===

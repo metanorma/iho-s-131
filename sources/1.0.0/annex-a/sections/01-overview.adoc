@@ -1,0 +1,87 @@
+
+[[sec_1]]
+== Overview
+
+[[sec_1.1]]
+=== Preface
+
+The "Data Classification and Encoding Guide" has been developed to
+provide consistent, standardized instructions for encoding S-100 compliant
+Marine Harbour Infrastructure (S-131) data.
+
+The purpose of the Data Classification and Encoding Guide is to facilitate
+S-131 encoding to meet IHO standards for the proper display of Marine
+Harbour Infrastructure information in an ECDIS and other electronic
+charting displays. This document describes how to encode information
+that the modeller considers relevant to a Harbour Infrastructure data
+product. The content of a dataset is at the discretion of the producing
+authority provided that the conventions described within this document
+are followed. A "producing authority" is a Hydrographic Office (HO)
+or other organization authorized by a government, to produce definitive
+nautical information.
+
+The entire S-100 Universal Hydrographic Data Model, including the
+S-131 Product Specification, is available at the following web site,
+http://www.iho.int.
+
+[[sec_1.2]]
+=== S-131 Annex A - Data Classification and Encoding Guide -- Metadata
+
+NOTE: This information uniquely identifies this Data Classification
+and Encoding Guide to the Product Specification and provides information
+about its creation and maintenance.
+
+[[table_1.1]]
+.Marine Harbour Infrastructure product specification metadata
+[cols="a,a"]
+|===
+h| Metadata h| Content
+
+| *Title:*
+| The International Hydrographic Organization Marine Harbour Infrastructure
+Product Specification, Data Classification and Encoding Guide
+| *Version:* | 1.0.0
+| *Date:* | 31 December 2022
+| *Language:* | English
+| *Classification:* | Unclassified
+| *Contact:*
+| International Hydrographic Organization4 Quai Antione 1erB.P. 445MC
+98011 MONACO CEDEXTelephone: +377 93 10 81 00Fax: +377 93 10 81 40URL:
+www.iho.int
+| *Identifier:* | S-131 Annex A Data Classification and Encoding Guide
+| *Maintenance:* | Changes to S-131 Annex A; Data Classification and
+Encoding Guide are coordinated by the IHO Nautical Information Provision
+Working Group (NIPWG) and must be made available via the IHO web site.
+
+|===
+
+[[sec_1.3]]
+=== Terms and definitions
+
+For terms and definitions, see the Marine Harbour Infrastructure Product
+Specification, Clause 1.4.2.
+
+[[sec_1.4]]
+=== Abbreviations
+
+For a list of abbreviations, see the Marine Harbour Infrastructure
+Product Specification, Clause 1.4.3.
+
+[[sec_1.5]]
+=== Use of language
+
+Within this document:
+
+"Must" indicates a mandatory requirement;
+
+"Should" indicates an optional requirement, that is the recommended
+process to be followed, but is not mandatory;
+
+"May" means "allowed to" or "could possibly", and is not mandatory,
+or recommended.
+
+[[sec_1.6]]
+=== Maintenance
+
+Changes to the Data Classification and Encoding Guide must occur in
+accordance with the S-131 Product Specification clause 1.7.

@@ -1,0 +1,89 @@
+
+[[sec_8]]
+== Cartographic Features
+
+This product specification uses the *Text Placement* cartographic
+features derived from S-101 (version 1.0). The structure of the feature
+and its usage are the same as in S-101 but the feature specification
+in S-131 omits elements which are not relevant to marine protected
+areas, for example, 'light characteristic' is omitted as a listed
+value for the attribute *text type*.
+
+[[sec_8.1]]
+=== Text Placement
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# The Text Placement feature is used
+in association with the Feature Name attribute or a light description
+to optimize text positioning in ECDIS.
+8+| *S-10x Cartographic Feature: Text Placement*
+8+| *[underline]#Super Type:#*
+8+| *[underline]#Primitives:# point*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute h| S-57 Acronym 3+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Orientation Value | (ORIENT) 3+| | RE | 1, 1
+2+| Text | (INFORM)
+
+(NINFOM)
+3+| | TE | 0, 1
+
+2+| Text Offset Mm | 3+| | IN | 1, 1
+2+| Text Type | 3+| 1: Name | EN | 0, 1
+2+| Scale Minimum | (SCAMIN) 3+| | IN | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_8.1.1]]
+==== General
+
+If it is required to place text to improve clarity of display, it
+must be done using the cartographic feature *TextPlacement*. The *TextPlacement*
+feature must be associated with the relevant geo feature using the
+composition TextAssociation.
+
+S-131 differs from S-101 in prohibiting *TextPlacement* features not
+associated to a geographic feature; further, S-101 does not use the
+"light characteristic" value of _textType_, since S-131 does not include
+light geographic features.
+
+[underline]#Remarks:#
+
+* The *Text Placement* cartographic feature is used by the ECDIS to
+optionally position text in ECDIS, which has been populated using
+an attribute for the related feature. This attribute is identified
+by populating the attribute _text type_. Alternatively, the text to
+be displayed may be encoded using the attribute _text_.
+
+* Only one of the attributes text or text type must be populated for
+each instance of *Text Placement*.
+
+* The attributes _orientationValue_ and _textOffsetMm_ define the
+bearing (related to true north) and distance of the anchor point of
+the text, in millimetres on the ECDIS display, relative to the associated
+geographic feature. The values populated for these attributes must
+be determined based on the desired position of the text at the maximum
+display scale of the data.
+
+* *Text Placement* should only be associated with features of type
+point, and used in areas where it is important that text clear navigationally
+relevant areas, for example shipping channels and dredged areas.
+
+* The attribute _scaleMinimum_ may be used to determine a scale at
+which the text string is no longer visible in the ECDIS when scale
+minimum functionality is enabled. Where populated, the value for scale
+minimum on *TextPlacement* must not be set to a smaller scale value
+than the value (if any) populated for the associated feature.
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| Asso | Text Association | *TextPlacement* | positions | 0, 1 | *FeatureType* | identifies | 1,1
+
+|===

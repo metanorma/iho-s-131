@@ -1,0 +1,347 @@
+
+[[sec_9]]
+== Abstract Information types
+
+[[sec_9.1]]
+=== Introduction
+
+The abstract feature types are depicted in <<fig_9.1>>. At the root
+is the type named *InformationType*, from which all information types
+except *SpatialQuality* inherit several attributes. This means that
+any information type in S-131 except *SpatialQuality* can have any
+of the several attributes in the *InformationType* box. The information
+types *AbstractRxN* adds attributes and associations inherited by
+the four types *Regulations*, *Restrictions*, *Recommendations*, and
+*NauticalInformation*.
+
+The abstract information type hierarchy in S-131 is intentionally
+harmonised with the abstract hierarchy in other nautical publications
+Product Specifications.
+
+[[fig_9.1]]
+.Abstract Information types
+image::figure-14.png[]
+
+[[sec_9.2]]
+=== Information Type
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# Generalized information type which
+carries all the common attributes
+8+| *[underline]#S-10x Information Type:# Information Type*
+8+| *[underline]#Super Type:#*
+8+| *[underline]#Sub-Types:# AbstractRxN (<<sec_9.3>>), Authority
+(<<sec_11.2>>), ContactDetails (<<sec_11.4>>), ServiceHours (<<sec_11.6>>),
+NonstandardWorkingDay (<<sec_11.7>>), AvailablePortServices (<<sec_11.8>>),
+Applicability (<<sec_12.1>>), Entrance (<<sec_13.1>>)*
+8+| *[underline]#Primitives:# None*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute h| S-57 Acronym 3+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Feature Name | 3+| | C | 0, ++*++
+2+| Display Name | 3+| | (S) BO | 0, 1
+2+| Language | 3+| | (S) TE | 0, 1
+2+| Name | (OBJNAM) 3+| | (S) TE | 1, 1
+2+| Fixed date range | 3+| | C | 0, 1
+2+| Date Start | (DATSTA) 3+| | (S) TD | 0, 1
+2+| Date End | (DATEND) 3+| | (S) TD | 0, 1
+2+| Periodic Date Range | 3+| | C | 0, ++*++
+2+| Date Start | (DATSTA) 3+| | (S) TD | 1, 1
+2+| Date End | (DATEND) 3+| | (S) TD | 1, 1
+2+| Graphic | 3+| | C | 0, ++*++
+2+| Pictorial Representation | (PICREP) 3+| | (S) TE | 1, ++*++
+2+| Picture Caption | 3+| | (S) TE | 0, 1
+2+| Source Date | (SORDAT) 3+| | (S) DA | 0, 1
+2+| Picture Information | 3+| | (S) TE | 0, 1
+2+| Bearing Information | 3+| | (S) C | 0, 1
+
+2+| Cardinal Direction | 3+|
+1: North +
+2: North Northeast +
+3: Northeast +
+4: East Northeast +
+5: East +
+6: East Southeast +
+7: Southeast +
+8: South Southeast +
+9: South +
+10: South Southwest +
+11: Southwest +
+12: West Southwest +
+13: West +
+14: West Northwest +
+15: Northwest +
+16: North Northwest
+| (S) EN | 0, 1
+
+2+| Distance | 3+| | (S) RE | 0, 1
+
+2+| Sector Bearing | (SECTR1)
+
+(SECTR2)
+3+| | (S) RE | 0, 2 (ordered)
+
+2+| Information | 3+| | (S) C | 0, ++*++
+2+| File Locator | 3+| | (S) TE | 0, 1
+2+| File Reference | (TXTDSC) 3+| | (S) TE | 0, 1
+2+| Headline | 3+| | (S) TE | 0, ++*++ (ordered)
+2+| Language | 3+| | (S) TE | 0, 1
+
+2+| Text | (INFORM)
+
+(NINFOM)
+3+| | (S) TE | 0, 1
+
+2+| Orientation | 3+| | (S) C | 0, 1
+2+| Orientation Uncertainty | 3+| | (S) RE | 0, 1
+2+| Orientation Value | (ORIENT) 3+| | (S) RE | 1, 1
+2+| Source | 3+| | TE | 0, 1
+
+2+| Source Type | 3+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| EN | 0, 1
+
+2+| Reported Date | (SORDAT) 3+| | TD | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_9.2.1]]
+==== General
+
+Where a complex attribute has all its sub-attributes optional (e.g.,
+multiplicity 0..1 or 0..*), at least one of the sub-attributes must
+be populated.
+
+The *featureName* attribute of an instance of an information type
+can be used for a short title that is either a proper name (if such
+is relevant) or which describes the instance. For example, the *featureName*
+attribute of an *Authority* information type can be the name of a
+government agency.
+
+*featureName* attributes of information types should not duplicate
+the geographic feature name of an associated feature, but should pertain
+to the information instance itself. The *featureName* attribute should
+be populated only if the value conveys useful information to the end
+user. Some examples of such situations are:
+
+* providing the name of an organisation, such as the name of an Authority.
+
+* distinguishing between instances -- if multiple instances of the
+same information type are associated to the same feature type (or
+another information type), the different instances may be given descriptive
+names to make it easier for the mariner to distinguish their content.
+
+Some information instances are associated to multiple features, in
+which case its name should be general enough to be relevant to all
+the features.
+
+For example, if naming *Regulations* instances describing regulations,
+consider whether (for example) there is a general regulation applicable
+to all areas in a jurisdiction and an exceptional regulations object
+associated to a single area or a subset of areas in the jurisdiction.
+In this situation, the general regulations may be encoded with the
+name "General regulations for (feature type) Areas" and associated
+to several features, while a specific feature can also have a specific
+regulation whose name is "Special regulations for (named area)".
+
+The *AdditionalInformation* association to a *NauticalInfomation*
+object can be used to attach an additional chunk of information to
+an information type, when there is no applicable specific information
+type or association. This should be used sparingly if at all.
+
+[underline]#Remarks:#
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Additional Information | *InformationType* | informationProvidedFor | 0, ++*++ | *NauticalInformation* | providesInformation | 0, ++*++
+
+|===
+
+[[sec_9.3]]
+=== AbstractRxN
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# An abstract superclass for information
+types that encode rules, recommendations, and general information
+in text or graphic form.
+8+| *[underline]#S-10x Information Type:# AbstractRxN*
+8+| *[underline]#Super Type:# InformationType (<<sec_9.2>>)*
+8+| *[underline]#Sub-Types:# Regulations (<<sec_10.2>>), Restrictions
+(<<sec_10.3>>), Recommendations (<<sec_10.4>>), NauticalInformation
+(<<sec_10.5>>)*
+8+| *[underline]#Primitives:# None*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute h| S-57 Acronym 3+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Category of Authority | 3+|
+2: Border Control +
+3: Police +
+4: Port +
+5: Immigration +
+6: Health +
+7: Coast Guard +
+8: Agricultural +
+9: Military +
+10: Private Company +
+11: Maritime Police +
+12: Environmental +
+13: Fishery +
+14: Finance +
+15: Maritime +
+16: Customs
+| EN | 0, 1
+
+2+| RxN Code | 3+| | C | 0, ++*++
+
+2+| Category of RxN | 3+|
+1: Navigation +
+2: Communication +
+3: Environmental Protection +
+4: Wildlife Protection +
+5: Security +
+6: Customs +
+7: Cargo Operation +
+8: Refuge +
+9: Health +
+10: Natural Resources or Exploitation +
+11: Port +
+12: Finance +
+13: Agriculture
+| (S) CL | 0, 1
+
+2+| Action or Activity | 3+|
+1: Navigating With a Pilot +
+2: Entering Port +
+3: Leaving Port +
+4: Berthing +
+5: Slipping +
+6: Anchoring +
+7: Weighing Anchor +
+8: Transiting +
+9: Overtaking +
+10: Reporting +
+11: Working Cargo +
+12: Landing +
+13: Diving +
+14: Fishing +
+15: Discharging Overboard +
+16: Passing
+| (S) CL | 0, 1
+
+2+| Headline | 3+| | (S) TE | 0, ++*++ (ordered)
+2+| Text Content | 3+| | C | 0, ++*++
+
+2+| Category of text | 3+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information | 3+| | (S) C | 0, ++*++
+2+| File Locator | 3+| | (S) TE | 0, 1
+2+| File Reference | (TXTDSC) 3+| | (S) TE | 0, 1
+2+| Headline | 3+| | (S) TE | 0, ++*++ (ordered)
+2+| Language | 3+| | (S) TE | 0, 1
+
+2+| Text | (INFORM)
+
+(NINFOM)
+3+| | (S) TE | 0, 1
+
+2+| Online Resource | 3+| | (S) C | 0, 1
+2+| Online Resource Linkage URL | 3+| | (S) UL | 1, 1
+2+| Protocol | 3+| | (S) TE | 0, 1
+2+| Application Profile | 3+| | (S) TE | 0, 1
+2+| Name of Resource | 3+| | (S) TE | 0, 1
+2+| Online Resource Description | 3+| | (S) TE | 0, 1
+
+2+| Online Function | 3+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request | 3+| | (S) TE | 0, 1
+2+| Source | 3+| | (S) TE | 0, 1
+
+2+| Source Type | 3+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date | (SORDAT) 3+| | (S) TD | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_9.3.1]]
+==== Abstract supertype for information from textual sources
+
+*AbstractRxN* is the supertype of the four types intended primarily
+for encoding information from regulatory or other text sources. The
+attributes *categoryOfRxN* and *actionOrActivity* should be encoded
+wherever possible in order to allow software to classify the content
+according to the type of regulation (*categoryOfRxN*) and its effects
+on common maritime activities by both commercial and recreational
+vessels.
+
+At least one of the attributes *textContent* and *graphic* must be
+populated.
+
+Subtypes of *AbstractRxN* must not be associated to *Nautical Information*,
+since this leads to chains of information types which have little
+or no meaning in reality.
+
+[underline]#Remarks:#
+
+The complex attribute _rxNCode_ can be used to classify regulations
+(or recommendations, etc.) according to their principal subject (sub-attribute
+_categoryOfRxN_) and the type of vessel activity affected (sub-attribute
+_actionOrActivity_), as well as provide a sequence of brief topic
+headings (sub-attribute headline). The _rxNCode_ attribute is intended
+to be used to allow mariners to obtain information relevant to particular
+subjects or to particular kinds of vessel operations.
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Inclusion Type | *AbstractRxN* | theApplicableRxN | 0, ++*++ | *Applicability* | isApplicableTo | 0, ++*++
+| association | Related organisation | *AbstractRxN* | theInformation | 0, ++*++ | *Authority* | theOrganisation | 0, ++*++
+
+|===

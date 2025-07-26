@@ -1,0 +1,5249 @@
+
+[[sec_17]]
+== Attribute and Enumerate Descriptions
+
+EDITOR: This section was generated automatically using S-100 tools and
+does not contain attribute types or constraints. See the review print
+of the feature catalogue for that information. Also, encoding instructions
+are provided for only a few attributes in this edition.
+
+[[sec_17.1]]
+=== Administrative Division
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A generic term for an administrative
+region within a country at a level below that of the sovereign state.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.2]]
+=== Applicable Load Line Zone
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The load line zone in which the port
+is located. Defined by the International Convention on Load Lines.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.3]]
+=== Application Profile
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Name of an application profile that
+can be used with the online resource.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.4]]
+=== Approach Description
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Description of the approach to a location.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.5]]
+=== Associated Feature Name
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The name of an associated feature.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.6]]
+=== Available Berthing Length
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The length of a berth or dock which
+is available for use.
+
+Value Type: real
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.7]]
+=== Berthing Assistance
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of assistance for mooring
+or anchoring operations.
+
+. *Berthing Information*
++
+--
+[underline]#IHO Definition:# Information about assistance or arrangements
+for a service related to berthing operations.
+--
+
+. *Line Personnel*
++
+--
+[underline]#IHO Definition:# Personnel specializing in the mooring
+and unmooring of vessels.
+--
+
+. *Mooring Boat*
++
+--
+[underline]#IHO Definition:# A boat which assists the securement of
+a vessel to a berth or mooring with ropes or anchor.
+--
+
+. *Mule*
++
+--
+[underline]#IHO Definition:# A locomotive for moving vessels.
+--
+
+. *Tugboat*
++
+--
+[underline]#IHO Definition:# A powerful small boat designed to pull
+or push larger ships or powerless barges.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.8]]
+=== Bollard Description
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A textual description of the type of
+bollard at a berth or mooring facility.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.9]]
+=== Bollard Number
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# An identifier used to locate a specific
+bollard.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.10]]
+=== Bollard Pull
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The rated pull force for a bollard
+or other structure used to secure a vessel's lines at a berth, a mooring
+facility or to a tug.
+
+Value Type: real
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.11]]
+=== Call Name
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The designated call name of a station;
+for example, radio station, radar station, pilot.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+This is the name used when calling a radio station by radio; for example,
+"Singapore Pilots".
+
+|===
+
+[[sec_17.12]]
+=== Call Sign
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The designated call-sign of a station
+(radio station, radar station, pilot, ...).
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.13]]
+=== Cardinal Direction
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Principal and intermediate compass
+points.
+
+. *North*
++
+--
+[underline]#IHO Definition:# 348.75-011.25 degrees (true north).
+--
+
+. *North Northeast*
++
+--
+[underline]#IHO Definition:# 011.25 - 033.75 degrees.
+--
+
+. Northeast
++
+--
+[underline]#IHO Definition:# 033.75 - 056.25 degrees.
+--
+
+. *East Northeast*
++
+--
+[underline]#IHO Definition:# 056.25-078.75 degrees.
+--
+
+. East
++
+--
+[underline]#IHO Definition:# 078.75-101.25 degrees
+--
+
+. *East Southeast*
++
+--
+[underline]#IHO Definition:# 101.25-123.75 degrees.
+--
+
+. Southeast
++
+--
+[underline]#IHO Definition:# 123.75-146.25 degrees.
+--
+
+. *South Southeast*
++
+--
+[underline]#IHO Definition:# 146.25-168.75 degrees.
+--
+
+. South
++
+--
+[underline]#IHO Definition:# 168.75-191.25 degrees
+--
+
+. *South Southwest*
++
+--
+[underline]#IHO Definition:# 191.25-213.75 degrees.
+--
+
+. Southwest
++
+--
+[underline]#IHO Definition:# 213.75-236.25 degrees.
+--
+
+. *West Southwest*
++
+--
+[underline]#IHO Definition:# 236.25-258.75 degrees.
+--
+
+. West
++
+--
+[underline]#IHO Definition:# 258.75-281.25 degrees.
+--
+
+. *West Northwest*
++
+--
+[underline]#IHO Definition:# 281.25-303.75 degrees.
+--
+
+. Northwest
++
+--
+[underline]#IHO Definition:# 303.75 - 326.25 degrees.
+--
+
+. *North Northwest*
++
+--
+[underline]#IHO Definition:# 326.25 - 348.75 degrees.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.14]]
+=== Cargo Service
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of services related
+to the goods or items carried by vessels.
+
+. *Stevedoring*
++
+--
+[underline]#IHO Definition:# The loading, unloading, moving or handling
+of cargo, ship's stores, gear, or other materials, into, in, on, or
+out of any vessel.
+--
+
+. *Cargo Surveying*
++
+--
+[underline]#IHO Definition:# Inspection, evaluation or monitoring
+of the quantity, stowage, loading and unloading, and condition of
+cargo, and the effects of cargoes on vessel stability and safety.
+--
+
+. *Cargo Lashing*
++
+--
+[underline]#IHO Definition:# The securement of cargo to the ship's
+structure and/or other cargo.
+--
+
+. *Draught Survey*
++
+--
+[underline]#IHO Definition:# Determination of the quantity of certain
+types of bulk cargo by assessment of its effect on displacement when
+loaded in a vessel.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.15]]
+=== Category of Authority
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The type of person, government agency
+or organisation granted powers of managing or controlling access to
+and/or activity in an area.
+
+. *Border Control*
++
+--
+[underline]#IHO Definition:# The administration to prevent or detect
+and prosecute violations of rules and regulations at international
+boundaries.
+--
+
+. *Police*
++
+--
+[underline]#IHO Definition:# The department of government, or civil
+force, charged with maintaining public order.
+--
+
+. *Port*
++
+--
+[underline]#IHO Definition:# Person or corporation, owners of, or
+entrusted with or invested with the power of managing a port. May
+be called a Harbour Board, Port Trust, Port Commission, Harbour Commission,
+Marine Department.
+--
+
+. *Immigration*
++
+--
+[underline]#IHO Definition:# The authority controlling people entering
+a country.
+--
+
+. *Health*
++
+--
+[underline]#IHO Definition:# The authority with responsibility for
+checking the validity of the health declaration of a vessel and for
+declaring free pratique.
+--
+
+. *Coast Guard*
++
+--
+[underline]#IHO Definition:# Organization keeping watch on shipping
+and coastal waters according to governmental law; normally the authority
+with responsibility for search and rescue.
+--
+
+. *Agricultural*
++
+--
+[underline]#IHO Definition:# The authority with responsibility for
+preventing infection of the agriculture of a country and for the protection
+of the agricultural interests of a country.
+--
+
+. *Military*
++
+--
+[underline]#IHO Definition:# A military authority which provides control
+of access to or approval for transit through designated areas or airspace.
+--
+
+. *Private Company*
++
+--
+[underline]#IHO Definition:# A private or publicly owned company or
+commercial enterprise which exercises control of facilities, for example
+a calibration area.
+--
+
+. *Maritime Police*
++
+--
+[underline]#IHO Definition:# A governmental or military force with
+jurisdiction in territorial waters. Examples could include Gendarmerie
+Maritime, Carabinierie, and Guardia Civil.
+--
+
+. *Environmental*
++
+--
+[underline]#IHO Definition:# An authority with responsibility for
+the protection of the environment.
+--
+
+. *Fishery*
++
+--
+[underline]#IHO Definition:# An authority with responsibility for
+the control of fisheries.
+--
+
+. *Finance*
++
+--
+[underline]#IHO Definition:# An authority with responsibility for
+the control and movement of money.
+--
+
+. *Maritime*
++
+--
+[underline]#IHO Definition:# A national or regional authority charged
+with administration of maritime affairs.
+--
+
+. *Customs*
++
+--
+[underline]#IHO Definition:# The agency or establishment for collecting
+duties, tolls.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.16]]
+=== Category of Berth Location
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of a berth according
+to the method of describing its location or extent.
+
+. *Wharf Reference Metre Mark*
++
+--
+[underline]#IHO Definition:# A wharf or quay with reference position(s)
+given by one or more metre marks.
+--
+
+. *Wharf Reference Position*
++
+--
+[underline]#IHO Definition:# A wharf or quay with reference position(s)
+given by one or more point or points in geographic coordinates.
+--
+
+. *Pier (Jetty)*
++
+--
+[underline]#IHO Definition:# A long, narrow structure extending into
+the water to afford a berthing place for vessels, to serve as a promenade,
+etc.
+--
+
+. *Conventional Mooring*
++
+--
+[underline]#IHO Definition:# Mooring using the vessel's anchors and
+buoys to secure the vessel at multiple points.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.17]]
+=== Category of Cargo
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of the different types
+of cargo that a ship may be carrying.
+
+. *Container*
++
+--
+[underline]#IHO Definition:# One of a number of standard sized cargo
+carrying units, secured using standard corner attachments and bar.
+--
+
+. *Passenger*
++
+--
+[underline]#IHO Definition:# A fee paying traveller.
+--
+
+. *Livestock*
++
+--
+[underline]#IHO Definition:# Live animals carried in bulk.
+--
+
+. *Dangerous or Hazardous*
++
+--
+[underline]#IHO Definition:# Dangerous or hazardous cargo as described
+by the IMO International Maritime Dangerous Goods code.
+--
+
+. *Heavy Lift*
++
+--
+[underline]#IHO Definition:# Indivisible heavy items of weight generally
+over 100 tons, and width or height greater than 100 metres.
+--
+
+. *Dry Bulk Cargo*
++
+--
+[underline]#IHO Definition:# Commodity cargo that is transported unpackaged
+in large quantities. These types of goods usually need to be kept
+dry during the whole transportation period.
+--
+
+. *Liquid Bulk Cargo*
++
+--
+[underline]#IHO Definition:# Liquids or gases that are transported
+in bulk and carried unpackaged.
+--
+
+. *Reefer Container Cargo*
++
+--
+[underline]#IHO Definition:# Cargo transported in refrigerated containers,
+generally perishable commodities which require temperature-controlled
+transportation, such as fruit, meat, fish, vegetables, dairy products
+and other foods.
+--
+
+. *Ro-Ro Cargo*
++
+--
+[underline]#IHO Definition:# Wheeled cargo, such as cars, busses,
+trucks, agricultural vehicles and cranes, that are driven on and off
+the ship on their own wheels or using a platform vehicle, such as
+a self-propelled modular transporter.
+--
+
+. *Project Cargo*
++
+--
+[underline]#IHO Definition:# Project cargo is a term used to broadly
+describe the national or international transportation of large, heavy,
+high value, or critical (to the project they are intended for) pieces
+of equipment. Also commonly referred to as heavy lift, this includes
+shipments made of various components which need disassembly for shipment
+and reassembly after delivery.
+--
+
+. *Break Bulk Cargo*
++
+--
+[underline]#IHO Definition:# Goods that are stowed on board ship in
+individually counted units, and not in intermodal containers nor in
+bulk as with oil or grain.
+--
+
+[underline]#Remarks:#
+
+If item 7 is used, the nature of dangerous or hazardous cargoes can
+be amplified with category of dangerous or hazardous cargo.
+
+|===
+
+[[sec_17.18]]
+=== Category of Communication Preference
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of frequencies, VHF
+channels, telephone numbers, or other means of communication based
+on preference.
+
+. *Preferred Calling*
++
+--
+[underline]#IHO Definition:# The first choice channel or frequency
+to be used when calling a radio station.
+--
+
+. *Alternate Calling*
++
+--
+[underline]#IHO Definition:# A channel or frequency to be used for
+calling a radio station when the preferred channel or frequency is
+busy or is suffering from interference.
+--
+
+. *Preferred Working*
++
+--
+[underline]#IHO Definition:# The first choice channel or frequency
+to be used when working with a radio station.
+--
+
+. *Alternate Working*
++
+--
+[underline]#IHO Definition:# A channel or frequency to be used for
+working with a radio station when the preferred working channel or
+frequency is busy or is suffering from interference.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.19]]
+=== Category Of Dangerous Or Hazardous Cargo
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of dangerous goods or
+hazardous materials based on the International Maritime Dangerous
+Goods Code (IMDG Code).
+
+. *IMDG Code Class 1 Div. 1.1*
++
+--
+[underline]#IHO Definition:# Explosives, Division 1: Substances and
+articles which have a mass explosion hazard.
+--
+
+. *IMDG Code Class 1 Div. 1.2*
++
+--
+[underline]#IHO Definition:# Explosives, Division 2: substances and
+articles which have a projection hazard but not a mass explosion hazard
+--
+
+. *IMDG Code Class 1 Div. 1.3*
++
+--
+[underline]#IHO Definition:# Explosives, Division 3: substances and
+articles which have a fire hazard and either a minor blast hazard
+or a minor projection hazard or both, but not a mass explosion hazard
+--
+
+. *IMDG Code Class 1 Div. 1.4*
++
+--
+[underline]#IHO Definition:# Explosives, Division 4: substances and
+articles which present no significant hazard
+--
+
+. *IMDG Code Class 1 Div. 1.5*
++
+--
+[underline]#IHO Definition:# Explosives, Division 5: very insensitive
+substances which have a mass explosion hazard
+--
+
+. *IMDG Code Class 1 Div. 1.6*
++
+--
+[underline]#IHO Definition:# Explosives, Division 6: extremely insensitive
+articles which do not have a mass explosion hazard
+--
+
+. *IMDG Code Class 2 Div. 2.1*
++
+--
+[underline]#IHO Definition:# Gases, flammable gases
+--
+
+. *IMDG Code Class 2 Div. 2.2*
++
+--
+[underline]#IHO Definition:# Gases, non-flammable, non-toxic gases
+--
+
+. *IMDG Code Class 2 Div. 2.3*
++
+--
+[underline]#IHO Definition:# Gases, toxic gases
+--
+
+. *IMDG Code Class 3*
++
+--
+[underline]#IHO Definition:# flammable liquids
+--
+
+. *IMDG Code Class 4 Div. 4.1*
++
+--
+[underline]#IHO Definition:# flammable solids, self-reactive substances
+and desensitized explosives
+--
+
+. *IMDG Code Class 4 Div. 4.2*
++
+--
+[underline]#IHO Definition:# substances liable to spontaneous combustion
+--
+
+. *IMDG Code Class 4 Div. 4.3*
++
+--
+[underline]#IHO Definition:# substances which, in contact with water,
+emit flammable gases
+--
+
+. *IMDG Code Class 5 Div. 5.1*
++
+--
+[underline]#IHO Definition:# oxidizing substances
+--
+
+. *IMDG Code Class 5 Div. 5.2*
++
+--
+[underline]#IHO Definition:# organic peroxides
+--
+
+. *IMDG Code Class 6 Div. 6.1*
++
+--
+[underline]#IHO Definition:# toxic substances
+--
+
+. *IMDG Code Class 6 Div. 6.2*
++
+--
+[underline]#IHO Definition:# infectious substances
+--
+
+. *IMDG Code Class 7*
++
+--
+[underline]#IHO Definition:# Radioactive material
+--
+
+. *IMDG Code Class 8*
++
+--
+[underline]#IHO Definition:# Corrosive substances
+--
+
+. *IMDG Code Class 9*
++
+--
+[underline]#IHO Definition:# Miscellaneous dangerous substances and
+articles
+--
+
+. *Harmful Substances in Packaged Form*
++
+--
+[underline]#IHO Definition:# Harmful substances are those substances
+which are identified as marine pollutants in the International Maritime
+Dangerous Goods Code (IMDG Code). Packaged form is defined as the
+forms of containment specified for harmful substances in the IMDG
+Code.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.20]]
+=== Category of Depths Description
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of significant aspects
+of depths about which information is provided.
+
+. *Shoal*
++
+--
+[underline]#IHO Definition:# A shallow elevation composed of unconsolidated
+material that may constitute a hazard to surface navigation.
+--
+
+. *General Depth*
++
+--
+[underline]#IHO Definition:# General information about the vertical
+distance from the water surface to the bottom.
+--
+
+. *Controlling Depth*
++
+--
+[underline]#IHO Definition:# The least depth in the approach or channel
+to an area, such as a port or anchorage, governing the maximum draft
+of vessels that can enter.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.21]]
+=== Category of Harbour Facility
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of harbour use.
+
+. *RoRo Terminal*
++
+--
+[underline]#IHO Definition:# A terminal for roll-on roll-off ferries.
+--
+
+. *Ferry Terminal*
++
+--
+[underline]#IHO Definition:# A terminal for passenger and vehicle
+ferries.
+--
+
+. *Fishing Harbour*
++
+--
+[underline]#IHO Definition:# A harbour with facilities for fishing
+boats.
+--
+
+. *Yacht Harbour/Marina*
++
+--
+[underline]#IHO Definition:# A harbour facility for small boats, yachts,
+etc., where supplies, repairs, and various services are available.
+--
+
+. *Naval Base*
++
+--
+[underline]#IHO Definition:# A centre of operations for naval vessels.
+--
+
+. *Tanker Terminal*
++
+--
+[underline]#IHO Definition:# A terminal for the bulk handling of liquid
+cargoes.
+--
+
+. *Passenger Terminal*
++
+--
+[underline]#IHO Definition:# A terminal for the loading and unloading
+of passengers.
+--
+
+. *Shipyard*
++
+--
+[underline]#IHO Definition:# A place where ships are built or repaired.
+--
+
+. *Container Terminal*
++
+--
+[underline]#IHO Definition:# A terminal with facilities to load/unload
+or store shipping containers.
+--
+
+. *Bulk Terminal*
++
+--
+[underline]#IHO Definition:# A terminal for the handling of bulk materials
+such as iron ore, coal, etc.
+--
+
+. *Ship Lift*
++
+--
+[underline]#IHO Definition:# A platform powered by synchronous electric
+motors (for example syncrolift) used to lift vessels (larger than
+boats) in and out of the water.
+--
+
+. *Straddle Carrier*
++
+--
+[underline]#IHO Definition:# A wheeled vehicle designed to lift and
+carry containers or vessels within its own framework. It is used for
+moving, and sometimes stacking, shipping containers and vessels.
+--
+
+. *Service Harbour*
++
+--
+[underline]#IHO Definition:# A harbour within which the floating equipment
+(dredges, tugs ...) of harbour services are stationed.
+--
+
+. *Pilotage Service*
++
+--
+[underline]#IHO Definition:# The services of a person who directs
+the movements of a vessel through pilot waters, usually a person who
+has demonstrated extensive knowledge of channels, aids to navigation,
+dangers to navigation, etc., in a particular area and is licensed
+for that area, are available.
+--
+
+. *Service and Repair*
++
+--
+[underline]#IHO Definition:# A place where mechanical services or
+repairs can be undertaken to engines or other vessel equipment.
+--
+
+. *Quarantine Station*
++
+--
+[underline]#IHO Definition:# A medical control center located in an
+isolated spot ashore where patients with contagious diseases from
+vessel in quarantine are taken.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.22]]
+=== Category of Mooring/Warping Facility
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A place or structure to which a vessel
+can be secured.
+
+. *Dolphin*
++
+--
+[underline]#IHO Definition:# A post or group of posts, used for mooring
+or warping a vessel, or as an aid to navigation. The dolphin may be
+in the water, on a wharf or on the beach.
+--
+
+. *Deviation Dolphin*
++
+--
+[underline]#IHO Definition:# A post or group of posts, which a vessel
+may swing around for compass adjustment.
+--
+
+. *Bollard*
++
+--
+[underline]#IHO Definition:# Small shaped post, mounted on a wharf
+or dolphin used to secure ship's lines.
+--
+
+. *Tie-Up Wall*
++
+--
+[underline]#IHO Definition:# A section of wall designated for tying-up
+vessels awaiting transit. Bollards and mooring devices are available
+for both large and small ships.
+--
+
+. *Post or Pile*
++
+--
+[underline]#IHO Definition:# A long heavy timber or section of steel,
+wood, concrete, etc., forced into the seabed to serve as a mooring
+facility.
+--
+
+. *Mooring Cable*
++
+--
+[underline]#IHO Definition:# A chain or very strong fibre or wire
+rope used to anchor or moor vessels or buoys.
+--
+
+. *Mooring Buoy*
++
+--
+[underline]#IHO Definition:# A buoy secured to the bottom by permanent
+moorings with means for mooring a vessel by use of its anchor chain
+or mooring lines.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.23]]
+=== Category of Port Section
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of subdivisions of a
+port or harbour area by usage.
+
+. *Port Fairway*
++
+--
+[underline]#IHO Definition:# The main navigable channel in a harbour
+or its approaches, for vessels of larger size.
+--
+
+. *Berth Pocket*
++
+--
+[underline]#IHO Definition:# A body of water at a berth or anchor
+berth, of adequate dimensions to allow a vessel to make fast to the
+shore, mooring buoys, berthing dolphins or to anchor.
+--
+
+. *Seaplane Anchorage*
++
+--
+[underline]#IHO Definition:# An area in which sea-planes anchor or
+may anchor.
+--
+
+. *Dredged Basin*
++
+--
+[underline]#IHO Definition:# An area of water or channel enlargement
+of increased depth compared to adjacent areas, where the depth is
+maintained by dredging operations.
+--
+
+. *Port Safety Zone*
++
+--
+[underline]#IHO Definition:# The area around a port facility or harbour
+installation within which vessels are prohibited from entering without
+permission.
+--
+
+. *Lay-by Berth*
++
+--
+[underline]#IHO Definition:# A general berth for use by vessels for
+short term waiting until a loading or discharging berth is available.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.24]]
+=== Category of Relationship
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Expresses constraints or requirements
+on vessel actions or activities in relation to a geographic feature,
+facility, or service.
+
+. *Prohibited*
++
+--
+[underline]#IHO Definition:# Use of facility, waterway or service
+is forbidden.
+--
+
+. *Not Recommended*
++
+--
+[underline]#IHO Definition:# Use of facility, waterway or service
+is not recommended.
+--
+
+. *Permitted*
++
+--
+[underline]#IHO Definition:# Use of facility, waterway, or service
+is permitted but *not required*.
+--
+
+. Recommended
++
+--
+[underline]#IHO Definition:# Use of facility, waterway, or service
+is recommended.
+--
+
+. Required
++
+--
+[underline]#IHO Definition:# Use of facility, waterway, or service
+is required.
+--
+
+. Not Required
++
+--
+[underline]#IHO Definition:# Use of facility, waterway, or service
+is not required.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.25]]
+=== Category of Schedule
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The type of schedule, for instance
+opening, *closure*, etc.
+
+. *Normal Operation*
++
+--
+[underline]#IHO Definition:# The service, office, is open, fully manned,
+and operating normally, or the area is accessible as usual.
+--
+
+. Closure
++
+--
+[underline]#IHO Definition:# The service, office, or area is closed.
+--
+
+. *Unmanned Operation*
++
+--
+[underline]#IHO Definition:# The service is available but not manned.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.26]]
+=== Category of Temporal Variation
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# An assessment of the likelihood of
+change over time.
+
+. *Extreme Event*
++
+--
+[underline]#IHO Definition:# Indication of the possible impact of
+a significant event (for example hurricane, earthquake, volcanic eruption,
+landslide, etc), which is considered likely to have changed the seafloor
+or landscape significantly.
+--
+
+. *Likely to Change and Significant Shoaling Expected*
++
+--
+[underline]#IHO Definition:# Continuous or frequent change (for example
+river siltation, sand waves, seasonal storms, ice bergs, etc) that
+is likely to result in new significant shoaling.
+--
+
+. *Likely to Change But Significant Shoaling Not Expected*
++
+--
+[underline]#IHO Definition:# Continuous or frequent change (for example
+sand wave shift, seasonal storms, ice bergs, etc) that is not likely
+to result in new significant shoaling.
+--
+
+. Likely to Change
++
+--
+[underline]#IHO Definition:# Continuous or frequent change to non-bathymetric
+features (for example river siltation, glacier creep/recession, sand
+dunes, buoys, marine farms, etc).
+--
+
+. *Unlikely to Change*
++
+--
+[underline]#IHO Definition:# Significant change to the seafloor is
+not expected.
+--
+
+. *Unassessed*
++
+--
+[underline]#IHO Definition:# Not having been assessed.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.27]]
+=== Category of text
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of completeness of textual
+information in relation to the source.
+
+. *Abstract or Summary*
++
+--
+[underline]#IHO Definition:# A statement summarizing the important
+points of a text.
+--
+
+. *Extract*
++
+--
+[underline]#IHO Definition:# An excerpt or excerpts from a text.
+--
+
+. *Full Text*
++
+--
+[underline]#IHO Definition:# The whole text.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.28]]
+=== Category of Vessel Registry
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The locality of vessel registration
+or enrolment relative to the nationality of a port, territorial sea,
+administrative area, exclusive zone or other location.
+
+. *Domestic*
++
+--
+[underline]#IHO Definition:# The vessel is registered or enrolled
+under the same national flag as the port, harbour, territorial sea,
+exclusive economic zone, or administrative area in which the object
+that possesses this attribute applies or is located.
+--
+
+. *Foreign*
++
+--
+[underline]#IHO Definition:# The vessel is registered or enrolled
+under a national flag different from the port, harbour, territorial
+sea, exclusive economic zone, or other administrative area in which
+the object that possesses this attribute applies or is located.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.29]]
+=== Cathodic Protection System
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A system used to protect metal structures
+against corrosion by supplying direct current to the immersed external
+surface of the structure.
+
+Value Type: boolean
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.30]]
+=== City Name
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The name of a town or city.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.31]]
+=== Communication Channel
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A channel number assigned to a specific
+radio frequency, frequencies or frequency band.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+The expected input is the specific VHF-Channel. The attribute 'communication
+channel' encodes the various VHF-channels used for communication.
+
+|===
+
+[[sec_17.32]]
+=== Condition
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The various conditions of buildings
+and other constructions.
+
+. *Under Construction*
++
+--
+[underline]#IHO Definition:# Being built but not yet capable of function.
+--
+
+. *Ruined*
++
+--
+[underline]#IHO Definition:# A structure in a decayed or deteriorated
+condition resulting from neglect or disuse, or a damaged structure
+in need of repair.
+--
+
+. *Under Reclamation*
++
+--
+[underline]#IHO Definition:# An area of the sea, a lake or the navigable
+part of a river that is being reclaimed as land, usually by the dumping
+of earth and other material.
+--
+
+. *Planned Construction*
++
+--
+[underline]#IHO Definition:# Detailed planning has been completed
+but construction has not been initiated.
+--
+
+[underline]#Remarks:#
+
+The default 'condition' should be considered to be completed, undamaged
+and working normally.
+
+|===
+
+[[sec_17.33]]
+=== Comparison Operator
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Numerical comparison.
+
+. *Greater Than*
++
+--
+[underline]#IHO Definition:# The value of the left value is greater
+than that of the right.
+--
+
+. *Greater Than or Equal To*
++
+--
+[underline]#IHO Definition:# The value of the left expression is greater
+than or equal to that of the right.
+--
+
+. *Less Than*
++
+--
+[underline]#IHO Definition:# The value of the left expression is less
+than that of the right.
+--
+
+. *Less Than or Equal To*
++
+--
+[underline]#IHO Definition:# The value of the left expression is less
+than or equal to that of the right.
+--
+
+. Equal To
++
+--
+[underline]#IHO Definition:# The two values are equivalent.
+--
+
+. *Not Equal To*
++
+--
+[underline]#IHO Definition:# The two values are not equivalent.
+--
+
+[underline]#Remarks:#
+
+Provides the relation between the value given in the model and the
+real ship's value.
+
+|===
+
+[[sec_17.34]]
+=== Contact Instructions
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Instructions provided on how to contact
+a particular person, organisation or service.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.35]]
+=== Country Name
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The name of a nation.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.36]]
+=== Date End
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The latest date on which an object
+(for example a buoy) will be present.
+
+[underline]#Indication:# Dates should be encoded using 4 digits for
+the calendar year (YYYY), 2 digits for the month (MM) (for example
+April = 04) and 2 digits for the day (DD). When no specific year,
+month and/or day is required/known, indication of the year, month
+and/or day is omitted.
+
+Value Type: S100_TruncatedDate
+
+[underline]#Remarks:#
+
+Date End indicates the latest date of an event or the end of a date
+range. It is used to indicate the end of a fixed date range, the end
+of a periodic date range, or the removal or cancellation of a feature
+at a specific date in the future.
+
+|===
+
+[[sec_17.37]]
+=== Date Fixed
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The date of an event.
+
+Value Type: S100_TruncatedDate
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.38]]
+=== Date Start
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The earliest date on which an object
+(for example a buoy) will be present.
+
+Value Type: S100_TruncatedDate
+
+[underline]#Remarks:#
+
+Date Start indicates the earliest date of an event or the start of
+a date range. It is used to indicate the start of a fixed date range,
+the start of a periodic date range, or the deployment or implementation
+of a feature at a specific date in the future.
+
+|===
+
+[[sec_17.39]]
+=== Date Variable
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A day which is not fixed in the Gregorian
+calendar.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+Examples: The fourth Thursday in November; new moon day of Kartika
+(Diwali); Easter Sunday.
+
+|===
+
+[[sec_17.40]]
+=== Day of Week
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Any one of seven days in a week.
+
+. *Sunday*
++
+--
+[underline]#IHO Definition:# The first day of the week.
+--
+
+. *Monday*
++
+--
+[underline]#IHO Definition:# The second day of the week.
+--
+
+. *Tuesday*
++
+--
+[underline]#IHO Definition:# The third day of the week.
+--
+
+. *Wednesday*
++
+--
+[underline]#IHO Definition:# The fourth day of the week.
+--
+
+. *Thursday*
++
+--
+[underline]#IHO Definition:# The fifth day of the week.
+--
+
+. *Friday*
++
+--
+[underline]#IHO Definition:# The sixth day of the week.
+--
+
+. *Saturday*
++
+--
+[underline]#IHO Definition:# The seventh day of the week.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.41]]
+=== Day of Week is Range
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A statement expressing if the days
+of the week identified define a range or not.
+
+Value Type: boolean
+
+[underline]#Remarks:#
+
+A True value is an indication that the identified days of the week
+define a range between and inclusive of those days.
+
+|===
+
+[[sec_17.42]]
+=== Delivery Point
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Details of where post can be delivered
+such as the apartment, name and/or number of a street, building or
+PO Box.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.43]]
+=== Development
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Describes a feature that is in development.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.44]]
+=== Display Name
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A statement expressing if a feature
+name is to be displayed in certain system display settings or not.
+
+Indication:A Truevalueisanindicationthatthenameis intendedtobedisplayed.
+
+Value Type: boolean
+
+[underline]#Remarks:#
+
+Where it is allowable to encode multiple instances of feature name
+for a single feature instance, only one feature name instance can
+indicate that the name is to be displayed (display name set to True).
+
+|===
+
+[[sec_17.45]]
+=== Distance
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A numeric measure of the spatial separation
+between two locations.
+
+Value Type: real
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.46]]
+=== Dynamic Resource
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Whether a vessel must use a shore-based
+or other resource to obtain up-to-date information.
+
+. *Static*
++
+--
+[underline]#IHO Definition:# The information is static, or a source
+of up-to-date information is unavailable or unknown.
+--
+
+. *Mandatory External Dynamic*
++
+--
+[underline]#IHO Definition:# An external source of up-to-date information
+is available and interaction with it to obtain up-to-date information
+is required.
+--
+
+. *Optional External Dynamic*
++
+--
+[underline]#IHO Definition:# An external source of up-to-date information
+is available but interaction with it to obtain up-to-date information
+is not required.
+--
+
+. *Onboard Dynamic*
++
+--
+[underline]#IHO Definition:# Up-to-date information may be computed
+using only onboard resources.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.47]]
+=== Elevation
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The altitude of the ground level of
+an object, measured from a specified vertical datum.
+
+Value Type: real
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.48]]
+=== Entrance Description
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Description of the seaward end of a
+channel, harbour, dock, etc.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.49]]
+=== File Locator
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The location of a fragment of text
+or other information in a support file.
+
+Value Type: text
+
+[underline]#Indication:# The string encodes the location of a single
+fragment of text or other information contained in a support file.
+
+[underline]#Example:# *p-224.105(a)(1)* (when used as the ID of a
+<div xml:id=” p-224.105(a)(1)”> element in an XML support file)
+
+[underline]#Remarks:#
+
+* The attribute *file locator* indicates the location of a section
+of text within the file referenced by the attribute
+*file reference* that is relevant for a particular feature.
+
+* The value populated for file locator depends on the type of file:
+** Plain-text (S-100 support file format = "ASCII"): The offset of
+the start of the section relative to the beginning of the file (the
+first character in the file has offset 0).
+** HTML: A HTML fragment identifier; this is the value of the name
+or id attribute of a HTML element in the file.
+*** XML: XML fragment identifier; that is, the value of an xml:id
+attribute of an element in the file.
+
+* The type of file is provided in the support file discovery metadata
+block (see S-100 Part 17 S100_SupportFileFormat).
+
+|===
+
+[[sec_17.50]]
+=== File Reference
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The file name of an externally referenced
+text file.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.51]]
+=== Firefighting Service
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Services for combating fires, provided
+by different methods.
+
+. *Shore-Based Firefighting*
++
+--
+[underline]#IHO Definition:# Personnel and equipment that are capable
+of combating a fire from ashore.
+--
+
+. *Onboard Firefighting*
++
+--
+[underline]#IHO Definition:# Trained firefighting personnel with the
+capability of boarding and combating a fire on a vessel.
+--
+
+. *Firefighting Boat*
++
+--
+[underline]#IHO Definition:# Specialised watercraft with firefighting
+apparatus designed for fighting shoreline and shipboard fires
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.52]]
+=== Frequency Shore Station Receives
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The shore station receiver frequency.
+
+Value Type: integer
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.53]]
+=== Frequency Shore Station Transmits
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The shore station transmitter frequency.
+
+Value Type: integer
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.54]]
+=== GLN Extension
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The GLN extension component is used
+to identify internal physical locations within a location which is
+identified with a GLN. Must conform to the rules for GLN extension.
+(GS1 specification).
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* The GLN extension component is used to identify internal physical
+locations within a location which is identified with a GLN. Must conform
+to the rules for GLN extension. (GS1 specification.
+
+|===
+
+[[sec_17.55]]
+=== Global Location Number
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A globally unique, standardised identifier
+for parties and locations in business processes or supply chains.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* Global Location Numbers may be used to identify physical or digital
+locations, legal entities, organisational subdivisions or departments.
+A Global Location Number must conform to the GLN format specified
+in GS1 General Specifications.
+
+|===
+
+[[sec_17.56]]
+=== Headline
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Words set at the head of a passage
+or page to introduce or categorize.
+
+Value Type: text
+
+[underline]#Example:# *Weather and Tidal Information*
+
+[underline]#Remarks:#
+
+* The length of a _headline_ value should be no more than 60 characters.
+
+|===
+
+[[sec_17.57]]
+=== Heaving Lines From Shore
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Ships must take heaving lines thrown
+from the shore.
+
+Value Type: boolean
+
+[underline]#Remarks:#
+
+No remarks
+
+|===
+
+[[sec_17.58]]
+=== Horizontal Distance Uncertainty
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The best estimate of the horizontal
+accuracy of horizontal clearances and distances.
+
+AttributeType: Real
+
+[underline]#Unit:# Defined as an attribute in the ENC dataset metadata:
+metre (m)
+
+[underline]#Resolution:# 0.1m
+
+[underline]#Format:# xx.x
+
+[underline]#Example:# *0.5* for an error of stem:[0 cdot 5] metres.
+
+[underline]#Remarks:#
+
+* The expected input is the radius of the two-dimensional error.
+* The error is assumed to be positive and negative. The plus/minus
+character must not be encoded
+
+|===
+
+[[sec_17.59]]
+=== ID Code
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Identification code as specified in
+predefined system. Also called identification number.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.60]]
+=== In Ballast
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Whether the vessel is in ballast.
+
+Value Type: boolean
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.61]]
+=== ISPS Level
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of ISPS security levels
+according to the ISPS Code.
+
+. *ISPS Level 1*
++
+--
+[underline]#IHO Definition:# The level for which minimum appropriate
+protective security measures shall be maintained at all times.
+--
+
+. *ISPS Level 2*
++
+--
+[underline]#IHO Definition:# The level for which appropriate additional
+protective security measures shall be maintained for a period of time
+as a result of heightened risk of a security incident.
+--
+
+. *ISPS Level 3*
++
+--
+[underline]#IHO Definition:# The level for which further specific
+protective security measures shall be maintained for a limited period
+of time when a security incident is probable or imminent, although
+it may not be possible to identify the specific target.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.62]]
+=== Language
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The method of human communication,
+either spoken or written, consisting of the use of words in a structured
+and conventional way.
+
+[underline]#Attribute Type:# text
+
+[underline]#Indication:# The language is encoded by a character code
+following ISO639-2/T.
+
+[underline]#Format:# c3 (*mandatory*)
+
+[underline]#Example:# *eng* for English
+
+[underline]#Remarks:#
+
+The language is encoded by a 3 character code following ISO 639-2/T.
+
+|===
+
+[[sec_17.63]]
+=== Local Knowledge Description
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Description of local knowledge that
+may be needed, for example to traverse a location.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.64]]
+=== Location by Text
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A textual rendering of a geographic
+location.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.65]]
+=== Location Maritime Resource Name
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Location identifier, based on MRN.
+This can be either a specific identifier for an identified physical
+location or a type-only identifier for a logical location, such as
+BERTH.
+
+Value Type: URN
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.66]]
+=== Logical Connectives
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Expresses whether all the constraints
+described by its co-attributes must be satisfied, or only one such
+constraint need be satisfied.
+
+. *Logical Conjunction*
++
+--
+[underline]#IHO Definition:# All the conditions described by the other
+attributes of the object, or sub-attributes of the same complex attribute,
+are true.
+--
+
+. *Logical Disjunction*
++
+--
+[underline]#IHO Definition:# At least one of the conditions described
+by the other attributes of the object, or sub-attributes of the same
+complex attributes, is true.
+--
+
+[underline]#Remarks:#
+
+This attribute is intended to be used with co-attributes that encode
+limits on vessel dimensions, type of cargo, and other characteristics.
+
+The combination of constraints described by logicalConnective and
+its co-attributes defines a subset of vessels to which information
+described by a feature or information type instance applies (or does
+not apply, is required, recommended, etc.).
+
+The relationship between the vessel subset and the information is
+indicated by an association - see PermissionType and InclusionType).
+
+The two listed values of logicalConnective are two of the basic operations
+of Boolean logic. The third basic operation (not) is not used.
+
+|===
+
+[[sec_17.67]]
+=== Manifold Number
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# An identifier for a specific location
+on a manifold (a pipe or chamber with several openings).
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.68]]
+=== Maximum Display Scale
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The largest intended viewing scale
+for the data.
+
+[underline]#Type:# Integer
+
+[underline]#Indication:# The modulus of the scale is indicated, that
+is stem:[1:22000] is encodedas 22000.
+
+[underline]#Unit:# none
+
+[underline]#Resolution:# 1
+
+[underline]#Minimum value:# 1
+
+[underline]#Format:# xxxxxxxx
+
+[underline]#Example:# *12000* for a maximum display scale of scale
+of 1:12000
+
+[underline]#Remarks:#
+
+* *Maximum display scale* provides a reference for the user selected
+viewing scale in the ECDIS at which the overscale warning will be
+displayed if there is no larger maximum display scale ENC dataset
+available, as well as the ECDIS viewing scale when the cell is loaded.
+
+*  This attribute is only used in conjunction with the meta feature
+*Data Coverage* which is used to define polygons of equal largest
+intended viewing scale. *maximum display scale* should therefore not
+be confused with the attribute *scale maximum*.
+
+|===
+
+[[sec_17.69]]
+=== Medical Service
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Services for the prevention or treatment
+of, or response to injury or illness.
+
+. *Ambulance*
++
+--
+[underline]#IHO Definition:# A vehicle for conveying the sick or injured
+to or from a hospital.
+--
+
+. *Fumigation*
++
+--
+[underline]#IHO Definition:# Disinfection or purification with fumes.
+--
+
+. *Doctor*
++
+--
+[underline]#IHO Definition:# A place where a doctor is available to
+provide medical attention.
+--
+
+. *Quarantine*
++
+--
+[underline]#IHO Definition:# The isolation of patients with contagious
+diseases.
+--
+
+. *Vaccination Centre*
++
+--
+[underline]#IHO Definition:# A place where substances intended to
+procure immunity against one or several diseases are administered.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.70]]
+=== Membership
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Indicates whether a vessel is *included*
+or *excluded* from the regulation/restriction/recommendation/nautical
+information.
+
+. *Included*
++
+--
+[underline]#IHO Definition:# Vessels with these characteristics are
+included in the regulation/restriction/recommendation/nautical information
+--
+
+. *Excluded*
++
+--
+[underline]#IHO Definition:# Vessels with these characteristics are
+excluded from the regulation/restriction/recommendation/nautical information
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.71]]
+=== Method of Securing
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The process, arrangement or scheme
+of attachment used to secure a vessel to a berth.
+
+. *Bow to Seaward*
++
+--
+[underline]#IHO Definition:# Vessel is secured perpendicular to the
+wharf with bow to seaward.
+--
+
+. *Stern to Seaward*
++
+--
+[underline]#IHO Definition:# Vessel is secured perpendicular to the
+wharf with stern to the seaward.
+--
+
+. *Mediterranean Mooring*
++
+--
+[underline]#IHO Definition:# The vessel is secured perpendicular to
+the wharf.
+--
+
+. *Baltic Mooring*
++
+--
+[underline]#IHO Definition:# Mooring method/procedure used during
+onshore wind conditions without a tug.
+--
+
+. *Running Mooring*
++
+--
+[underline]#IHO Definition:# Mooring by maneuvering ahead and astern
+while dropping anchors to secure the vessel with reduced swinging
+room.
+--
+
+. *Standing Mooring*
++
+--
+[underline]#IHO Definition:# Mooring by using mainly wind and tide
+to position the vessel while dropping anchors to secure the vessel
+with reduced swinging room. Makes limited use of the engine to position
+the vessel.
+--
+
+. *Single Point Mooring*
++
+--
+[underline]#IHO Definition:# A mooring structure used by tankers to
+load and unload in port approaches or in offshore oil and gas fields.
+The size of the structure can vary between a large mooring buoy and
+a manned floating structure.
+--
+
+. *Conventional Mooring*
++
+--
+[underline]#IHO Definition:# Mooring using the vessel's anchors and
+buoys to secure the vessel at multiple points.
+--
+
+. *Ship-to-Ship Mooring*
++
+--
+[underline]#IHO Definition:# Mooring alongside another vessel.
+--
+
+. *Spider Buoy Mooring*
++
+--
+[underline]#IHO Definition:# Mooring system supported by a spider
+buoy.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.72]]
+=== Metre Mark Number
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# An identifier for a specific position
+along a linear or curvilinear extent of a wharf, quay, or jetty. Numbering
+may be continued over multiple segments.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.73]]
+=== Minimum Berth Depth
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The least depth of the body of water
+at the berth or in a berth pocket adjacent to the berth.
+
+Value Type: real
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.74]]
+=== Minimum Display Scale
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The smallest intended viewing scale
+for the data.
+
+[underline]#Type:# Integer
+
+[underline]#Indication:# The modulus of the scale is indicated,that
+is stem:[1:700000] is encoded as 700000.
+
+[underline]#Unit:# none
+
+[underline]#Resolution:# 1
+
+[underline]#Minimum value:# 1
+
+[underline]#Format:# xxxxxxxx
+
+[underline]#Example:# *700000* for a minimum display scale of scale
+of 1:700000
+
+[underline]#Remarks:#
+
+* *Minimum display scale* is intended to be used in a series of ENC
+cells covering a geographic area to determine the dataset loading
+strategy as the user selected viewing scale becomes larger.
+
+* This attribute is only used in conjunction with the meta feature
+Data Coverage which is used to define polygons of equal smallest intended
+viewing scale. *minimum display scale* should therefore not be confused
+with the attribute *scale minimum*.
+
+|===
+
+[[sec_17.75]]
+=== MMSI Code
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The Maritime Mobile Service Identity
+(MMSI) Code is formed of a series of nine digits which are transmitted
+over the radio path in order to uniquely identify ship stations, ship
+earth stations,coast stations, coast earth stations, and group calls.
+These identities are formed in such a way that the identity or part
+thereof can be used by telephone and telex subscribers connected to
+the general telecommunications network principally to call ships automatically.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.76]]
+=== Name
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The individual name of a feature.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.77]]
+=== Name of Resource
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Name of the online resource.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.78]]
+=== Nationality
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Identifier of membership of a particular
+nation.
+
+[underline]#Type:# text
+
+[underline]#Indication:# The nationality is encoded by a 2 character
+code following ISO 3166
+
+[underline]#Format:#
+
+Example::
++
+--
+*AU* for Australia +
+*US* for the United States of America
+--
+
+[underline]#Remarks:#
+
+* The attribute "nationality" indicates the nationality of the specific
+feature.
+
+* Where it is required to encode multiple nationalities relevant to
+a single feature (for example, for a maritime jurisdiction area that
+is in dispute between two Coastal States), this must be done by populating
+multiple instances of *nationality*.
+|===
+
+[[sec_17.79]]
+=== Online Function
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Code for function performed by the
+online resource.
+
+. *Download*
++
+--
+[underline]#IHO Definition:# online instructions for transferring
+data from one storage device or system to another.
+--
+
+. *Offline Access*
++
+--
+[underline]#IHO Definition:# Online instructions for requesting the
+resource from the provider.
+--
+
+. *Order*
++
+--
+[underline]#IHO Definition:# Online order process for obtaining the
+resource.
+--
+
+. *Search*
++
+--
+[underline]#IHO Definition:# To make painstaking investigation or
+examination.
+--
+
+. *Complete Metadata*
++
+--
+[underline]#IHO Definition:# Complete metadata provided.
+--
+
+. *Browse Graphic*
++
+--
+[underline]#IHO Definition:# Browse graphic provided.
+--
+
+. *Upload*
++
+--
+[underline]#IHO Definition:# Online resource upload capability provided.
+--
+
+. *Email Service*
++
+--
+[underline]#IHO Definition:# Online email service provided.
+--
+
+. *Browsing*
++
+--
+[underline]#IHO Definition:# Online browsing provided.
+--
+
+. *File Access*
++
+--
+[underline]#IHO Definition:# Online file access provided (ISO 19115:2014)
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.80]]
+=== Online Resource Description
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Detailed text description of what the
+online resource is/does.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.81]]
+=== Online Resource Linkage URL
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Universal Resource Locator of the online
+resource.
+
+[underline]#Attribute Type:# URL
+
+[underline]#Indication:#
+
+[underline]#Format:# URL address
+
+[underline]#Example:# https://www.iho.int/[https://www.iho.int]
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.82]]
+=== Orientation Uncertainty
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The best estimate of the accuracy of
+a bearing.
+
+Value Type: real
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.83]]
+=== Orientation Value
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The angular distance measured from
+true north to the major axis of the feature.
+
+Value Type: real
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.84]]
+=== Pictorial Representation
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Indicates whether a pictorial representation
+of the feature is available.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+The 'pictorial representation' could be a drawing or a photo. The
+string encodes the file name of an external graphic file (pixel/vector).
+
+|===
+
+[[sec_17.85]]
+=== Picture Caption
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Short description of the purpose of
+the image
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.86]]
+=== Picture Information
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A set of information to provide credits
+to picture creator, copyright owner etc.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.87]]
+=== Port Facility Number
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Number assigned to the port facility
+in the IMO port facility database.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* The IMO port facility number consists of a UN LOCODE with a 4-digit
+sufffix, seperated by a hyphen, for example USLAX-0001.
+
+|===
+
+[[sec_17.88]]
+=== Postal code
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Known in various countries as a postcode,
+or ZIP code, the postal code is a series of letters and/or digits
+that identifies each postal delivery area.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.89]]
+=== Product
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The various substances which are transported,
+*stored* or exploited.
+
+. *Oil*
++
+--
+[underline]#IHO Definition:# A thick, slippery liquid that will not
+dissolve in water, usually petroleum based in the context of storage
+tanks.
+--
+
+. *Gas*
++
+--
+[underline]#IHO Definition:# A substance with particles that can move
+freely, usually a fuel substance in the context of storage tanks.
+--
+
+. *Stone*
++
+--
+[underline]#IHO Definition:# A general term for rock and rock fragments
+ranging in size from pebbles and gravel to boulders or large rock
+masses.
+--
+
+. *Coal*
++
+--
+[underline]#IHO Definition:# A hard black mineral that is burned as
+fuel.
+--
+
+. Ore
++
+--
+[underline]#IHO Definition:# A solid rock or mineral from which metal
+is obtained.
+--
+
+. *Chemicals*
++
+--
+[underline]#IHO Definition:# Any substance obtained by or used in
+a chemical process.
+--
+
+. *Milk*
++
+--
+[underline]#IHO Definition:# A white fluid secreted by female mammals
+as food for their young.
+--
+
+. *Bauxite*
++
+--
+[underline]#IHO Definition:# A mineral from which aluminum is obtained.
+--
+
+. *Coke*
++
+--
+[underline]#IHO Definition:# A solid substance obtained after gas
+and tar have been extracted from coal, used as a fuel.
+--
+
+. *Iron Ingots*
++
+--
+[underline]#IHO Definition:# An oblong lump of cast iron metal.
+--
+
+. *Salt*
++
+--
+[underline]#IHO Definition:# Sodium chloride obtained from mines or
+by the evaporation of sea water.
+--
+
+. *Sand*
++
+--
+[underline]#IHO Definition:# Loose material consisting of small but
+easily distinguishable, separate **grain**s, between 0.0625 and 2.000
+millimetres in diameter.
+--
+
+. *Timber*
++
+--
+[underline]#IHO Definition:# Wood prepared for use in building or
+carpentry.
+--
+
+. *Sawdust/Wood Chips*
++
+--
+[underline]#IHO Definition:# Powdery fragments of wood made in sawing
+timber or coarse chips produced for use in manufacturing pressed board.
+--
+
+. *Scrap Metal*
++
+--
+[underline]#IHO Definition:# Discarded metal suitable for being reprocessed.
+--
+
+. *Liquefied Natural Gas*
++
+--
+[underline]#IHO Definition:# Natural gas that has been liquefied for
+ease of transport by cooling the gas to -162 Celsius.
+--
+
+. *Liquefied Petroleum Gas*
++
+--
+[underline]#IHO Definition:# A compressed gas consisting of flammable
+light hydrocarbons and derived from petroleum.
+--
+
+. *Wine*
++
+--
+[underline]#IHO Definition:# The fermented juice of grapes.
+--
+
+. *Cement*
++
+--
+[underline]#IHO Definition:# A substance made of powdered lime and
+clay, mixed with water.
+--
+
+. Grain
++
+--
+[underline]#IHO Definition:# A small hard seed, especially that of
+any cereal plant such as wheat, rice, corn, rye etc.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.90]]
+=== Protocol
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# connection protocol to be used.
+
+[example]
+ftp, http get KVP, http POST, etc.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.91]]
+=== Protocol request
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Request used to access the resource.
+Structure and content depend on the protocol and standard used by
+the online resource, such as Web Feature Service standard.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.92]]
+=== Quality of Horizontal Measurement
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The degree of reliability attributed
+to a position.
+
+. *Surveyed*
++
+--
+[underline]#IHO Definition:# The position(s) was(were) determined
+by the operation of making measurements for determining the relative
+position of points on, above or beneath the earth's surface. Survey
+implies a regular, controlled survey of any date.
+--
+
+. *Unsurveyed*
++
+--
+[underline]#IHO Definition:# Survey data is does not exist or is very
+poor.
+--
+
+. *Inadequately Surveyed*
++
+--
+[underline]#IHO Definition:# Not surveyed to modern standards; or
+due to its age, scale, or positional or vertical uncertainties is
+not suitable to the type of navigation expected in the area.
+--
+
+. *Approximate*
++
+--
+[underline]#IHO Definition:# A position that is considered to be less
+than third-order accuracy, but is generally considered to be within
+30.5 metres of its correct geographic location. Also may apply to
+an object whose position does not remain fixed.
+--
+
+. *Position Doubtful*
++
+--
+[underline]#IHO Definition:# Of uncertain position. The expression
+is used principally on charts to indicate that a wreck, shoal, etc.,
+has been reported in various positions and not definitely determined
+in any.
+--
+
+. *Unreliable*
++
+--
+[underline]#IHO Definition:# A feature's position has been obtained
+from questionable or unreliable data.
+--
+
+. *Reported (Not Surveyed)*
++
+--
+[underline]#IHO Definition:# An object whose position has been reported
+and its position confirmed by some means other than a formal survey
+such as an independent report of the same object.
+--
+
+. *Reported (Not Confirmed)*
++
+--
+[underline]#IHO Definition:# An object whose position has been reported
+and its position has not been confirmed.
+--
+
+. *Estimated*
++
+--
+[underline]#IHO Definition:# The most probable position of an object
+determined from incomplete data or data of questionable accuracy.
+--
+
+. *Precisely Known*
++
+--
+[underline]#IHO Definition:# A position that is of a known value,
+such as the position of an anchor berth or other defined object.
+--
+
+. *Calculated*
++
+--
+[underline]#IHO Definition:# A position that is computed from data.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.93]]
+=== Ramp Number
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# An identifier for a specific ramp
+(a sloping structure that can be used as a landing place for small
+vessels, landing ships, or a ferry boat, or for hauling a cradle carrying
+a vessel, or for the transfer of rolling cargo).
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.94]]
+=== Repair Service
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Work or maintenance activities whereby
+vessels or equipment are restored to working order, renovated, or
+improved in condition.
+
+. *Compensation of Magnetic Compass*
++
+--
+[underline]#IHO Definition:# The process of neutralizing or reducing
+to a minimum the magnetic effects the vessel itself exerts on a magnetic
+compass. It is based on the principle that the magnetic effect of
+the iron and steel of the vessel can be counterbalanced by means of
+magnets and soft iron placed near the compass. Also called compass
+adjustment, compass compensation, or magnetic compensation.
+--
+
+. *Diver Service*
++
+--
+[underline]#IHO Definition:# Underwater inspection and repair performed
+by divers.
+--
+
+. *Bridge Equipment Repair*
++
+--
+[underline]#IHO Definition:# Repairs to eqipment installed on the
+ship's bridge.
+--
+
+. *Engine Repair*
++
+--
+[underline]#IHO Definition:# Repair of an engine or machine parts.
+--
+
+. *Electronic Equipment Repair*
++
+--
+[underline]#IHO Definition:# Repair of marine electronic instruments.
+--
+
+. *Hull Repair*
++
+--
+[underline]#IHO Definition:# Repairs to the ship's body, frame, or
+superstructure.
+--
+
+. *Navigational Equipment Repair*
++
+--
+[underline]#IHO Definition:# Repairs to equipment used in the act
+of navigating a ship.
+--
+
+. *Propeller Repair*
++
+--
+[underline]#IHO Definition:# Repairs to propeller hub and blades.
+--
+
+. *Salvage Gear Repair*
++
+--
+[underline]#IHO Definition:# Repairs to equipment used in salvage
+operations.
+--
+
+. *Shaft Repair*
++
+--
+[underline]#IHO Definition:# Repairs to drive shafts used for transmitting
+mechanical power and torque to a propeller.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.95]]
+=== Reported Date
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The date that the item was observed,
+done, or investigated.
+
+Value Type: S100_TruncatedDate
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.96]]
+=== SMDG Terminal Code
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A code from the SMDG (Ship Message
+Design Group) Terminal Code List.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.97]]
+=== Scale Minimum
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The minimum scale at which the feature
+may be used for example for ECDIS presentation.
+
+Value Type: integer
+
+[underline]#Indication:# The modulus of the scale is indicated, that
+is stem:[1:89999] is encoded as 89999
+
+[underline]#Example:# If a particular minimum scale is specified as
+stem:[1:89999] (encoded as 89999), and an example of a smaller scale
+would be 1:179 999 (encoded as *179999*).
+
+The *scale minimum* value of a feature determines the display scale
+below which the feature is no longer displayed. Its purpose is to
+reduce clutter, to prioritise the display of features and to improve
+display speed. In encoding its value, the producing authority should
+consider these factors, as well as the scale at which the feature
+is no longer likely to be required for navigation.
+
+In order to optimise the performance and clarity of the ENC, it is
+a mandatory requirement on ENCs that *scale minimum* is used.
+
+[underline]#Remarks:#
+
+* *scale minimum* only affects the display of a feature on an ECDIS,
+not its presence in the SD.
+
+* If scale *minimum* is not encoded, the feature is displayed at all
+scales.
+
+* Where *scale minimum* is used, it must always be set to a scale
+less (that is, to a smaller scale) than or equal to the maximum display
+scale of the data.  Failure to follow this rule will mean that features
+will not be displayed on the ECDIS until the overscale warning is
+activated.
+
+* [strkike]#Skin of the Earth and Meta features must always be displayed.
+Therefore, *scale minimum* must not be encoded on Skin of the Earth
+and Meta features.# (S-131 does not define skin of the earth features.)
+
+* If the same feature exists in datasets of different maximum display
+scales, the same *scale minimum* value must be assigned to each occurrence
+of the feature.
+
+|===
+
+[[sec_17.98]]
+=== Sector Bearing
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A sector is the part of a circle between
+two straight lines drawn from the centre to the circumference. Sector
+bearing specifies the limit of the sector.
+
+Value Type: real
+
+[underline]#Remarks:#
+
+The values given to the common limits of adjacent sectors should be
+identical. The orientation of bearing is from seaward to the central
+object. This conforms with the method used in 'List of Lights' publications.
+A generic term such as 'to shore' cannot be used; a specific bearing
+must be encoded. Where a light sector limit is defined as
+'to the shore', it should be encoded using a value that ensures that,
+when the limit is drawn, it will fall entirely on land.
+
+|===
+
+[[sec_17.99]]
+=== Ship Sanitation Control
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Application of measures to ensure that
+a vessel is free of disease and disease risks, or issue of completion
+or exemption certificates for such measures.
+
+. *Sanitation Measures Only*
++
+--
+[underline]#IHO Definition:# Capable of applying measures to ensure
+that a vessel is free of disease and disease risks, but cannot issue
+a certificate.
+--
+
+. *Issue SSCC*
++
+--
+[underline]#IHO Definition:# The competent authority can issue a Ship
+Sanitation Control Certificate after satisfactorily completing or
+supervising the completion of ship sanitation control measures.
+--
+
+. *Issue SSCEC*
++
+--
+[underline]#IHO Definition:# The competent authority may issue a Ship
+Sanitation Control Exemption Certificate if it is satisfied that the
+ship is free of infection and contamination, including vectors and
+reservoirs
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.100]]
+=== Signal Frequency
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The frequency of a signal.
+
+Value Type: integer
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.101]]
+=== Sill Depth
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The greatest depth over a sill.
+
+Value Type: real
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.102]]
+=== Source
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The publication, document, or reference
+work from which information comes or is acquired.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+May be populated with the corresponding paper chart Notice to Mariners
+numbers, although other references are permitted.
+
+|===
+
+[[sec_17.103]]
+=== Source Date
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The production date of the source;
+for example the date of measurement.
+
+Value Type: date
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.104]]
+=== Source Type
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Type of the source.
+
+. *Law or Regulation*
++
+--
+[underline]#IHO Definition:# Treaty, convention, or international
+agreement; law or regulation issued by a national or other authority.
+--
+
+. *Official Publication*
++
+--
+[underline]#IHO Definition:# Publication not having the force of law,
+issued by an international organisation or a national or local administration.
+--
+
+. *Mariner Report, Confirmed*
++
+--
+[underline]#IHO Definition:# Reported by mariner(s) and confirmed
+by another source.
+--
+
+. *Mariner Report, Not Confirmed*
++
+--
+[underline]#IHO Definition:# Reported by mariner(s) but not confirmed.
+--
+
+. *Industry Publications and Reports*
++
+--
+[underline]#IHO Definition:# Shipping and other industry publications,
+including graphics, charts and web sites.
+--
+
+. *Remotely Sensed Images*
++
+--
+[underline]#IHO Definition:# Information obtained from satellite images.
+--
+
+. *Photographs*
++
+--
+[underline]#IHO Definition:# Information obtained from photographs.
+--
+
+. *Products Issued by HO Services*
++
+--
+[underline]#IHO Definition:# Information obtained from products issued
+by Hydrographic Offices.
+--
+
+. *News Media*
++
+--
+[underline]#IHO Definition:# Information obtained from news media.
+--
+
+. *Traffic Data*
++
+--
+[underline]#IHO Definition:# Information obtained from the analysis
+of traffic data.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.105]]
+=== Supply Service
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of services for the
+provision of materials, goods, utilities, or personal services to
+vessels, passengers, or crew.
+
+. *Shore Power*
++
+--
+[underline]#IHO Definition:# The provision of shoreside electrical
+power to a ship at berth while its main and auxiliary engines are
+shut down.
+--
+
+. *Fuel Oil Bunkering*
++
+--
+[underline]#IHO Definition:# Transfer of fuel oil to the fuel compartments
+of a ship.
+--
+
+. *LNG Bunkering*
++
+--
+[underline]#IHO Definition:# Transfer of liquefied natural gas to
+the fuel compartments of a ship.
+--
+
+. *Lubricants*
++
+--
+[underline]#IHO Definition:# Substances capable of reducing friction,
+heat, and wear when introduced as a film between solid surfaces.
+--
+
+. *Steam*
++
+--
+[underline]#IHO Definition:# The gas into which water is changed by
+boiling.
+--
+
+. *Potable Water*
++
+--
+[underline]#IHO Definition:# Water which can be used for drinking
+and food preparation.
+--
+
+. *International Shore Connection*
++
+--
+[underline]#IHO Definition:# A universal hose connection for the supply
+of water for fighting fires.
+--
+
+. *Provisions*
++
+--
+[underline]#IHO Definition:# A place where food and other such supplies
+are available.
+--
+
+. *Chandler*
++
+--
+[underline]#IHO Definition:# A dealer in ships' supplies.
+--
+
+. *Mechanics Workshop*
++
+--
+[underline]#IHO Definition:# A place where mechanical repairs can
+be undertaken to engines or other vessel equipment.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.106]]
+=== Technical Port Service
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Services for the adjustment of vessel
+equipment or for assessments pertaining to cargo, compliance with
+regulations, safety, or security.
+
+. *Compensation of Magnetic Compass*
++
+--
+[underline]#IHO Definition:# The process of neutralizing or reducing
+to a minimum the magnetic effects the vessel itself exerts on a magnetic
+compass. It is based on the principle that the magnetic effect of
+the iron and steel of the vessel can be counterbalanced by means of
+magnets and soft iron placed near the compass. Also called compass
+adjustment, compass compensation, or magnetic compensation.
+--
+
+. *Degaussing*
++
+--
+[underline]#IHO Definition:# Neutralization of the strength of the
+magnetic field of a vessel, by means of suitably arranged electric
+coils permanently installed in the vessel. See also Degaussing Cable.
+--
+
+. *Cargo Surveying*
++
+--
+[underline]#IHO Definition:# Inspection, evaluation or monitoring
+of the quantity, stowage, loading and unloading, and condition of
+cargo, and the effects of cargoes on vessel stability and safety.
+--
+
+. *Vetting*
++
+--
+[underline]#IHO Definition:# Assessment of quality and compliance
+with applicable law, regulations, and safety standards.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.107]]
+=== Telecommunication Carrier
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The name of a provider or type of carrier
+for a telecommunication service. This service may include land line
+based, shore based or satellite based radio connections.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.108]]
+=== Telecommunication Identifier
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# An identifier, such as words, numbers,
+letters, symbols, or any combination of those used to establish a
+contact to a particular person, organisation or service.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.109]]
+=== Telecommunication Service
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of methods of communication
+over a distance by electrical, electronic, or electromagnetic means.
+
+. *Voice*
++
+--
+[underline]#IHO Definition:# The transfer or exchange of information
+by using sounds that are being made by mouth and throat when speaking.
+--
+
+. *Facsimile*
++
+--
+[underline]#IHO Definition:# A system of transmitting and reproducing
+graphic matter (as printing or still pictures) by means of signals
+sent over telephone lines.
+--
+
+. *SMS*
++
+--
+[underline]#IHO Definition:# Short Message Service is a form of text
+messaging communication on phones and mobile phones.
+--
+
+. *Data*
++
+--
+[underline]#IHO Definition:# A representation of facts, concepts or
+instructions in a formalised manner suitable for communication, interpretation
+or processing.
+--
+
+. *Streamed Data*
++
+--
+[underline]#IHO Definition:# Data that is constantly received by and
+presented to an end-user while being delivered by a provider.
+--
+
+. *Telex*
++
+--
+[underline]#IHO Definition:# A system of communication in which messages
+are sent over long distances by using a telephone system and are printed
+by using a special machine (called a teletypewriter).
+--
+
+. *Telegraph*
++
+--
+[underline]#IHO Definition:# An apparatus, system or process for communication
+at a distance by electric transmission over wire.
+--
+
+. *Email*
++
+--
+[underline]#IHO Definition:# Messages and other data exchanged between
+individuals using computers in a network.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.110]]
+=== Terminal Identifier
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The unique identifier for a given terminal.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.111]]
+=== Text
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A non-formatted digital text string.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* This attribute should be used, for example, to hold the information
+that is shown on paper charts by short cautionary or explanatory notes.
+Therefore, text populated in _text_ must not exceed 300 characters.
+
+* Text may be in English, or in a national language defined by the
+attribute _language_.
+
+* No formatting of text is possible within text. If formatted text,
+or text strings exceeding 300 characters, is required, then the sub-attribute
+_fileReference_ must be used.
+
+|===
+
+[[sec_17.112]]
+=== Text Offset Mm
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The distance in millimetres that text
+associated with a feature is positioned from the feature in an end-user
+system.
+
+[underline]#Type:# Integer
+
+[underline]#Example:# *45* for a text offset of 45mm
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.113]]
+=== Text Type
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The attribute from which a text string
+is derived.
+
+. *Name*
++
+--
+[underline]#IHO Definition:# The individual name of a feature.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.114]]
+=== Thickness of Ice Capability
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The thickness of ice that the ship
+can safely transit.
+
+Value Type: integer
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.115]]
+=== Time of Day End
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The time corresponding to the end of
+an active period.
+
+[underline]#Format:# XML built-in time format
+
+[underline]#Example:# 12:30:00, 12:30:00Z, 12:30:00-0700
+
+[underline]#Remarks:#
+
+The time of day end must be encoded using 2 digits for the hour (hh),
+2 digits for the minutes(mm) and 2 digits for the seconds (ss).
+This conforms to ISO 8601:2004.
+
+Local time expressed without a specified offset to UTC is used where
+the same time of day applies locally, regardless of any local seasonal
+time adjustments (for example daylight saving (or Summer) time).
+|===
+
+[[sec_17.116]]
+=== Time of Day Start
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The time corresponding to the start
+of an active period.
+
+Format: XML built-in time formatExample: 12:30:00, 12:30:00Z, 12:30:00-0700
+
+[underline]#Remarks:#
+
+The time of day start must be encoded using 2 digits for the hour
+(hh), 2 digits for the minutes(mm) and 2 digits for the seconds (ss).
+This conforms to ISO 8601:2004.
+
+Local time expressed without a specified offset to UTC is used where
+the same time of day applies locally, regardless of any local seasonal
+time adjustments (for example daylight saving (or Summer) time).
+
+|===
+
+[[sec_17.117]]
+=== Tug Information
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Textual description of the types and
+capacities of available tugs.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.118]]
+=== Uncertainty Fixed
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The best estimate of the fixed horizontal
+or vertical accuracy component for positions, depths, heights, vertical
+distances and vertical clearances.
+
+[underline]#Type:# Real
+
+[underline]#Unit:# Defined as an attribute in the ENC dataset metadata:
+metre (m).
+
+[underline]#Resolution:# stem:[0 cdot 1 "unitsml(m)"]
+
+[underline]#Format:# xx.x
+
+[underline]#Example:# *1.2* for a fixed uncertainty of
+stem:[1 cdot 2] metres
+
+[underline]#Remarks:#
+
+* The maximum of the one-dimensional error (for vertical) or two-dimensional
+error (for horizontal). The error is assumed to be positive and negative.
+The plus/minus character must not be encoded
+
+|===
+
+[[sec_17.119]]
+=== Uncertainty Variable Factor
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The factor to be applied to the variable
+component of an uncertainty equation so as to provide the best estimate
+of the variable horizontal or vertical accuracy component for positions,
+depths, heights, vertical distances and vertical clearances.
+
+[underline]#Attribute Type:# Real
+
+[underline]#Indication:# The fraction that equates to the factor
+(or percentage) contributing to the variable uncertainty component
+is indicated, that is a factor of 5% is encoded as 0.05.
+
+[underline]#Resolution:# stem:[0 cdot 01]
+
+[underline]#Format:# 0.xx
+
+[underline]#Example:# The positional accuracy for the highest accuracy
+for hydrographic data is quoted as “±5 metres + 10% depth”. The variable
+component in this example is depth, and the factor to be applied to
+the depth at a location in order to provide the variable uncertainty
+is *0.1*.
+
+In this example, at a depth of 25 metres, the variable uncertainty
+would be 2.5 metres, and the overall best estimate of the positional
+accuracy would be stem:[+-7.5] metres.
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.120]]
+=== UN Location Code
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Used to encode the UN Location Code
+(http://www.unece.org/cefact/locode/service/location.html) or - in
+Europe - the Inland Ship Reporting Standard (ISRS) Code.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* The ISRS Code exists of: - UN country code (2 digits), - UN Location
+code (3 digits, "XXX" if not available), - Fairway section number
+(5 numerical digits, to be determined by the national authority; a
+side branch should have an own section number, when there are special
+restrictions, e.g. bridges), - terminal code or passage point code
+(5 alphanumerical digits, "00000" if not available), - fairway section
+hectometre (5 numerical digits, hectometre at the centre of the area,
+"00000" if not available). If the ISRS code is not available, the
+code of the Nordersoft RIS-Index may be used.
+
+|===
+
+[[sec_17.121]]
+=== Vertical Clearance Value
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The vertical clearance measured from
+the horizontal plane towards the feature overhead.
+
+Value Type: real
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.122]]
+=== Vertical Datum
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The reference level used for expressing
+the vertical measurements of points on the earth's surface. Also called
+datum level, reference plane, levelling datum, datum for sounding
+reduction, datum for heights.
+
+. *Mean Low Water Springs*
++
+--
+[underline]#IHO Definition:# The average height of the low waters
+of spring tides. This level is used as a tidal datum in some areas.
+Also called spring low water.
+--
+
+. *Mean Lower Low Water Springs*
++
+--
+[underline]#IHO Definition:# The average height of lower low water
+springs at a place.
+--
+
+. *Mean Sea Level*
++
+--
+[underline]#IHO Definition:# The average height of the surface of
+the sea at a tide station for all stages of the tide over a 19-year
+period, usually determined from hourly height readings measured from
+a fixed predetermined reference level.
+--
+
+. *Lowest Low Water*
++
+--
+[underline]#IHO Definition:# An arbitrary level conforming to the
+lowest tide observed at a place, or some what lower.
+--
+
+. Mean Low Water
++
+--
+[underline]#IHO Definition:# The average height of all low waters
+at a place over a 19-year period.
+--
+
+. *Lowest Low Water Springs*
++
+--
+[underline]#IHO Definition:# An arbitrary level conforming to the
+lowest water level observed at a place at spring tides during a period
+of time shorter than 19 years.
+--
+
+. *Approximate Mean Low Water Springs*
++
+--
+[underline]#IHO Definition:# An arbitrary level, usually within 0.3m
+from that of Mean Low Water Springs (MLWS).
+--
+
+. *Indian Spring Low Water*
++
+--
+[underline]#IHO Definition:# An arbitrary tidal datum approximating
+the level of the mean of the lower low water at spring tides. It was
+first used in waters surrounding India.
+--
+
+. Low Water Springs
++
+--
+[underline]#IHO Definition:# An arbitrary level, approximating that
+of mean low water springs (MLWS).
+--
+
+. *Approximate Lowest Astronomical Tide*
++
+--
+[underline]#IHO Definition:# An arbitrary level, usually within 0.3m
+from that of Lowest Astronomical Tide (LAT).
+--
+
+. *Nearly Lowest Low Water*
++
+--
+[underline]#IHO Definition:# An arbitrary level approximating the
+lowest water level observed at a place, usually equivalent to the
+Indian Spring Low Water (ISLW).
+--
+
+. Mean Lower Low Water
++
+--
+[underline]#IHO Definition:# The average height of the lower low waters
+at a place over a 19-year period.
+--
+
+. Low Water
++
+--
+[underline]#IHO Definition:# The lowest level reached at a place by
+the water surface in one oscillation. Also called low tide.
+--
+
+. Approximate Mean Low Water
++
+--
+[underline]#IHO Definition:# An arbitrary level, usually within 0.3m
+from that of Mean Low Water (MLW).
+--
+
+. *Approximate Mean Lower Low Water*
++
+--
+[underline]#IHO Definition:# An arbitrary level, usually within 0.3m
+from that of Mean Lower Low Water (MLLW).
+--
+
+. *Mean High Water*
++
+--
+[underline]#IHO Definition:# The average height of all high waters
+at a place over a 19-year period.
+--
+
+. *Mean High Water Springs*
++
+--
+[underline]#IHO Definition:# The average height of the high waters
+of spring tides. Also called spring high water.
+--
+
+. High Water
++
+--
+[underline]#IHO Definition:# The highest level reached at a place
+by the water surface in one oscillation.
+--
+
+. *Approximate Mean Sea Level*
++
+--
+[underline]#IHO Definition:# An arbitrary level, usually within 0.3m
+from that of Mean Sea Level (MSL).
+--
+
+. High Water Springs
++
+--
+[underline]#IHO Definition:# An arbitrary level, approximating that
+of mean high water springs (MHWS).
+--
+
+. *Mean Higher High Water*
++
+--
+[underline]#IHO Definition:# The average height of higher high waters
+at a place over a 19-year period.
+--
+
+. *Equinoctial Spring Low Water*
++
+--
+[underline]#IHO Definition:# The level of low water springs near the
+time of an equinox.
+--
+
+. Lowest Astronomical Tide
++
+--
+[underline]#IHO Definition:# The lowest tide level which can be predicted
+to occur under average meteorological conditions and under any combination
+of astronomical conditions.
+--
+
+. *Local Datum*
++
+--
+[underline]#IHO Definition:# An arbitrary datum defined by a local
+harbour authority, from which levels and tidal heights are measured
+by this authority.
+--
+
+. *International Great Lakes Datum 1985*
++
+--
+[underline]#IHO Definition:# A vertical reference system with its
+zero based on the *mean water level* at Rimouski/Pointe-au-Pere, Quebec,
+over the period 1970 to 1988.
+--
+
+. Mean Water Level
++
+--
+[underline]#IHO Definition:# The average of all hourly water levels
+over the available period of record.
+--
+
+. *Lower Low Water Large Tide*
++
+--
+[underline]#IHO Definition:# The average of the lowest low waters,
+one from each of 19 years of observations.
+--
+
+. *Higher High Water Large Tide*
++
+--
+[underline]#IHO Definition:# The average of the highest high waters,
+one from each of 19 years of observations.
+--
+
+. *Nearly Highest High Water*
++
+--
+[underline]#IHO Definition:# An arbitrary level approximating the
+highest water level observed at a place, usually equivalent to the
+high water springs.
+--
+
+. *Highest Astronomical Tide*
++
+--
+[underline]#IHO Definition:# The highest tidal level which can be
+predicted to occur under average meteorological conditions and under
+any combination of astronomical conditions.
+--
+
+. *Baltic Sea Chart Datum 2000*
++
+--
+[underline]#IHO Definition:# The datum refers to each Baltic country's
+realization of the European Vertical Reference System (EVRS) with
+land-uplift epoch 2000, which is connected to the Normaal Amsterdams
+Peil (NAP).
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.123]]
+=== Vessels Characteristics
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Characteristics of vessels
+
+. *Length Overall*
++
+--
+[underline]#IHO Definition:# The maximum length of the ship (L.O.A.).
+(http://en.wikipedia.org/wiki/Ship_measurements; 24 July 2010)
+--
+
+. *Length at Waterline*
++
+--
+[underline]#IHO Definition:# The ship's length measured at the waterline.
+--
+
+. *Breadth*
++
+--
+[underline]#IHO Definition:# The width or beam of the vessel.
+--
+
+. *Draught*
++
+--
+[underline]#IHO Definition:# The depth of water necessary to float
+a vessel fully loaded.
+--
+
+. *Displacement Tonnage*
++
+--
+[underline]#IHO Definition:# A measurement of the weight of the vessel,
+usually used for warships. (Merchant ships are usually measured based
+on the volume of cargo space; see tonnage). Displacement is expressed
+either in long tons of 2,240 pounds or metric tonnes of 1,000 kg.
+Since the two units are very close in size (2,240 pounds = 1,016 kg
+and 1,000 kg = 2,205 pounds), it is common not to distinguish between
+them. To preserve secrecy, nations sometimes misstate a warship's
+displacement.
+--
+
+. *Displacement Tonnage, Light*
++
+--
+[underline]#IHO Definition:# The weight of the ship excluding cargo,
+fuel, ballast, stores, passengers, and crew, but with water in the
+boilers to steaming level.
+--
+
+. *Displacement Tonnage, Loaded*
++
+--
+[underline]#IHO Definition:# The weight of the ship including cargo,
+passengers, fuel, water, stores, dunnage and such other items necessary
+for use on a voyage, which brings the vessel down to her load draft.
+--
+
+. *Deadweight Tonnage*
++
+--
+[underline]#IHO Definition:# The difference between displacement,
+light and displacement, loaded. A measure of the ship's total carrying
+capacity.
+--
+
+. *Gross Tonnage*
++
+--
+[underline]#IHO Definition:# The entire internal cubic capacity of
+the ship expressed in tons of 100 cubic feet to the ton, except certain
+spaces with are exempted such as: peak and other tanks for water ballast,
+open forecastle bridge and poop, access of hatchways, certain light
+and air spaces, domes of skylights, condenser, anchor gear, steering
+gear, wheel house, galley and cabin for passengers.
+--
+
+. *Net Tonnage*
++
+--
+[underline]#IHO Definition:# Obtained from the gross tonnage by deducting
+crew and navigating spaces and allowances for propulsion machinery.
+--
+
+. *Panama Canal/Universal Measurement System Net Tonnage*
++
+--
+[underline]#IHO Definition:# The Panama Canal/Universal Measurement
+System (PC/UMS) is based on net tonnage, modified for Panama Canal
+purposes. PC/UMS is based on a mathematical formula to calculate a
+vessel's total volume; a PC/UMS net ton is equivalent to 100 cubic
+feet of capacity.
+--
+
+. *Suez Canal Net Tonnage*
++
+--
+[underline]#IHO Definition:# The Suez Canal Net Tonnage (SCNT) is
+derived with a number of modifications from the former net register
+tonnage of the Moorsom System and was established by the International
+Commission of Constantinople in its Protocol of 18 December 1873.
+It is still in use, as amended by the Rules of Navigation of the Suez
+Canal Authority, and is registered in the Suez Canal Tonnage Certificate.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.124]]
+=== Vessels Characteristics Unit
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The unit used for vessel characteristics
+attribute.
+
+. *Metric Ton*
++
+--
+[underline]#IHO Definition:# The tonne or metric ton (U.S.), often
+redundantly referred to as a metric tonne, is a unit of mass equal
+to 1,000 kg (2,205 lb) or approximately the mass of one cubic metre
+of water at four degrees Celsius. It is sometimes abbreviated as mt
+in the United States, but this conflicts with other SI symbols. The
+tonne is not a unit in the International System of Units (SI), but
+is accepted for use with the SI. In SI units and prefixes, the tonne
+is a megagram (Mg). The Imperial and US customary units comparable
+to the tonne are both spelled ton in English, though they differ in
+mass. Pronunciation of tonne (the word used in the UK) and ton is
+usually identical, but is not too confusing unless accuracy is important
+as the tonne and UK long ton differ by only 1.6.
+--
+
+. *Ton*
++
+--
+[underline]#IHO Definition:# Long ton (weight ton or imperial ton)
+is the name for the unit called the "ton" in the avoirdupois or Imperial
+system of measurements, as used in the United Kingdom and several
+other Commonwealth countries. It has been mostly replaced by the tonne,
+and in the United States by the *short ton*. One long ton is equal
+to 2,240 pounds (1,016 kg) or 35 cubic feet (0.9911 m) of salt water
+with a density of 64 lb/ft (1.025 g/ml). It has some limited use in
+the United States, most commonly in measuring the displacement of
+ships, and was the unit prescribed for warships by the Washington
+Naval Treaty for example battleships were limited to a mass of 35,000
+long tons (36,000 t; 39,000 ST).
+--
+
+. *Short Ton*
++
+--
+[underline]#IHO Definition:# A unit of weight equal to 2,000 pounds
+(907.18474 kg). In the United States it is often called simply ton
+without distinguishing it from the metric ton (tonne, 1,000 kilograms)
+or the long ton (2,240 pounds / 1,016.0469088 kilograms); rather,
+the other two are specifically noted. There are, however, some US
+applications for which unspecified tons normally means long tons (for
+example, Navy ships) or metric tons (world grain production figures).
+Both the long and short ton are defined as 20 hundredweights, but
+a hundredweight is 100 pounds (45.359237 kg) in the US system (short
+or net hundredweight) and 112 pounds (50.80234544 kg) in the Imperial
+system (long or gross hundredweight).
+--
+
+. *Gross Ton*
++
+--
+[underline]#IHO Definition:# Gross tonnage (GT) is a function of the
+volume of all ship's enclosed spaces (from keel to funnel) measured
+to the outside of the hull framing. There is a sliding scale factor.
+So GT is a kind of capacity-derived index that is used to rank a ship
+for purposes of determining manning, safety and other statutory requirements
+and is expressed simply as GT, which is a unitless entity, even though
+its derivation is tied to the cubic meter unit of volumetric capacity.
+
+Tonnage measurements are now governed by an IMO Convention (International
+Convention on Tonnage Measurement of Ships, 1969 (London-Rules)),
+which applies to all ships built after July 1982. In accordance with
+the Convention, the correct term to use now is GT, which is a function
+of the moulded volume of all enclosed spaces of the ship.
+--
+
+. *Net Ton*
++
+--
+[underline]#IHO Definition:# Net tonnage (NT) is based on a calculation
+of the volume of all cargo spaces of the ship. It indicates a vessels
+earning space and is a function of the moulded volume of all cargo
+spaces of the ship.
+--
+
+. *Suez Canal Net Tonnage*
++
+--
+[underline]#IHO Definition:# The Suez Canal Net Tonnage (SCNT) is
+derived with a number of modifications from the former net register
+tonnage of the Moorsom System and was established by the International
+Commission of Constantinople in its Protocol of 18 December 1873.
+It is still in use, as amended by the Rules of Navigation of the Suez
+Canal Authority, and is registered in the Suez Canal Tonnage Certificate.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.125]]
+=== Vessels Characteristics Value
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The value of a particular characteristic
+such as a dimension or tonnage of a vessel.
+
+Value Type: real
+
+[underline]#Remarks:#
+
+* Indicates range limits in expressions characterizing vessels by
+dimensions and tonnages. The unit of measure, characteristic, and
+comparison operator (greater, less, etc.) are encoded separately.
+
+|===
+
+[[sec_17.126]]
+=== Vessel Performance
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# A description of the required handling
+characteristics of a vessel including hull design, main and auxiliary
+machinery, cargo handling equipment, navigation equipment and manoeuvring
+behaviour.
+
+Value Type: text
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.127]]
+=== Waste Disposal Service
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Service for the reception of residues,
+polluting substances, refuse, oily wastes, and by-products from ships.
+
+. *MARPOL Annex I Oily Bilge Water*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+oil related waste/residue of the type "Oily bilge water" as specified
+in MARPOL Annex I.
+--
+
+. *MARPOL Annex I Oily Residues*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+oil related waste/residue of the type "Oily Residues (sludge)" as
+specified in MARPOL Annex I.
+--
+
+. *MARPOL Annex I Oily Tank Washings*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+oil related waste/residue of the type "Oily tank washings (slops)"
+as specified in MARPOL Annex I.
+--
+
+. *MARPOL Annex I Dirty Ballast Water*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+oil related waste/residue of the type "Dirty ballast water" as specified
+in MARPOL Annex I.
+--
+
+. *MARPOL Annex I Scale and Sludge from Tank Cleaning*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+oil related waste/residue of the type "Scale and sludge from tank
+cleaning" as specified in MARPOL Annex I.
+--
+
+. *MARPOL Annex I Other Oily Waste*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+oil related waste/residue of the type "Other" as specified in MARPOL
+Annex I.
+--
+
+. *MARPOL Annex II Category X*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+chemical/Noxious liquid substances related waste/residue of the type
+"Category X" as specified in MARPOL Annex II.
+--
+
+. *MARPOL Annex II Category Y*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+chemical/Noxious liquid substances related waste/residue of the type
+"Category Y" as specified in MARPOL Annex II.
+--
+
+. *MARPOL Annex II Category Z*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+chemical/Noxious liquid substances related waste/residue of the type
+"Category Z" as specified in MARPOL Annex II.
+--
+
+. *MARPOL Annex II Category OS*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+chemical/Noxious liquid substances related waste/residue of the type
+"Other substance" as specified in MARPOL Annex II.
+--
+
+. *MARPOL Annex IV Sewage*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+waste/residue of the type "Sewage" as specified in MARPOL Annex IV.
+--
+
+. *MARPOL Annex V Plastics*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+garbage related waste/residue of the type "Plastics", as specified
+in MARPOL Annex V
+--
+
+. *MARPOL Annex V Food Wastes*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+garbage related waste/residue of the type "Food wastes", as specified
+in MARPOL Annex V
+--
+
+. *MARPOL Annex V Domestic Wastes*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+garbage related waste/residue of the type "Domestic wastes", as specified
+in MARPOL Annex V
+--
+
+. *MARPOL Annex V Cooking Oil*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+garbage related waste/residue of the type "Cooking oil", as specified
+in MARPOL Annex V
+--
+
+. *MARPOL Annex V Incinerator Ashes*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+garbage related waste/residue of the type "Incinerator ashes", as
+specified in MARPOL Annex V
+--
+
+. *MARPOL Annex V Operational Wastes*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+garbage related waste/residue of the type "Operational wastes", as
+specified in MARPOL Annex V
+--
+
+. *MARPOL Annex V Animal Carcasses*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+garbage related waste/residue of the type "Animal carcasses", as specified
+in MARPOL Annex V
+--
+
+. *MARPOL Annex V Fishing Gear*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+garbage related waste/residue of the type "Fishing gear", as specified
+in MARPOL Annex V
+--
+
+. *MARPOL Annex V E-Waste*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+garbage related waste/residue of the type "E-waste", as specified
+in MARPOL Annex V
+--
+
+. *MARPOL Annex V Cargo Residues - non-HME*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+garbage related waste/residue of the type "Cargo residues not determined
+to be harmful to the marine environment", as specified in MARPOL Annex V
+--
+
+. *MARPOL Annex V Cargo Residues - HME*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+garbage related waste/residue of the type "Cargo residues harmful
+to the marine environment", as specified in MARPOL Annex V
+--
+
+. *MARPOL Annex VI Ozone-Depleting Substances*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+air pollution related waste/residue of the type "Ozone-depleting substances"
+as specified in MARPOL Annex VI.
+--
+
+. *MARPOL Annex VI Exhaust Gas-Cleaning Residues*
++
+--
+[underline]#IHO Definition:# The service with facility to receive
+air pollution related waste/residue of the type "Exhaust gas-cleaning
+residues" as specified in MARPOL Annex VI.
+--
+
+[underline]#Remarks:#
+
+* No remarks.
+
+|===
+
+[[sec_17.128]]
+=== Action or Activity
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The action or activity of a vessel.
+
+. *Navigating With a Pilot*
++
+--
+[underline]#IHO Definition:# Carrying a qualified pilot as part of
+the vessel navigation team.
+--
+
+. *Entering Port*
++
+--
+[underline]#IHO Definition:# Navigating a vessel into a port.
+--
+
+. *Leaving Port*
++
+--
+[underline]#IHO Definition:# Navigating a vessel out of a port.
+--
+
+. *Berthing*
++
+--
+[underline]#IHO Definition:# Attaching a vessel to a wharf or jetty
+--
+
+. *Slipping*
++
+--
+[underline]#IHO Definition:# Detaching a vessel from a wharf or jetty.
+--
+
+. *Anchoring*
++
+--
+[underline]#IHO Definition:# Attaching a vessel to the seabed by means
+of an anchor and cable.
+--
+
+. *Weighing Anchor*
++
+--
+[underline]#IHO Definition:# Detaching a vessel from the seabed by
+recovering an anchor and cable.
+--
+
+. *Transiting*
++
+--
+[underline]#IHO Definition:# Navigating a vessel along a route or
+through a narrow gap, such as under a bridge or through a lock.
+--
+
+. *Overtaking*
++
+--
+[underline]#IHO Definition:# Navigating a vessel past another traveling
+broadly in the same direction.
+--
+
+. *Reporting*
++
+--
+[underline]#IHO Definition:# Providing details such as the name, location
+or intentions of a vessel.
+--
+
+. *Working Cargo*
++
+--
+[underline]#IHO Definition:# Loading or unloading cargo.
+--
+
+. *Landing*
++
+--
+[underline]#IHO Definition:# Placing crew or passengers on shore.
+--
+
+. *Diving*
++
+--
+[underline]#IHO Definition:# A signal or message warning of diving
+activity.
+--
+
+. *Fishing*
++
+--
+[underline]#IHO Definition:# Hunting or catching fish.
+--
+
+. *Discharging Overboard*
++
+--
+[underline]#IHO Definition:# Releasing anything into the sea; often
+ballast water; or spoil from dredging elsewhere.
+--
+
+. *Passing*
++
+--
+[underline]#IHO Definition:# Navigating a vessel past another travelling
+broadly in the opposite direction.
+--
+
+[underline]#Remarks:#
+
+codeListType=open enumeration; encoding=other: [something]
+
+|===
+
+[[sec_17.129]]
+=== Category of RxN
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# The principal subject matter of regulations,
+restrictions, recommendations or nautical information.
+
+. *Navigation*
++
+--
+[underline]#IHO Definition:# The process of directing the movement
+of a craft from one point to another.
+--
+
+. *Communication*
++
+--
+[underline]#IHO Definition:# Transmitting and/or receiving electronic
+communication signals.
+--
+
+. *Environmental Protection*
++
+--
+[underline]#IHO Definition:# Pertaining to environmental protection.
+--
+
+. *Wildlife Protection*
++
+--
+[underline]#IHO Definition:# Pertaining to wildlife protection.
+--
+
+. *Security*
++
+--
+[underline]#IHO Definition:# Pertaining to security.
+--
+
+. *Customs*
++
+--
+[underline]#IHO Definition:# The agency or establishment for collecting
+duties, tolls.
+--
+
+. *Cargo Operation*
++
+--
+[underline]#IHO Definition:# Pertaining to cargo operations.
+--
+
+. *Refuge*
++
+--
+[underline]#IHO Definition:# Pertaining to a place of safety or refuge.
+--
+
+. *Health*
++
+--
+[underline]#IHO Definition:# The authority with responsibility for
+checking the validity of the health declaration of a vessel and for
+declaring free pratique.
+--
+
+. *Natural Resources or Exploitation*
++
+--
+[underline]#IHO Definition:# Pertaining to natural resources or exploitation.
+--
+
+. *Port*
++
+--
+[underline]#IHO Definition:# Person or corporation, owners of, or
+entrusted with or invested with the power of managing a port. May
+be called a Harbour Board, Port Trust, Port Commission, Harbour Commission,
+Marine Department.
+--
+
+. *Finance*
++
+--
+[underline]#IHO Definition:# An authority with responsibility for
+the control and movement of money.
+--
+
+. *Agriculture*
++
+--
+[underline]#IHO Definition:# The science, art, or practice of cultivating
+the soil, producing crops, and raising livestock and in varying degrees
+the preparation and marketing of the resulting products.
+--
+
+[underline]#Remarks:#
+
+codeListType=open enumeration; encoding=other: [something]
+
+|===
+
+[[sec_17.130]]
+=== Category of Vessel
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of vessels by function
+or use.
+
+. *General Cargo Vessel*
++
+--
+[underline]#IHO Definition:# A vessel which is designed for carrying
+general cargo, e.g. boxes, sacks.
+--
+
+. *Container Carrier*
++
+--
+[underline]#IHO Definition:# a vessel designed to carry ISO containers
+--
+
+. *Tanker*
++
+--
+[underline]#IHO Definition:# A vessel which is designed for carrying
+liquid goods, for example oil or water.
+--
+
+. *Bulk Carrier*
++
+--
+[underline]#IHO Definition:# A vessel which is designed for carrying
+bulk goods, e.g. coal, ore or grain.
+--
+
+. *Passenger Vessel*
++
+--
+[underline]#IHO Definition:# A day trip or cabin vessel constructed
+and equipped to carry more than 12 passengers.
+--
+
+. *Roll-On Roll-Off*
++
+--
+[underline]#IHO Definition:# A vessel designed to allow road vehicles
+to be driven on and off; often a ferry.
+--
+
+. *Refrigerated Cargo Vessel*
++
+--
+[underline]#IHO Definition:# A vessel designed to carry refrigerated
+cargo.
+--
+
+. *Fishing Vessel*
++
+--
+[underline]#IHO Definition:# A vessel that is used and equipped for
+the fishing of living aquatic resources.
+--
+
+. *Service*
++
+--
+[underline]#IHO Definition:# A vessel which provides a service such
+as a tug, anchor handler, survey or supply vessel.
+--
+
+. *Warship*
++
+--
+[underline]#IHO Definition:# A vessel designed for the conduct of
+military operations.
+--
+
+. *Towed or Pushed Composite Unit*
++
+--
+[underline]#IHO Definition:# Either a *tug and tow*, or any combination
+of a tug providing propulsion to barges or vessels secured ahead or
+alongside.
+--
+
+. Tug and Tow
++
+--
+[underline]#IHO Definition:# A combination of tug(s) and non-powered
+tow(s).
+--
+
+. *Light Recreational*
++
+--
+[underline]#IHO Definition:# A pleasure boat or watercraft, or an
+excursion vessel used for short cruises such as whale watching.
+--
+
+. *Semi-Submersible Offshore Installation*
++
+--
+[underline]#IHO Definition:# An installation which is designed to
+float at all times and which is normally anchored in position when
+deployed in the offshore gas and oil industry.
+--
+
+. *Jack-Up Exploration or Project Installation*
++
+--
+[underline]#IHO Definition:# An exploration or project installation
+with legs which can be raised and lowered. The legs are raised when
+the installation is re-positioned. When stationary the legs are lowered
+to the sea floor and the working platform is raised clear of the sea
+surface.
+--
+
+. *Livestock Carrier*
++
+--
+[underline]#IHO Definition:# A vessel designed to carry large quantities
+of live animals.
+--
+
+. *Sport Fishing*
++
+--
+[underline]#IHO Definition:# A vessel used in fishing for pleasure
+or competition.
+--
+
+[underline]#Remarks:#
+
+codeListType=open enumeration; encoding=other: [something]
+
+|===
+
+[[sec_17.131]]
+=== Security-Safety-Emergency Service
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Protective services, law enforcement,
+or services for responding to sudden danger.
+
+. *Coast Guard*
++
+--
+[underline]#IHO Definition:# Organization keeping watch on shipping
+and coastal waters according to governmental law; normally the authority
+with responsibility for search and rescue.
+--
+
+. *Customs*
++
+--
+[underline]#IHO Definition:# The agency or establishment for collecting
+duties, tolls.
+--
+
+. *Environmental Emergency Information Centre*
++
+--
+[underline]#IHO Definition:# Office for reporting or obtaining information
+about sudden dangers to the environment such as spillage of polluting
+or hazardous substances.
+--
+
+. *Emergency Coordination Centre*
++
+--
+[underline]#IHO Definition:# An office or organisation for reporting
+or coordinating response to emergencies.
+--
+
+. *Guard and/or Security Service*
++
+--
+[underline]#IHO Definition:# A place where a vessel is patrolled by
+a security service or stored in a secure lockup.
+--
+
+. *Immigration*
++
+--
+[underline]#IHO Definition:# The authority controlling people entering
+a country.
+--
+
+. *Police*
++
+--
+[underline]#IHO Definition:# The department of government, or civil
+force, charged with maintaining public order.
+--
+
+. *Sea Rescue Control*
++
+--
+[underline]#IHO Definition:# A unit responsible for promoting efficient
+organization of search and rescue services and for coordinating the
+conduct of search and rescue operations within a search and rescue
+region.
+--
+
+[underline]#Remarks:#
+
+codelistType=openEnumeration
+
+|===
+
+[[sec_17.132]]
+=== Transport Connection
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# Classification of services for the
+conveyance of persons and/or goods, according to means of transport,
+nature of path, or representative installation.
+
+. *Heliport*
++
+--
+[underline]#IHO Definition:# A small airport for the use of helicopters
+and some other vertical lift aircraft. Heliports typically contain
+one or more touchdown and liftoff areas and also have facilities such
+as fuel or hangars. In some larger towns and cities, customs facilities
+may also be available.
+--
+
+. *Helipad*
++
+--
+[underline]#IHO Definition:# A small landing surface for helicopters,
+with minimal or no supporting installations or facilities.
+--
+
+. *Hired Boat*
++
+--
+[underline]#IHO Definition:# Small boat with crew that may be hired
+for single journeys.
+--
+
+. *Bus Station*
++
+--
+[underline]#IHO Definition:# A building where buses and coaches regularly
+stop to take on and/or let off passengers, especially for long-distance
+travel.
+--
+
+. *Ferry*
++
+--
+[underline]#IHO Definition:# A vessel for transporting passengers,
+vehicles, and/or goods across a stretch of water, especially as a
+regular service.
+--
+
+. *Motorway*
++
+--
+[underline]#IHO Definition:# A limited access dual carriageway road
+specially designed for fast long-distance traffic and subject to special
+regulations concerning its use. It may have more than two lanes.
+--
+
+. *Launch*
++
+--
+[underline]#IHO Definition:# Large open or half decked boat.
+--
+
+. *Inland Waterway Transport*
++
+--
+[underline]#IHO Definition:# The carriage of goods or passengers using
+navigable waterways such as canals, rivers, lakes, or other stretch
+of water that is not part of the sea.
+--
+
+. *Short Sea Transportation*
++
+--
+[underline]#IHO Definition:# The carriage of specified types of cargo
+between qualifying ports. The types of cargo and/or qualifying ports
+are generally specified by law or government regulation.
+--
+
+. *Marine Highway*
++
+--
+[underline]#IHO Definition:# Specially designated commercially navigable
+routes in coastal, inland, and intracoastal waters, frequently as
+waterborne relievers to congested landside routes.
+--
+
+[underline]#Remarks:#
+
+codelistType=openEnumeration
+
+|===

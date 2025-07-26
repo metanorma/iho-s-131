@@ -1,0 +1,53 @@
+= Data Classification and Encoding Guide (Annex A) 
+:series: S
+:docnumber: 131
+:doctype: standard
+:edition: 1.0.0
+:language: en
+:published-date: 2022-12-31
+:copyright-year: 2022
+:committee: ircc
+:workgroup: ibsc
+:mn-document-class: iho
+:mn-output-extensions: xml,html,doc,pdf,rxl
+:local-cache-only:
+:data-uri-image:
+:imagesdir: images
+
+include::sections/00-preface.adoc[]
+
+include::sections/01-overview.adoc[]
+
+include::sections/02-general.adoc[]
+
+include::sections/03-table-format.adoc[]
+
+include::sections/04-metadata-features.adoc[]
+
+include::sections/05-abstract-geo-features.adoc[]
+
+include::sections/06-harbour-layout.adoc[]
+
+include::sections/07-physical-infrastructure.adoc[]
+
+include::sections/08-cartographic-features.adoc[]
+
+include::sections/09-abstract-information-types.adoc[]
+
+include::sections/10-textual-regulations.adoc[]
+
+include::sections/11-services.adoc[]
+
+include::sections/12-limitation.adoc[]
+
+include::sections/13-harbour-entrance.adoc[]
+
+include::sections/14-spatial-quality.adoc[]
+
+include::sections/15-association-names.adoc[]
+
+include::sections/16-association-roles.adoc[]
+
+include::sections/17-attribute-enumerate-descriptions.adoc[]
+
+include::sections/18-complex-attributes.adoc[]

@@ -1,0 +1,2997 @@
+
+[[sec_6]]
+== Harbour Layout
+
+[[sec_6.1]]
+=== Introduction
+
+Layout features describe the layout of the harbour area. They include
+terminal, mooring facilities, special areas within the harbour, berths,
+designation of the positioning of specific berths along a wharf or
+quay, dock areas, and a *HarbourAreaSection* feature for subdividing
+harbour areas into sub-sections.
+
+Note that the current model includes some features which would ideally
+be merged into "categoryOfPortSection" attributes of other features,
+due to GI Registry conceptual limitations on re-use of concepts.
+
+Port sections in S-131 include both water and land sections.
+
+The most common water sections in ports are:
+
+* Anchorage: An area in which vessels anchor or may anchor (NP100)
+* Fairway: The main navigable channel in the approaches to, or within,
+a river or harbour. Sometimes called the Ship Channel (NP100)
+* Turning basin: An area of water or enlargement of a channel in a
+port, where vessels are enabled to turn, and which is kept clear of
+obstructions such as buoys for that purpose (NP100)
+* Basin: A sheltered body of water available for port operations connecting
+either with the sea, with an outer port or with another basin. Generally
+an almost land locked area leading off an in inlet, firth or sound.
+Also, an area of water limited in extent and nearly enclosed by structures
+alongside which vessels can lie (IHO S-32)
+* Berth Pocket: Body of water at the berth or anchor berth with sufficient
+footprint to allow the vessel to make fast to the shore or mooring
+buoys or to anchor (NP100).
+
+Land or mixed land/water sections include:
+
+* Terminals: A number of berths grouped together and provided with
+facilities for handling cargo (IHO S-32)
+* Berths, quays, wharfs, and mooring facilities: Places where vessels
+may make fast for the purpose of loading or unloading cargo, embarking
+or disembarking passengers, etc.
+* Service locations: Dock areas, locations for removal of pollutants,
+fueling, repairs, etc.
+
+Different sections may under the immediate control of different organizations
+or served by different operators. Terminal facilities are often owned
+and/or operated by private companies. The overall harbour area is
+therefore generally divisible into different sections, each of which
+may be further divided into sub-sections or contain specific types
+or areas or facilities.
+
+<<fig_6.1>> depicts the logical hierarchy of layout feature types
+in S-131, showing what attributes are bound to each type along with
+their supertypes, from which they inherit attributes and associations.
+
+[[fig_6.1]]
+.Layout features and attributes
+image::figure-7.png[]
+
+[[sec_6.1.1]]
+==== Layout container associations
+
+<<fig_6.2>> depicts the containment (spatial) hierarchy, with containment
+relationships between layout feature types indicating which features
+are spatially contained within and part of a larger feature.
+
+*HarbourAreaAdministrative* is the main feature that covers the whole
+port area. It is subdivided into zero or more sections modelled by
+*HarbourAreaSection* features (the *LayoutDivision*) aggregation.
+*HarbourAreaSection* can be further subdivided into *WaterwayArea*,
+*Terminal*, *Berth*, *AnchorageArea*, *DockArea*, etc. The *Terminal*
+feature can also be subdivided into *Berth* features using the same
+association.
+
+*HarbourAreaSection* can also be subdivided into further features
+of the same class (the *SubUnit* self-association role).
+
+Note that *HarbourAreaSection* features can contain other *HarbourAreaSection*
+features. Note also that a *Terminal* can contain any number of *Berth*
+features.
+
+[[fig_6.2]]
+.Containment hierarchy of layout features
+image::figure-8.png[]
+
+[[sec_6.1.2]]
+==== Positioning in berths
+
+Positions in a berth can be indicated by means of the *BerthPosition*
+feature. Mooring facilities for anchor berths or at particular positions
+can be linked with either *AnchorBerth* or *BerthPosition* features
+with the _PrimaryAuxiliaryFacility_ association. These relationships
+are depicted in <<fig_6.3>>.
+
+[[fig_6.3]]
+.Positions within berths and mooring facilities
+image::figure-9.emf[]
+
+[[sec_6.1.3]]
+==== Associations for layout features
+
+<<fig_6.4>> depicts all associations between layout features.
+
+Nominal positions of berths can be indicated by associating a *BerthPosition*
+feature to *Berth* using the *Demarcation* association.
+
+Berth positions and Anchor berths can be linked to a mooring facility
+using the *PrimaryAuxiliaryFacility* association.
+
+The outer limit of the whole harbour area can be associated to *HarbourAreaAdministrative* feature using a *JurisdictionalLimit* association.
+
+[[fig_6.4]]
+.Feature associations for non-abstract layout features
+image::figure-10.png[]
+
+[[sec_6.1.4]]
+==== Associations between layout and physical infrastructure features
+
+Physical infrastructure features in a Terminal or *HarbourAreaSection*
+feature should be linked to a containing *Terminal* or *HarbourAreaSection*
+by an *Infrastructure* association (<<fig_6.5>>). If there is an hierarchy
+of features containing the infrastructure only the feature at the
+lowest level of the hierarchy should be linked to the infrastructure
+feature.
+
+[[fig_6.5]]
+.Feature association for infrastructure
+image::figure-11.png[]
+
+[[sec_6.1.5]]
+==== Inheritance of _TextAssociation_ by all layout and physical infrastructure features
+
+In addition, all layout and physical infrastructure features inherit
+a _TextAssociation_ to the cartographic feature *TextPlacement* (<<fig_6.6>>).
+
+[[fig_6.6]]
+.Inherited TextAssociation
+image::figure-12.png[]
+
+[[sec_6.2]]
+=== Anchor Berth
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# A designated area of water where
+a vessel, sea plane, etc., may anchor.
+8+| *[underline]#S-10x Geo Feature:# Anchor Berth (ACHBRT)*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# point, surface*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_6.2.1]]
+==== General
+
+The *AnchorBerth* feature in S-131 omits several of the attributes
+of the S-101 equivalent.
+
+The positions or limits of anchor berths may be defined by a regulatory
+authority (for example harbour authority).
+
+[[sec_6.2.2]]
+==== Anchor berths with limitations or restrictions on their use
+
+If it is required to encode an anchorage with conditions on its use
+related to the characteristics of a vessel or its cargo, it must be
+done using an associated *Applicability* information type. If it is
+required to encode an anchorage with other types of limitations on
+its use (not pertaining to vessel or cargo characteristics), for example
+an anchorage which may be used for a limited period of time, it must
+be done using an associated *Restrictions* information type. The specific
+limitation must be encoded in one or more attributes of the Restrictions
+object.
+
+[underline]#Remarks:#
+
+* The inherited complex attribute _featureName_, sub-attribute _name_
+is used to encode the name and/or number of the anchor berth.
+* Unlike S-101, S-131 does not include Sea Area/Named Water Area feature
+types, so the name of a group of anchor berths known by a single common
+name, must be encoded in each *AnchorBerth*.
+* If an anchor berth is defined by a centre point and a swinging circle,
+it should be encoded as a point in S-131 since the radius attribute
+of S-101 is not included in S-131. The radius must be encoded in the
+_textContent_ complex attribute with the headline "Swinging Circle"
+
+[underline]#Distinction:# AnchorageArea; Berth; MooringWarpingFacility
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Service Availability | | | | *AvailablePortServices* | serviceDescriptionReference | 0, 1
+| association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
+| association | Primary/Auxiliary Facility | *AnchorBerth* | primaryFacility | 0,1 | *MooringWarpingFacility* | auxiliaryFacility | 0,*
+
+|===
+
+[[sec_6.3]]
+=== Anchorage Area
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# An area in which vessels or seaplanes
+anchor or may anchor.
+8+| *[underline]#S-10x Geo Feature:# Anchorage Area (ACHARE)*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# point, surface*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Depths Description 2+| 2+| | C | 0, 1
+
+2+| Category of Depths Description 2+| 2+|
+1: Shoal +
+2: General Depth +
+3: Controlling Depth
+| (S) EN | 1, 1
+
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+2+| Location by Text 2+| 2+| | TE | 0, 1
+2+| Marked By 2+| 2+| | C | 0, 1
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+2+| ISPS Level 2+| 2+|
+1: ISPS Level 1 +
+2: ISPS Level 2 +
+3: ISPS Level 3
+| EN | 0, 1
+
+8+| [underline]#INT 1 Reference:# (see S-4 -- B-431.1; B-431.3 and B-431.7)
+
+[[sec_6.3.1]]
+==== General
+
+The *AnchorageArea* feature in S-131 omits several of the attributes
+of the S-101 equivalent.
+
+The complex attribute _featureName_, sub-attribute _name_ is used
+to encode the name and/or number of the Anchorage Area.
+
+The complex attribute _textContent_ may be used to provide information
+about the category of anchorage, where required.
+
+Individual recommended anchorages without defined limits should be
+encoded as *AnchorageArea* features with _point_ spatial primitives.
+Areas with numerous small craft moorings may be encoded as *AnchorageArea*
+features of type surface.
+
+[[sec_6.3.2]]
+==== Regulations, depth information, and general textual information
+
+General port regulations about anchorage areas in the port area may
+be encoded in an associated *Regulations* information type.
+
+The complex attribute _depthsDescription_ must be used for encoding
+information about the depth of the anchorage, including for example
+the nature of the seabed, shoaling, etc.
+
+Other general textual information may be encoded in an associated
+*NauticalInformation* information type, if pertaining to more than
+one feature, or in the _textContent_ attribute, if pertinent to a
+particular anchorage.
+
+[[sec_6.3.3]]
+==== Anchorages with limitations or restrictions on their use
+
+If it is required to encode an anchorage with conditions on its use
+related to the characteristics of a vessel or its cargo, it must be
+done using an associated *Applicability* information type.
+
+If it is required to encode an anchorage with other types of limitations
+on its use (not pertaining to vessel or cargo characteristics), for
+example an anchorage which may be used for a limited period of time,
+it must be done using an associated *Restrictions* information type.
+The specific limitation must be encoded in one or more attributes
+of the Restrictions object.
+
+[underline]#Remarks:#
+
+* The attribute _markedBy_ should be used to describe aids to navigation
+used to demarcate the location, for example, by marking a limit line,
+or one of the boundaries of an area.
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
+| aggregation | LayoutDivision | *AnchorageArea* | layoutUnit | 0,* | *HarbourAreaSection* | componentOf | 1,1
+
+|===
+
+[[sec_6.4]]
+=== Berth
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# Place in which a ship is moored at wharf.
+8+| *[underline]#S-10x Geo Feature:# Berth (BERTHS)*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# point, curve, surface*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Available Berthing Length 2+| 2+| | RE | 0, 1
+2+| Bollard Description 2+| 2+| | TE | 0, 1
+2+| Bollard Pull 2+| 2+| | RE | 0, 1
+2+| Minimum Berth Depth 2+| 2+| | RE | 0, 1
+2+| Elevation 2+| (ELEVAT) 2+| | RE | 0, 1
+2+| Cathodic Protection System 2+| 2+| | BO | 0, 1
+
+2+| Category of Berth Location 2+| 2+|
+1: Wharf Reference Metre Mark +
+2: Wharf Reference Position +
+3: Pier (Jetty) +
+4: Conventional Mooring
+| EN | 0, 1
+
+2+| Port Facility Number 2+| 2+| | TE | 0, 1
+2+| Bollard Number 2+| 2+| | TE | 0, 2 (ordered)
+2+| GLN Extension 2+| 2+| | TE | 0, 1
+2+| Metre Mark Number 2+| 2+| | TE | 0, 2 (ordered)
+2+| Manifold Number 2+| 2+| | TE | 0, 2 (ordered)
+2+| Ramp Number 2+| 2+| | TE | 0, 1
+2+| Location by Text 2+| 2+| | TE | 0, 1
+
+2+| Method of Securing 2+| 2+|
+1: Bow to Seaward +
+2: Stern to Seaward +
+3: Mediterranean Mooring +
+4: Baltic Mooring +
+5: Running Mooring +
+6: Standing Mooring +
+7: Single Point Mooring +
+8: Conventional Mooring +
+9: Ship-to-Ship Mooring +
+10: Spider Buoy Mooring
+| EN | 0, 1
+
+2+| UN Location Code 2+| 2+| | TE | 1, 1
+2+| Terminal Identifier 2+| 2+| | TE | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_6.4.1]]
+==== General
+
+The berth encodes the named place where a vessel can be moored adjacent
+to a shoreline construction.
+
+[underline]#Remarks:#
+
+The complex attribute _featureName_ is used to encode the name or
+number of the berth. Population of more than one of the attributes
+bollard number, metre mark number, manifold number, and ramp number
+is allowed but should be reviewed to ensure that it reflects the reality
+of what is used at the berth.
+
+[underline]#Distinction:# AnchorBerth; DockArea; MooringWarpingFacility
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Service Availability | | | | *AvailablePortServices* | serviceDescriptionReference | 0, 1
+| association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
+| Asso | Demarcation | *Berth* | demarcatedFeature | 1, 1 | *BerthPosition* | demarcationIndicator | 0, ++*++
+| Aggr | Layout Division | *Berth* | layoutUnit | 0, ++*++ | *HarbourAreaSection, Terminal* 3+| componentOf | 1, 1
+
+|===
+
+[[sec_6.5]]
+=== Berth Position
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# A specific position within a berth
+where a vessel may be moored or anchored.
+8+| *[underline]#S-10x Geo Feature:# Berth Position*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# point*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Available Berthing Length 2+| 2+| | RE | 0, 1
+2+| Bollard Description 2+| 2+| | TE | 0, 1
+2+| Bollard Pull 2+| 2+| | RE | 0, 1
+2+| Bollard Number 2+| 2+| | TE | 0, 2 (ordered)
+2+| GLN Extension 2+| 2+| | TE | 0, 1
+2+| Metre Mark Number 2+| 2+| | TE | 0, 2 (ordered)
+2+| Manifold Number 2+| 2+| | TE | 0, 2 (ordered)
+2+| Ramp Number 2+| 2+| | TE | 0, 1
+2+| Location by Text 2+| 2+| | TE | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_6.5.1]]
+==== General
+
+The *BerthPosition* feature is used to designate a position along
+a line of a *Berth*.
+
+[underline]#Remarks:#
+
+Population of more than one of the attributes bollard number, metre
+mark number, manifold number, and ramp number is allowed but should
+be reviewed to ensure that it reflects the reality of what is used
+at the berth position.
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+| Comp | Demarcation | *BerthPosition* | demarcationIndicator | 0, ++*++ | *Berth* | demarcatedFeature | 1, 1
+| Asso | Primary/Auxiliary Facility | *BerthPosition* | primaryFacility | 0, 1 | *MooringWarpingFacility* | auxiliaryFacility | 0, ++*++
+
+|===
+
+[[sec_6.6]]
+=== Dock Area
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# An artificially enclosed area within
+which ships may moor and which may have gates to regulate water level.
+8+| *[underline]#S-10x Geo Feature:# Dock Area (DOCARE)*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# surface*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Depths Description 2+| 2+| | C | 0, 1
+2+| Category of Depths Description 2+| 2+|
+1: Shoal +
+2: General Depth +
+3: Controlling Depth
+| (S) EN | 1, 1
+
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+2+| Location by Text 2+| 2+| | TE | 0, 1
+2+| Marked By 2+| 2+| | C | 0, 1
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+
+2+| ISPS Level 2+| 2+|
+1: ISPS Level 1 +
+2: ISPS Level 2 +
+3: ISPS Level 3
+| EN | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_6.6.1]]
+==== General
+
+Dock areas in S-101 ENCs that are not navigable at the maximum display
+scale of the ENC data, are encoded in S-101 ENCs using the S-101 feature
+Dock Area. Except for Gate, the boundaries of the dock are not encoded
+as separate features.
+
+Dock areas in S-101 ENCs that are navigable may be encoded as the
+S-101 features Depth Area, Dredged Area or Unsurveyed Area (see the
+S-101 DCEG), with the geo features making up the dock limits encoded
+using appropriate features such as Coastline, Shoreline Construction
+or Gate.
+
+S-131 datasets may encode both types of S-101 ENC dock features according
+to their primary use as a dock areas, using the S-131 feature type
+*DockArea*. The _depthsDescription_ attribute must be used for textual
+descriptions of the depths in the area.
+
+If an encoded Dock Area has a date dependency, this should be indicated
+using the complex attributes _fixedDateRange_ or _periodicDateRange_.
+
+* The complex attribute horizontal clearance fixed is used to encode
+the size of the entrance to the dock area, where required. This attribute
+is not included in S-131 Edition 1.0, but should be in the underlying
+ENC. If not, it may be encoded as text information in a _textContent_
+attribute.
+
+* The attributes horizontal clearance length and horizontal clearance
+width are used to encode the regulatory length and width of the navigable
+part of the dock area as declared by a competent authority, where
+known. This attribute is not included in S-131 Edition 1.0, but should
+be in the underlying ENC. If not, it may be encoded as text information
+in a _textContent_ attribute
+
+* S-101 guidance is that "[in] a non-tidal basin (wet dock), depths
+may refer to a sounding datum different from that in open waters.
+If this area is navigable at the maximum display scale of the ENC
+data, the value of this datum must be encoded using the meta feature
+Sounding Datum, with attribute vertical datum = 24 (local datum),
+co- incident with the area covered by the dock." For S-131, depths
+must be converted to the single sounding datum meta-feature and a
+note regarding the conversion must be included in the _depthsDescription_
+complex attribute.
+
+[underline]#Remarks:#
+
+* The attribute _markedBy_ should be used to describe aids to navigation
+used to demarcate the location, for example, by marking a limit line,
+or one of the boundaries of an area.
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Service Availability | | | | *AvailablePortServices* | serviceDescriptionReference | 0, 1
+| association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
+| aggregation | Layout Division | *DockArea* | layoutUnit | 0,* | *HarbourAreaSection* | componentOf | 1,1
+
+|===
+
+[[sec_6.7]]
+=== Dumping Ground
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# A sea area where dredged material
+or other potentially more harmful material, for example explosives,
+chemical waste, is deliberately deposited.
+8+| *[underline]#S-10x Geo Feature:# Dumping Ground (DMPGRD)*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# surface, point*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Depths Description 2+| 2+| | C | 0, 1
+
+2+| Category of Depths Description 2+| 2+|
+1: Shoal +
+2: General Depth +
+3: Controlling Depth
+| (S) EN | 1, 1
+
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+2+| Location by Text 2+| 2+| | TE | 0, 1
+2+| Marked By 2+| 2+| | C | 0, 1
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+2+| ISPS Level 2+| 2+|
+1: ISPS Level 1 +
+2: ISPS Level 2 +
+3: ISPS Level 3
+| EN | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_6.7.1]]
+==== General
+
+(Reserved)
+
+[underline]#Remarks:#
+
+* The attribute _markedBy_ should be used to describe aids to navigation
+used to demarcate the location, for example, by marking a limit line,
+or one of the boundaries of an area.
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
+| aggregation | Layout Division | *DumpingGround* | layoutUnit | 0,* | *HarbourBasin* | componentOf | 1,1
+
+|===
+
+[[sec_6.8]]
+=== Harbour Area (Administrative)
+
+[cols="a,a,a,a,a",options="unnumbered"]
+|===
+5+| [underline]#IHO Definition:# The area over which a harbour authority
+has jurisdiction.
+5+| *[underline]#S-10x Geo Feature:# Harbour Area (Administrative) (HRBARE)*
+5+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+5+| *[underline]#Primitives:# point, surface*
+
+| _Real World_ 2+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+
+| UN Location Code | | | TE | 0, 1
+| Nationality | (NATION) | | TE | 0, 1
+| Applicable Load Line Zone | | | TE | 0, 1
+
+| ISPS Level | |
+1: ISPS Level 1 +
+2: ISPS Level 2 +
+3: ISPS Level 3
+| EN | 0, 1
+
+| Category of Harbour Facility | (CATHAF) |
+1: RoRo Terminal +
+3: Ferry Terminal +
+4: Fishing Harbour +
+5: Yacht Harbour/Marina +
+6: Naval Base +
+7: Tanker Terminal +
+8: Passenger Terminal +
+9: Shipyard +
+10: Container Terminal +
+11: Bulk Terminal +
+12: Ship Lift +
+13: Straddle Carrier +
+14: Service Harbour +
+15: Pilotage Service
+| EN | 0, ++*++
+
+| General Harbour Information | | | C | 0, 1
+| General Port Description | | | (S) C | 0, 1
+| Text Content | | | (S) C | 1, ++*++
+
+| Category of text | |
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+| Information | | | (S) C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+
+| Text | (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+
+| Online Resource | | | (S) C | 0, 1
+| Online Resource Linkage URL | | | (S) UL | 1, 1
+| Protocol | | | (S) TE | 0, 1
+| Application Profile | | | (S) TE | 0, 1
+| Name of Resource | | | (S) TE | 0, 1
+| Online Resource Description | | | (S) TE | 0, 1
+
+| Online Function | |
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+| Protocol request | | | (S) TE | 0, 1
+| Source | | | (S) TE | 0, 1
+
+| Source Type | |
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+| Reported Date | (SORDAT) | | (S) TD | 0, 1
+| Facilities Layout Description | | | (S) C | 0, 1
+| Text Content | | | (S) C | 1, ++*++
+
+| Category of text | |
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+| Information | | | (S) C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+
+| Text | (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+
+| Online Resource | | | (S) C | 0, 1
+| Online Resource Linkage URL | | | (S) UL | 1, 1
+| Protocol | | | (S) TE | 0, 1
+| Application Profile | | | (S) TE | 0, 1
+| Name of Resource | | | (S) TE | 0, 1
+| Online Resource Description | | | (S) TE | 0, 1
+
+| Online Function | |
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+| Protocol request | | | (S) TE | 0, 1
+| Source | | | (S) TE | 0, 1
+
+| Source Type | |
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+| Reported Date | (SORDAT) | | (S) TD | 0, 1
+| Limits Description | | | (S) C | 0, 1
+| Text Content | | | (S) C | 1, ++*++
+
+| Category of text | |
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+| Information | | | (S) C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+
+| Text | (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+
+| Online Resource | | | (S) C | 0, 1
+| Online Resource Linkage URL | | | (S) UL | 1, 1
+| Protocol | | | (S) TE | 0, 1
+| Application Profile | | | (S) TE | 0, 1
+| Name of Resource | | | (S) TE | 0, 1
+| Online Resource Description | | | (S) TE | 0, 1
+
+| Online Function | |
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+| Protocol request | | | (S) TE | 0, 1
+| Source | | | (S) TE | 0, 1
+
+| Source Type | |
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+| Reported Date | (SORDAT) | | (S) TD | 0, 1
+| Construction Information | | | (S) C | 0, 1
+| Fixed date range | | | (S) C | 0, 1
+| Date Start | (DATSTA) | | (S) TD | 0, 1
+| Date End | (DATEND) | | (S) TD | 0, 1
+
+| Condition | (CONDTN) |
+1: Under Construction +
+2: Ruined +
+3: Under Reclamation +
+5: Planned Construction
+| (S) EN | 0, 1
+
+| Development | | | (S) TE | 1, 1
+| Location by Text | | | (S) TE | 0, 1
+| Text Content | | | (S) C | 0, ++*++
+
+| Category of text | |
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+| Information | | | (S) C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+
+| Text | (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+
+| Online Resource | | | (S) C | 0, 1
+| Online Resource Linkage URL | | | (S) UL | 1, 1
+| Protocol | | | (S) TE | 0, 1
+| Application Profile | | | (S) TE | 0, 1
+| Name of Resource | | | (S) TE | 0, 1
+| Online Resource Description | | | (S) TE | 0, 1
+
+| Online Function | |
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+| Protocol request | | | (S) TE | 0, 1
+| Source | | | (S) TE | 0, 1
+
+| Source Type | |
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+| Reported Date | (SORDAT) | | (S) TD | 0, 1
+| Cargo Services Description | | | (S) C | 0, 1
+
+| Text Content | | | (S) C | 1, ++*++
+
+| Category of text | |
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+| Information | | | (S) C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+
+| Text | (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+
+| Online Resource | | | (S) C | 0, 1
+| Online Resource Linkage URL | | | (S) UL | 1, 1
+| Protocol | | | (S) TE | 0, 1
+| Application Profile | | | (S) TE | 0, 1
+| Name of Resource | | | (S) TE | 0, 1
+| Online Resource Description | | | (S) TE | 0, 1
+
+| Online Function | |
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+| Protocol request | | | (S) TE | 0, 1
+| Source | | | (S) TE | 0, 1
+
+| Source Type | |
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+| Reported Date               | (SORDAT) | | (S) TD | 0, 1
+| Weather Resource            |          | | (S) C  | 0, ++*++
+| Online Resource             |          | | (S) C  | 0, 1
+| Online Resource Linkage URL |          | | (S) UL | 1, 1
+| Protocol                    |          | | (S) TE | 0, 1
+| Application Profile         |          | | (S) TE | 0, 1
+| Name of Resource            |          | | (S) TE | 0, 1
+| Online Resource Description |          | | (S) TE | 0, 1
+
+| Online Function | |
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+| Protocol request | | | (S) TE | 0, 1
+
+| Dynamic Resource | |
+1: Static +
+2: Mandatory External Dynamic +
+3: Optional External Dynamic +
+4: Onboard Dynamic
+| (S) EN | 0, 1
+
+| Text Content | | | (S) C | 0, 1
+
+| Category of text | |
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+| Information    |          | | (S) C  | 0, ++*++
+| File Locator   |          | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline       |          | | (S) TE | 0, ++*++ (ordered)
+| Language       |          | | (S) TE | 0, 1
+
+| Text | (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+
+| Online Resource             | | | (S) C  | 0, 1
+| Online Resource Linkage URL | | | (S) UL | 1, 1
+| Protocol                    | | | (S) TE | 0, 1
+| Application Profile         | | | (S) TE | 0, 1
+| Name of Resource            | | | (S) TE | 0, 1
+| Online Resource Description | | | (S) TE | 0, 1
+
+| Online Function | |
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+| Protocol request | | | (S) TE | 0, 1
+| Source | | | (S) TE | 0, 1
+
+| Source Type | |
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+| Reported Date | (SORDAT) | | (S) TD | 0, 1
+
+5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_6.8.1]]
+==== General
+
+The *HarbourAreaAdministrative* feature is used for encoding the location
+and extent of individual ports or harbours.
+
+A *HarbourAreaAdministrative* feature may be subdivided into *HarbourAreaSection*
+features to represent subdivisions of the harbour or port area
+(see <<sec_6.9.1>>), but should be so subdivided only if the source
+material includes such subdivisions, or if it is necessary to distinguish
+portions of the harbour or port area (for example, if different sections
+have different names or designations for administrative jurisdiction
+purposes).
+
+[underline]#Remarks:#
+
+* Services for import and export cargoes should be described in separate
+instances of _cargoServicesDescription.textContent_. When this is
+done, the _headline_ sub-attribute ot _textContent_ should indicate
+whether the _textContent_ instance pertains to import or export cargoes.
+
+* In the complex attribute _constructionInformation_, the _textContent_
+sub-atttribute is used for encoding a textual and/or graphical description
+of the development. The mandatory _development_ sub-attribute is used
+for encoding a brief description of the type of development.
+
+* In the complex attribute _weatherResource_, at least one of _onlineResource_
+or _textContent_ must be populated. If _onlineResource_ is populated
+_dynamicResource_ must be populated. If the information is to be obtained
+from an external source, the external source must be indicated in
+_onlineResource_,
+
+* Links to online resources for weather information should be provided
+in complex attribute _weatherResource_ and not in a linked *ContactDetails*
+information type.
+
+* Note also that _weatherResource_ binds the generic textual attribute
+_textContent_ and therefore information about accessing the online
+weather resource which cannot be encoded in other sub-attributes of
+_weatherResource_ should be provided in that _textContent_ attribute
+instead of creating a separate *ContactDetails* object.
+
+* The attributes _categoryOfHarbourFacility_ and _generalHarbourInformation_
+should be populated so that together the provide a complete overview
+of port/harbour type and function. For example, if a large commercial
+harbour area includes a marina in its jurisdiction, _categoryOfHarbourFacility_
+should include the listed value 5 (Yacht Harbour/Marina). However,
+it is not necessary to mention every single port service or facility
+in these attributes.
+
+* There is no requirement for a dataset to contain only one *HarbourAreaAdministrative* feature, even if the dataset covers only one port.
+
+[underline]#Distinction:#
+
+|===
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+h| Feature/Information associations
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Service Availability | | |
+
+| *AvailablePortServices* | serviceDescriptionReference | 0, 1
+
+| association
+| Location Hours
+|
+
+|
+
+|
+
+| *ServiceHours*
+| location_srvHrs
+| 0, 1
+
+| Asso | Jurisdictional Limit | *HarbourAreaAdministrative* | limitReference | 1, 1 | *OuterLimit* | limitExtent | 0, 1
+| Asso | Layout Division | *HarbourAreaAdministrative* | componentOf | 0, 1 | *HarbourAreaSection* | layoutUnit | 0, ++*++
+
+|===
+
+[[sec_6.9]]
+=== Harbour Area Section
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# A distinguishable portion of the
+area over which a harbour authority has jurisdiction.
+8+| *[underline]#S-10x Geo Feature:# Harbour Area Section*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# point, surface*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Category of Port Section 2+| 2+|
+1: Port Fairway +
+3: Berth Pocket +
+8: Seaplane Anchorage +
+9: Dredged Basin +
+11: Port Safety Zone +
+12: Lay-by Berth
+| EN | 0, 1
+
+2+| Category of Harbour Facility 2+| (CATHAF) 2+|
+4: Fishing Harbour +
+5: Yacht Harbour/Marina +
+6: Naval Base +
+9: Shipyard +
+14: Service Harbour +
+15: Pilotage Service +
+16: Service and Repair +
+17: Quarantine Station | EN | 0, ++*++
+
+
+2+| ISPS Level 2+| 2+|
+1: ISPS Level 1 +
+2: ISPS Level 2 +
+3: ISPS Level 3
+| EN | 0, 1
+
+2+| Facilities Layout Description 2+| 2+| | C | 0, 1
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_6.9.1]]
+==== General
+
+*HarbourAreaSection* features must be used when it is necessary to
+represent subdivisions of a port or harbour area, or group harbour
+facilities under a common designation. A *HarbourAreaSection* feature
+may contain specialized features such as **Terminal**s, **Berth**s,
+etc., and/or smaller *HarbourAreaSection* features.
+
+[underline]#Remarks:#
+
+* If a *HarbourAreaSection* feature contains other *HarbourAreaSection*
+features (i.e., is associated to other *HarbourAreaSection* features
+via _subUnit_ roles), the _categoryOfPortSection_ and _categoryOfHarbourFacility_
+attributes on the containing feature must be either (a) the union
+or superset of the values of those attributes on its subdivisions,
+or (b) not encoded in the containing feature.
+
+* A *HarbourAreaSection* feature may have both _subUnit_ and _layoutUnit_
+roles, i.e., it may contain other *HarbourAreaSection* feature as
+well as specialized features such as *Terminal*, *Berth*, etc. Generally,
+a *HarbourAreaSection* will have both types of roles only when it
+contains subdivision **HarbourAreaSection**s that do not cover the
+whole spatial extent of the container.
+
+* If there is a subdivision hierarchy of *HarbourAreaSection* features,
+specialized features (*Terminal*, *Berth*, etc.) or infrastructure
+features should be associated to the *HarbourAreaSection* feature
+at the lowest level possible (i.e., the lowest level that contains
+the entire specialized or infrastructure feature).
+
+* There is no requirement for *HarbourAreaSection* features to cover
+the entire extent of a *HarbourAreaAdministrative* feature. For example,
+larger ports may have areas which are spatially within the harbour
+area (or adjacent to its navigable waters as legally defined) but
+which are not controlled by the port authority, for example naval
+bases or civic waterfronts.
+
+[underline]#Distinction:#
+
+8+h| Feature/Information associations
+
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Service Availability | | | | *AvailablePortServices* | serviceDescriptionReference | 0,1
+| association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0,1
+| Aggr | Layout Division | *HarbourAreaSection* | layoutUnit | 0, ++*++ | *HarbourAreaAdministrative* | componentOf | 0,1
+| Aggr | Subsection | *HarbourAreaSection* | subUnit | 0, * | *HarbourAreaSection* | constitute | 0,1
+| Asso | Subsection | *HarbourAreaSection* | constitute | 0, 1 | *HarbourAreaSection* | subUnit | 0,*
+| Asso | Layout Division | *HarbourAreaSection* | componentOf | 1, 1 | *AnchorageArea, Berth, DockArea, DumpingGround, HarbourBasin, PilotBoardingPlace, SeaplaneLandingArea, Terminal, TurningBasin, WaterwayArea* | layoutUnit | 0,*
+| Asso | Infrastructure | *HarbourAreaSection* | infratructureLocation | 0,1 | *HarbourPhysicalInfrastructure* | hasinfrastructure | 0,*
+
+|===
+
+[[sec_6.10]]
+=== Harbour Basin
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# An enclosed area of water surrounded
+by quay walls constructed to provide means for the transfer of cargos
+from and to ships.
+8+| *[underline]#S-10x Geo Feature:# Harbour Basin*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# surface*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Depths Description 2+| 2+| | C | 0, 1
+
+2+| Category of Depths Description 2+| 2+|
+1: Shoal +
+2: General Depth +
+3: Controlling Depth
+| (S) EN | 1, 1
+
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+2+| Location by Text 2+| 2+| | TE | 0, 1
+2+| Marked By 2+| 2+| | C | 0, 1
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+
+2+| ISPS Level 2+| 2+|
+1: ISPS Level 1 +
+2: ISPS Level 2 +
+3: ISPS Level 3
+| EN | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_6.10.1]]
+==== General
+
+This feature may be used in S-131 to encode basins not marked by quay
+walls or specifically designated for cargo transfer.
+
+[underline]#Remarks:#
+
+* The attribute _markedBy_ should be used to describe aids to navigation
+used to demarcate the location, for example, by marking a limit line,
+or one of the boundaries of an area.
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
+| aggregation | Layout Division | *HarbourBasin* | layoutUnit | 0,* | *HarbourAreaSection* | componentOf | 1,1
+
+|===
+
+[[sec_6.11]]
+=== Mooring/Warping Facility
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# The equipment or structure used to
+secure a vessel.
+8+| *[underline]#S-10x Geo Feature:# Mooring/Warping Facility (MORFAC)*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# point*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Category of Mooring/Warping Facility 2+| (CATMOR) 2+|
+1: Dolphin +
+2: Deviation Dolphin +
+3: Bollard +
+4: Tie-Up Wall +
+5: Post or Pile +
+6: Mooring Cable +
+7: Mooring Buoy | EN | 1, 1
+
+2+| ID Code 2+| 2+| | TE | 1, 1
+2+| Bollard Description 2+| 2+| | TE | 0, 1
+2+| Bollard Pull 2+| 2+| | RE | 0, 1
+2+| Heaving Lines From Shore 2+| 2+| | BO | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_6.11.1]]
+==== General
+
+In S-131, only mooring/warping facilities that are in use are encoded
+as features. The identifying number of the mooring/warping facility,
+if any, must be encoded in the _iDCode_ attribute.
+
+[underline]#Remarks:#
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Service Availability | | | | *AvailablePortServices* | serviceDescriptionReference | 0, 1
+| association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
+| Asso | Primary/Auxiliary Facility | *MooringWarpingFacility* | auxiliaryFacility | 0, ++*++ | *BerthPosition* | primaryFacility | 0, 1
+
+|===
+
+[[sec_6.12]]
+=== Outer Limit
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# The extent to which a coastal State
+claims or may claim a specific jurisdiction in accordance with the
+provisions of International Law.
+8+| *[underline]#S-10x Geo Feature:# Outer Limit*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# curve, surface*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Limits Description 2+| 2+| | C | 0, 1
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+2+| Marked By 2+| 2+| | C | 0, ++*++
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+2+| Landmark Description 2+| 2+| | C | 0, ++*++
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+2+| Offshore Mark Description 2+| 2+| | C | 0, ++*++
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+2+| Major Light Description 2+| 2+| | C | 0, ++*++
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+2+| Useful Mark Description 2+| 2+| | C | 0, ++*++
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_6.12.1]]
+==== General
+
+This feature may be used to the legally or officially designated limits
+of the harbour area for purposes of navigation. Land-side boundaries
+of jurisdiction need not be encoded as *OuterLimit* features.
+
+[underline]#Remarks:#
+
+* Aids to navigation should not be encoded in the attribute _landmarkDescription_. Instead, they should be encoded in the appropriate attribute for describing marks (_offshoreMarkDescription_, _majorLightDescription_, or _usefulMarkDescription_).
+* The attribute _markedBy_ should be used to describe aids to navigation
+used to demarcate the location, for example, by marking a limit line,
+or one of the boundaries of an area.
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Limit Entrance | | | | *Entrance* | entranceReference | 0, 1
+| Asso | Jurisdictional Limit | *OuterLimit* | limitExtent | 0, 1 | *HarbourAreaAdministrative* | limitReference | 1, 1
+
+|===
+
+[[sec_6.13]]
+=== Pilot Boarding Place
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# A location offshore where a pilot
+may board a vessel in preparation to piloting it through local waters.
+8+| *[underline]#S-10x Geo Feature:# Pilot Boarding Place (PILBOP)*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# surface, point*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Depths Description 2+| 2+| | C | 0, 1
+2+| Category of Depths Description 2+| 2+|
+1: Shoal +
+2: General Depth +
+3: Controlling Depth
+| (S) EN | 1, 1
+
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+2+| Location by Text 2+| 2+| | TE | 0, 1
+2+| Marked By 2+| 2+| | C | 0, 1
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+2+| ISPS Level 2+| 2+|
+1: ISPS Level 1 +
+2: ISPS Level 2 +
+3: ISPS Level 3
+| EN | 0, 1
+
+8+| [underline]#INT 1 Reference: T 1.1-4#
+
+[[sec_6.13.1]]
+==== General
+
+For a pilot boarding place, the pilot vessel may either cruise in
+the area or come out on request. Off some large ports pilots on outgoing
+ships may be disembarked at a different location. Pilots may board
+from a helicopter; it is then less important for a ship to reach the
+exact position of the boarding place but an approximate position should
+still be encoded. Some pilot stations are used solely for long-distance
+(deep-sea) pilots. Pilots may be in constant attendance, in regular
+attendance at certain limited times, or available by previous arrangement
+only. The primary purpose of encoded pilotage information is to show
+the position of the facility. Because of the many variations in the
+service provided, the main source of information on pilotage must
+be in an associated publication or product.
+
+If it is required to encode a pilot boarding place, it must be done
+using the feature *Pilot Boarding Place*.
+
+For general information about the representation of pilot boarding
+places on charts, see S-4 -- B-491 and S-101 DCEG
+
+[underline]#Remarks:#
+
+* If it is required to encode the ship to shore or shore to ship contact
+information, it must be done using the information class
+*Contact Details* (see <<sec_11.4>>). The *Contact Details* must be
+associated to the *Pilot Boarding Place* feature using the association
+_AdditionalInformation_.
+
+* The attribute _markedBy_ should be used to describe aids to navigation
+used to demarcate the location, for example, by marking a limit line,
+or one of the boundaries of an area.
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
+| aggregation | Layout Division | *PilotBoardingPlace* | layoutUnit | 0,* | *HarbourAreaSection* | componentOf | 1,1
+
+|===
+
+[[sec_6.14]]
+=== Seaplane Landing Area
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# A designated portion of water for
+the landing and take-off of seaplanes.
+8+| *[underline]#S-10x Geo Feature:# Seaplane Landing Area (SPLARE)*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# surface, point*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Depths Description 2+| 2+| | C | 0, 1
+
+2+| Category of Depths Description 2+| 2+|
+1: Shoal +
+2: General Depth +
+3: Controlling Depth
+| (S) EN | 1, 1
+
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+2+| Location by Text 2+| 2+| | TE | 0, 1
+2+| Marked By 2+| 2+| | C | 0, 1
+2+| Text Content 2+| 2+| | (S) C | 1, ++*++
+
+2+| Category of text 2+| 2+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information 2+| 2+| | (S) C | 0, ++*++
+2+| File Locator 2+| 2+| | (S) TE | 0, 1
+2+| File Reference 2+| (TXTDSC) 2+| | (S) TE | 0, 1
+2+| Headline 2+| 2+| | (S) TE | 0, ++*++ (ordered)
+2+| Language 2+| 2+| | (S) TE | 0, 1
+
+2+| Text 2+| (INFORM)
+
+(NINFOM)
+2+| | (S) TE | 0, 1
+
+2+| Online Resource 2+| 2+| | (S) C | 0, 1
+2+| Online Resource Linkage URL 2+| 2+| | (S) UL | 1, 1
+2+| Protocol 2+| 2+| | (S) TE | 0, 1
+2+| Application Profile 2+| 2+| | (S) TE | 0, 1
+2+| Name of Resource 2+| 2+| | (S) TE | 0, 1
+2+| Online Resource Description 2+| 2+| | (S) TE | 0, 1
+
+2+| Online Function 2+| 2+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request 2+| 2+| | (S) TE | 0, 1
+
+2+| Source 2+| 2+| | (S) TE | 0, 1
+
+2+| Source Type 2+| 2+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
+
+2+| ISPS Level 2+| 2+|
+1: ISPS Level 1 +
+2: ISPS Level 2 +
+3: ISPS Level 3
+| EN | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_6.14.1]]
+==== General
+
+(reserved)
+
+[underline]#Remarks:#
+
+* The attribute _markedBy_ should be used to describe aids to navigation
+used to demarcate the location, for example, by marking a limit line,
+or one of the boundaries of an area.
+
+[underline]#Distinction:# WaterwayArea
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
+| aggregation | Layout Division | *SeaplaneLandingArea* | layoutUnit | 0,* | *HarbourAreaSection* | componentOf | 1,1
+
+|===
+
+[[sec_6.15]]
+=== Terminal
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# A terminal covers that area on shore
+which provides buildings and constructions for the transfer of cargo
+or passengers from and to ships.
+8+| *[underline]#S-10x Geo Feature:# Terminal*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# point, surface*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Port Facility Number 2+| 2+| | TE | 0, 1
+
+2+| Category of Harbour Facility 2+| (CATHAF) 2+|
+1: RoRo Terminal +
+3: Ferry Terminal +
+5: Yacht Harbour/Marina +
+7: Tanker Terminal +
+8: Passenger Terminal +
+10: Container Terminal +
+11: Bulk Terminal
+| EN | 0, 1
+
+2+| Category of Cargo 2+| 2+|
+2: Container +
+5: Passenger +
+6: Livestock +
+7: Dangerous or Hazardous +
+8: Heavy Lift +
+10: Dry Bulk Cargo +
+11: Liquid Bulk Cargo +
+12: Reefer Container Cargo +
+13: Ro-Ro Cargo +
+14: Project Cargo +
+15: Break Bulk Cargo
+| EN | 0, ++*++
+
+2+| Product 2+| (PRODCT) 2+|
+1: Oil +
+2: Gas +
+4: Stone +
+5: Coal +
+6: Ore +
+7: Chemicals +
+9: Milk +
+10: Bauxite +
+11: Coke +
+12: Iron Ingots +
+13: Salt +
+14: Sand +
+15: Timber +
+16: Sawdust/Wood Chips +
+17: Scrap Metal +
+18: Liquefied Natural Gas +
+19: Liquefied Petroleum Gas +
+20: Wine +
+21: Cement +
+22: Grain | EN | 0, ++*++
+
+2+| Terminal Identifier 2+| 2+| | TE | 0, 1
+2+| SMDG Terminal Code 2+| 2+| | TE | 0, 1
+2+| UN Location Code 2+| 2+| | TE | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_6.15.1]]
+==== General
+
+A terminal in S-131 may include water areas immediately adjacent to
+the shore installation.
+
+[underline]#Remarks:#
+
+Since port authorities sometimes designate terminals by their nominal
+point locations instead of providing precise coordinates, point terminal
+features may be located in water areas.
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Service Availability | | | | *AvailablePortServices* | serviceDescriptionReference | 0, 1
+| association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
+| Asso | Layout Division | *Terminal* | componentOf | 1, 1 | *Berth* | layoutUnit | 0, ++*++
+| Aggr | Layout Division | *Terminal* | layoutUnit | 0,* | *HarbourAreaSection* | componentOf | 1,1
+| Asso | Infrastructure | *Terminal* | infrastructureLocation | 0, 1 | *HarbourPhysicalInfrastructure* | hasInfrastructure | 0, ++*++
+
+|===
+
+[[sec_6.16]]
+=== Turning Basin
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# An area of water or enlargement of
+a channel used for turning vessels.
+8+| *[underline]#S-10x Geo Feature:# Turning Basin*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# surface*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute h| S-57 Acronym 3+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Depths Description | 3+| | C | 0, 1
+
+2+| Category of Depths Description | 3+|
+1: Shoal +
+2: General Depth +
+3: Controlling Depth
+| (S) EN | 1, 1
+
+2+| Text Content | 3+| | (S) C | 1, ++*++
+
+2+| Category of text | 3+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information | 3+| | (S) C | 0, ++*++
+2+| File Locator | 3+| | (S) TE | 0, 1
+2+| File Reference | (TXTDSC) 3+| | (S) TE | 0, 1
+2+| Headline | 3+| | (S) TE | 0, ++*++ (ordered)
+2+| Language | 3+| | (S) TE | 0, 1
+
+2+| Text | (INFORM)
+
+(NINFOM)
+3+| | (S) TE | 0, 1
+
+2+| Online Resource | 3+| | (S) C | 0, 1
+2+| Online Resource Linkage URL | 3+| | (S) UL | 1, 1
+2+| Protocol | 3+| | (S) TE | 0, 1
+2+| Application Profile | 3+| | (S) TE | 0, 1
+2+| Name of Resource | 3+| | (S) TE | 0, 1
+2+| Online Resource Description | 3+| | (S) TE | 0, 1
+
+2+| Online Function | 3+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request | 3+| | (S) TE | 0, 1
+2+| Source | 3+| | (S) TE | 0, 1
+
+2+| Source Type | 3+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date | (SORDAT) 3+| | (S) TD | 0, 1
+2+| Location by Text | 3+| | TE | 0, 1
+2+| Marked By | 3+| | C | 0, 1
+2+| Text Content | 3+| | (S) C | 1, ++*++
+
+2+| Category of text | 3+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information | 3+| | (S) C | 0, ++*++
+2+| File Locator | 3+| | (S) TE | 0, 1
+2+| File Reference | (TXTDSC) 3+| | (S) TE | 0, 1
+2+| Headline | 3+| | (S) TE | 0, ++*++ (ordered)
+2+| Language | 3+| | (S) TE | 0, 1
+
+2+| Text | (INFORM)
+
+(NINFOM)
+3+| | (S) TE | 0, 1
+
+2+| Online Resource | 3+| | (S) C | 0, 1
+2+| Online Resource Linkage URL | 3+| | (S) UL | 1, 1
+2+| Protocol | 3+| | (S) TE | 0, 1
+2+| Application Profile | 3+| | (S) TE | 0, 1
+2+| Name of Resource | 3+| | (S) TE | 0, 1
+2+| Online Resource Description | 3+| | (S) TE | 0, 1
+
+2+| Online Function | 3+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request | 3+| | (S) TE | 0, 1
+2+| Source | 3+| | (S) TE | 0, 1
+
+2+| Source Type | 3+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date | (SORDAT) 3+| | (S) TD | 0, 1
+
+2+| ISPS Level | 3+|
+1: ISPS Level 1 +
+2: ISPS Level 2 +
+3: ISPS Level 3
+| EN | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_6.16.1]]
+==== General
+
+(Reserved)
+
+[underline]#Remarks:#
+
+* The attribute _markedBy_ should be used to describe aids to navigation
+used to demarcate the location, for example, by marking a limit line,
+or one of the boundaries of an area.
+
+[underline]#Distinction:# WaterwayArea; HarbourBasin
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
+| Aggr | Layout Division | *TurningBasin* | layoutUnit | 0,* | *HarbourAreaSection* | componentOf | 1,1
+
+|===
+
+[[sec_6.17]]
+=== Waterway Area
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# An area in which uniform general
+information of the waterway exists.
+8+| *[underline]#S-10x Geo Feature:# Waterway Area*
+8+| *[underline]#Super Type:# Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# surface*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute h| S-57 Acronym 3+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Category of Port Section | 3+|
+1: Port Fairway +
+3: Berth Pocket +
+8: Seaplane Anchorage +
+9: Dredged Basin +
+11: Port Safety Zone +
+12: Lay-by Berth
+| EN | 1, 1
+
+2+| Depths Description | 3+| | C | 0, 1
+
+2+| Category of Depths Description | 3+|
+1: Shoal +
+2: General Depth +
+3: Controlling Depth
+| (S) EN | 1, 1
+
+2+| Text Content | 3+| | (S) C | 1, ++*++
+
+2+| Category of text | 3+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information | 3+| | (S) C | 0, ++*++
+2+| File Locator | 3+| | (S) TE | 0, 1
+2+| File Reference | (TXTDSC) 3+| | (S) TE | 0, 1
+2+| Headline | 3+| | (S) TE | 0, ++*++ (ordered)
+2+| Language | 3+| | (S) TE | 0, 1
+
+2+| Text | (INFORM)
+
+(NINFOM)
+3+| | (S) TE | 0, 1
+
+2+| Online Resource | 3+| | (S) C | 0, 1
+2+| Online Resource Linkage URL | 3+| | (S) UL | 1, 1
+2+| Protocol | 3+| | (S) TE | 0, 1
+2+| Application Profile | 3+| | (S) TE | 0, 1
+2+| Name of Resource | 3+| | (S) TE | 0, 1
+2+| Online Resource Description | 3+| | (S) TE | 0, 1
+
+2+| Online Function | 3+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request | 3+| | (S) TE | 0, 1
+2+| Source | 3+| | (S) TE | 0, 1
+
+2+| Source Type | 3+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date | (SORDAT) 3+| | (S) TD | 0, 1
+2+| Location by Text | 3+| | TE | 0, 1
+2+| Marked By | 3+| | C | 0, 1
+2+| Text Content | 3+| | (S) C | 1, ++*++
+
+2+| Category of text | 3+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text
+| (S) EN | 0, 1
+
+2+| Information | 3+| | (S) C | 0, ++*++
+2+| File Locator | 3+| | (S) TE | 0, 1
+2+| File Reference | (TXTDSC) 3+| | (S) TE | 0, 1
+2+| Headline | 3+| | (S) TE | 0, ++*++ (ordered)
+2+| Language | 3+| | (S) TE | 0, 1
+
+2+| Text | (INFORM)
+
+(NINFOM)
+3+| | (S) TE | 0, 1
+
+2+| Online Resource | 3+| | (S) C | 0, 1
+2+| Online Resource Linkage URL | 3+| | (S) UL | 1, 1
+2+| Protocol | 3+| | (S) TE | 0, 1
+2+| Application Profile | 3+| | (S) TE | 0, 1
+2+| Name of Resource | 3+| | (S) TE | 0, 1
+2+| Online Resource Description | 3+| | (S) TE | 0, 1
+
+2+| Online Function | 3+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request | 3+| | (S) TE | 0, 1
+2+| Source | 3+| | (S) TE | 0, 1
+
+2+| Source Type | 3+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date | (SORDAT) 3+| | (S) TD | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_6.17.1]]
+==== General
+
+Waterways can be encoded to indicate how specific sections of water
+have been divided for various administrative purposes such as for
+organizing traffic and managing the available water column. When it
+is required to encode a section of water as one of the types mentioned
+in the _categoryOfPortSection_ attribute, this must be done using
+the feature *WaterwayArea* with _categoryOfPortSection_ set to the
+appropriate value.
+
+[underline]#Remarks:#
+
+* The attribute _markedBy_ should be used to describe aids to navigation
+used to demarcate the location, for example, by marking a limit line,
+or one of the boundaries of an area.
+
+[underline]#Distinction:# DumpingGround; HarbourBasin; PilotBoardingPlace;
+SeaplaneLandingArea; TurningBasin.
+
+8+h| [underline]#Feature/Information associations#
+
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
+| Aggr | Layout Division | *WaterwayArea* | layoutUnit | 0, ++*++ | *HarbourAreaSection* | componentOf | 1, 1
+
+|===

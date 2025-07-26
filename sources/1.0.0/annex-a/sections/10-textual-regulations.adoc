@@ -1,0 +1,271 @@
+
+[[sec_10]]
+== Textual Regulations and Notes
+
+[[sec_10.1]]
+=== Introduction
+
+The information types *Regulations*, *Restrictions*, *Recommendations*,
+and *NauticalInformation* all inherit the attributes of their immediate
+abstract superclass *AbstractRxN*, which provides attributes _textContent_
+and _graphic_ for textual and pictorial material respectively.
+The sub-attributes of its complex attribute _rxnCode_ allow optional
+classification of the material encoded in _textContent/graphic_ according
+to the type of material and the kind of nautical activity affected
+by it. The classifications in _rxNCode_ sub-attributes _categoryOfRxN_
+and _actionOrActivity_ are intended to facilitate software queries
+for information, while the sub-attribute headline provides additional
+topic headings for subject matter.
+
+These four information types also inherit the attributes of abstract
+superclass *InformationType*, which allows encoding of the effective
+and expiry dates, if any, and the source of information
+footnote:[Source information is currently broken out into three attributes:
+source, sourceType, and reportedDate, due to GI Registry issues with
+the complex attribute sourceIndication.], if it is necessary to encode
+that data.
+
+The content of the regulation (recommendation, etc.) should be encoded
+in the _textContent_ attribute, which is also inherited from the abstract
+superclass *InformationType*. It may be encoded inline
+(_textContent.information.text_) or in an external file
+(_textContent.information.fileReference_) depending on its length,
+on whether it is unique to the feature instance, and on whether the
+producer decides to include a support file containing multiple sections
+referenced from different places in the dataset. (See also <<sec_2.4.8;and!sec_2.4.9>>
+for general guidance on encoding textual information.)
+
+These four information types are intended primarily for encoding textual
+information, such as that which derives from textual source material
+such as port handbooks, national or local laws or official publications.
+
+.Types for textual information concerning regulations, etc.
+image::figure-15.png[]
+
+Where possible, these types should be classified using the _categoryOfRxN_
+and _actionOrActivity_ codelists in the _rxnCode_ complex attribute.
+Being open enumeration codelists, they allow for additional categories
+not listed among their standard values. For example, an "under repair"
+activity might be encoded in the _actionOrActivity_ attribute
+(as "other: underRepair", following the syntax rule for encoding "extra"
+values in open enumerations footnote:[S-100 3-6.7 specifies the format
+as "The word 'other' followed by a colon and a single space character
+(that is 'other: ' without quotes), followed by one or more alphanumeric
+strings separated by single spaces."]).
+
+Producers should note that such extra values will merely be displayed
+and not processed (for example, the user interface will not use extra
+values to choose symbols or filter instances of *Regulations
+footnote:[In the interest of brevity, "Regulations" in this sub-clause
+stands for any one of the four types described by this section.]*,
+whereas it may apply filters to the standard values and/or them in
+portrayal).
+
+The _headline_ attribute of _rxNCode_ should be used to encode brief
+topic headings describing the textual content of the *Regulations*
+object. Topic headings in the source material may be suitable either
+as-is or being adapted for use in the intended application context
+(for example, being shortened for readability on an ECDIS screen or
+auxiliary display). The _headline_ attribute of the _textContent/information_
+attribute may also be used to provide sub-heads but must not duplicate
+the content of _rxNCode/headline_.
+
+Where multiple headline attributes are encoded in the same instance
+of _rxNCode_ complex attribute, they must be ordered as follows:
+
+. If the _headline_ values are derived from a source material (such
+as the published legal text of a government regulation), the ordering
+must conform to the hierarchy in the source, for example, section
+headings must precede sub-section headings. It is not necessary to
+include the entire hierarchy of headings for the portion that is actually
+encoded in the _textContent_ co-attribute.
+. If the _headline_ values are not derived from a source text, the
+ordering should be from general to specific.
+
+[[sec_10.1.1]]
+==== Regulations, etc., for specific locations
+
+All geo features may have an association to any of Regulations or
+its sibling information types. This association is _AssociatedRxN_
+and it is inherited from the root feature type *FeatureType*.
+
+If it is necessary to identify an authority or organization related
+to a particular regulation (restriction, etc.) object, this may be
+done using the _RelatedOrganisation_ association between *Regulations*,
+etc., and an *Authority* object.
+
+.Regulations, etc., for geo features
+image::figure-16.png[]
+
+[[sec_10.1.2]]
+==== Regulations applying only to vessels with specific characteristics or cargoes
+
+Regulations applying only to vessels of specified types, exceeding
+specified dimensions, or carrying specified cargoes (or other limitations
+which apply only to subsets of vessels) are encoded by defining the
+subset of vessels using an *Applicability* instance and associating
+the *Regulations* object to that *Applicability*.
+
+For information on the use of Applicability to define subsets of vessels,
+see <<sec_12>> in this DCEG and clause 4.2.1.9 in the main PS.
+
+[[sec_10.2]]
+=== Regulations
+
+[cols="a,a,a,a,a",options="unnumbered"]
+|===
+5+| [underline]#IHO Definition:# Regulations for a related area or facility.
+5+| *[underline]#S-10x Information Type:# Regulations*
+5+| *[underline]#Super Type:# AbstractRxN (<<sec_9.3>>)*
+5+| *[underline]#Primitives:# None*
+
+| _Real World_ 2+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_10.2.1]]
+==== General
+
+*Regulations* is intended to be used for official rules, laws, and
+similar source material, i.e., sources that have the force of law
+or are mandated by a controlling authority. They will generally originate
+from some kind of administration or authority, including port authorities.
+
+[underline]#Remarks:#
+
+* Association _AssociatedRxN_ is with a geographic feature. While
+an association from geographic feature to information type can be
+encoded in the geographic feature instance, the reverse association
+from the information type to the geographic feature may be omitted
+from the information type instance.
+
+[underline]#Distinction:# Restrictions, Recommendations, NauticalInformation
+
+|===
+
+[[sec_10.3]]
+=== Restrictions
+
+[cols="a,a,a,a,a",options="unnumbered"]
+|===
+5+| [underline]#IHO Definition:# Restrictions for a related area or
+facility.
+5+| *[underline]#S-10x Information Type:# Restrictions*
+5+| *[underline]#Super Type:# AbstractRxN (<<sec_9.3>>)*
+5+| *[underline]#Primitives:# None*
+
+| _Real World_ 2+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_10.3.1]]
+==== General
+
+*Restrictions* is intended for restrictions that constrain the activities
+of vessels temporarily with or without the legal force, or for longer
+terms without the force of law; they may be issued by a local authority
+such as a port captain or US Coast Guard district.
+
+[underline]#Remarks:#
+
+* Association _AssociatedRxN_ is with a geographic feature. While
+an association from geographic feature to information type can be
+encoded in the geographic feature instance, the reverse association
+from the information type to the geographic feature may be omitted
+from the information type instance.
+
+[underline]#Distinction:# Regulations, Recommendations, NauticalInformation
+
+|===
+
+[[sec_10.4]]
+=== Recommendations
+
+[cols="a,a,a,a,a",options="unnumbered"]
+|===
+5+| [underline]#IHO Definition:# Recommendations for a related area or facility.
+5+| *[underline]#S-10x Information Type:# Recommendations*
+5+| *[underline]#Super Type:# AbstractRxN (<<sec_9.3>>)*
+5+| *[underline]#Primitives:# None*
+
+| _Real World_ 2+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+5+| [underline]#INT 1 Reference:#
+
+[[sec_10.4.1]]
+==== General
+
+Recommendations is intended for encoding suggestions, limitations,
+or preferred procedures that are not mandatory.
+
+For example, a recommendation for approaching a particular berth at
+a given orientation may be encoded in a *Recommendations* object associated
+to the *Berth* feature with an _AssociatedRxN_ association from the
+*Berth* to the *Recommendations* object. If it is a port rule rather
+than a recommendation, it should be encoded as a *Restrictions* or
+*Regulations* object instead, with the same association from the *Berth*
+feature.
+
+[underline]#Remarks:#
+
+* Association _AssociatedRxN_ is with a geographic feature. While
+an association from geographic feature to information type can be
+encoded in the geographic feature instance, the reverse association
+from the information type to the geographic feature may be omitted
+from the information type instance.
+
+[underline]#Distinction:# Regulations, Restrictions, NauticalInformation
+
+|===
+
+[[sec_10.5]]
+=== Nautical Information
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# Nautical information about a related
+area or facility.
+8+| *[underline]#S-10x Information Type:# Nautical Information*
+8+| *[underline]#Super Type:# AbstractRxN (<<sec_9.3>>)*
+8+| *[underline]#Primitives:# None*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute h| S-57 Acronym 3+h| Allowable Encoding Value h| Type h| Multiplicity
+8+| [underline]#INT 1 Reference:# --*NauticalInformation* is intended
+for material that is largely informative in nature, of which does
+not fit into the category of regulation, recommendation, or restriction.
+
+[underline]#Remarks:#
+
+* Association _AdditionalInformation_ may be with a geographic feature
+or an information type. Association _AssociatedRxN_ is with a geographic
+feature. While an association from geographic feature to information
+type can be encoded in the geographic feature instance, the reverse
+association from the information type to the geographic feature may
+be omitted from the information type instance.
+* In theory, *Nautical Information* can be associated with any geographic
+feature through either an _AdditionalInformation_ or _AssociatedRxN_
+association. _AdditionalInformation_ should be used only when the
+information encoded in *Nautical Information* is general in nature
+and does not supplement information encoded in a *Regulations*, *Restrictions*,
+or *Recommendations* object associated to the same feature.
+* According to a purely theoretical reading of the model,
+*Nautical Information* can be associated to another *Nautical Information*,
+*Regulations*, *Restrictions*, or *Recommendations* instance using
+the _AdditionalInformation_ association inherited from
+*Information Type*. This is not permitted due to the undefined semantics
+of chaining RxN types (i.e., such chaining has little or no significant
+meaning and has not been given any special meaning in the model).
+
+[underline]#Distinction:# Regulations, Restrictions, Recommendations
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+| association | Additional Information | *NauticalInformation* | providesInformation | 0, ++*++ | *InformationType* | informationProvidedFor | 0, ++*++
+
+|===

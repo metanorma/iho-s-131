@@ -1,0 +1,485 @@
+
+
+[[sec_5]]
+== Abstract Geo Features
+
+[[sec_5.1]]
+=== Introduction
+
+This clause describes abstract feature types. The abstract types cannot
+be used directly, but define attributes and associations inherited
+by their sub-types. The encoding remarks in the description of each
+abstract feature apply to its sub-types but may be overridden by remarks
+in the sub-type.
+
+The abstract feature types are depicted in <<fig_5.1>>. At the root
+is the type named *FeatureType*, from which all feature types except
+cartographic and meta-features inherit several attributes. This means
+that any Geo feature in S-131 can have any of the several attributes
+in the *FeatureType* box. This type also has information associations
+to three information types, and a feature association to *TextPlacement*
+which, as for attributes, allows any S-131 Geo feature to have the
+same associations. The feature types *OrganizationContactArea* and
+*SupervisedArea* define no local attributes but inherit the attributes
+of *FeatureType*, however each adds an additional information association
+which is inherited by all Geo features in S-131.
+
+The abstract feature hierarchy in S-131 is intentionally harmonised
+with the abstract hierarchy in other nautical publications Product
+Specifications, specifically S-127 (Marine Traffic Management), which
+has a more complex structure than S-131 necessitating the use of the
+abstract types *OrganizationContactArea* and *SupervisedArea* (in
+S-131, unlike S-127, these classes do not have separate sub-hierarchies).
+The abstract types *Layout* and *HarbourPhysicalInfrastructure* distinguish
+S-131 features describing harbour layout from those describing infrastructure.
+
+This top-level hierarchy of types in S-131 means than any S-131 Geo
+feature can have any or all of the five information associations in
+<<fig_5.1>>, and also an associated *TextPlacement* cartographic feature
+to position text. Cartographic and meta-features are not derived from
+this abstract hierarchy and do not inherit these attributes and associations.
+
+[[fig_5.1]]
+.Abstract Feature types and their relationships
+image::figure-6.png[]
+
+[[sec_5.2]]
+=== Feature Type
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# Generalized feature type which carries
+all the common attributes
+8+| *[underline]#S-10x Geo Feature:# FeatureType*
+8+| *[underline]#Super Type:#*
+8+| *[underline]#Sub-Types:# OrganizationContactArea (<<sec_5.3>>)*
+8+| *[underline]#Primitives:# noGeometry*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute h| S-57 Acronym 3+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Location Maritime Resource Name | 3+| | UN | 0, 1
+2+| Global Location Number | 3+| | TE | 0, 1
+2+| Feature Name | 3+| | C | 0, ++*++
+2+| Display Name | 3+| | (S) BO | 0, 1
+2+| Language | 3+| | (S) TE | 0, 1
+2+| Name | (OBJNAM) 3+| | (S) TE | 1, 1
+2+| Fixed date range | 3+| | C | 0, 1
+2+| Date Start | (DATSTA) 3+| | (S) TD | 0, 1
+2+| Date End | (DATEND) 3+| | (S) TD | 0, 1
+2+| Periodic Date Range | 3+| | C | 0, ++*++
+2+| Date Start | (DATSTA) 3+| | (S) TD | 1, 1
+2+| Date End | (DATEND) 3+| | (S) TD | 1, 1
+2+| RxN Code | 3+| | C | 0, ++*++
+
+2+| Category of RxN |
+3+|
+1: Navigation +
+2: Communication +
+3: Environmental Protection +
+4: Wildlife Protection +
+5: Security +
+6: Customs +
+7: Cargo Operation +
+8: Refuge +
+9: Health +
+10: Natural Resources or Exploitation +
+11: Port +
+12: Finance +
+13: Agriculture
+| (S) CL | 0, 1
+
+2+| Action or Activity |
+3+|
+1: Navigating With a Pilot +
+2: Entering Port +
+3: Leaving Port +
+4: Berthing +
+5: Slipping +
+6: Anchoring +
+7: Weighing Anchor +
+8: Transiting +
+9: Overtaking +
+10: Reporting +
+11: Working Cargo +
+12: Landing +
+13: Diving +
+14: Fishing +
+15: Discharging Overboard +
+16: Passing
+| (S) CL | 0, 1
+
+2+| Headline | 3+| | (S) TE | 0, ++*++ (ordered)
+2+| Graphic | 3+| | C | 0, ++*++
+2+| Pictorial Representation | (PICREP) 3+| | (S) TE | 1, ++*++
+2+| Picture Caption | 3+| | (S) TE | 0, 1
+2+| Source Date | (SORDAT) 3+| | (S) DA | 0, 1
+2+| Picture Information | 3+| | (S) TE | 0, 1
+2+| Bearing Information | 3+| | (S) C | 0, 1
+
+2+| Cardinal Direction | 3+|
+1: North +
+2: North Northeast +
+3: Northeast +
+4: East Northeast +
+5: East +
+6: East Southeast +
+7: Southeast +
+8: South Southeast +
+9: South +
+10: South Southwest +
+11: Southwest +
+12: West Southwest +
+13: West +
+14: West Northwest +
+15: Northwest +
+16: North Northwest
+| (S) EN | 0, 1
+
+2+| Distance | 3+| | (S) RE | 0, 1
+2+| Sector Bearing
+| (SECTR1)
+
+(SECTR2) 3+| | (S) RE | 0, 2 (ordered)
+2+| Information | 3+| | (S) C | 0, ++*++
+2+| File Locator | 3+| | (S) TE | 0, 1
+2+| File Reference | (TXTDSC) 3+| | (S) TE | 0, 1
+2+| Headline | 3+| | (S) TE | 0, ++*++ (ordered)
+2+| Language | 3+| | (S) TE | 0, 1
+
+2+| Text
+| (INFORM)
+
+(NINFOM) 3+| | (S) TE | 0, 1
+2+| Orientation | 3+| | (S) C | 0, 1
+2+| Orientation Uncertainty | 3+| | (S) RE | 0, 1
+2+| Orientation Value | (ORIENT) 3+| | (S) RE | 1, 1
+2+| Source | 3+| | TE | 0, 1
+
+2+| Source Type |
+3+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| EN | 0, 1
+
+2+| Reported Date | (SORDAT) 3+| | TD | 0, 1
+2+| Text Content | 3+| | C | 0, ++*++
+2+| Category of text |
+3+|
+1: Abstract or Summary +
+2: Extract +
+3: Full Text +
+| (S) EN | 0, 1
+
+2+| Information | 3+| | (S) C | 0, ++*++
+2+| File Locator | 3+| | (S) TE | 0, 1
+2+| File Reference | (TXTDSC) 3+| | (S) TE | 0, 1
+2+| Headline | 3+| | (S) TE | 0, ++*++ (ordered)
+2+| Language | 3+| | (S) TE | 0, 1
+2+| Text
+| (INFORM)
+
+(NINFOM) 3+| | (S) TE | 0, 1
+2+| Online Resource | 3+| | (S) C | 0, 1
+2+| Online Resource Linkage URL | 3+| | (S) UL | 1, 1
+2+| Protocol | 3+| | (S) TE | 0, 1
+2+| Application Profile | 3+| | (S) TE | 0, 1
+2+| Name of Resource | 3+| | (S) TE | 0, 1
+2+| Online Resource Description | 3+| | (S) TE | 0, 1
+
+2+| Online Function | 3+|
+1: Download +
+3: Offline Access +
+4: Order +
+5: Search +
+6: Complete Metadata +
+7: Browse Graphic +
+8: Upload +
+9: Email Service +
+10: Browsing +
+11: File Access
+| (S) EN | 0, 1
+
+2+| Protocol request | 3+| | (S) TE | 0, 1
+2+| Source | 3+| | (S) TE | 0, 1
+
+2+| Source Type | 3+|
+1: Law or Regulation +
+2: Official Publication +
+7: Mariner Report, Confirmed +
+8: Mariner Report, Not Confirmed +
+9: Industry Publications and Reports +
+10: Remotely Sensed Images +
+11: Photographs +
+12: Products Issued by HO Services +
+13: News Media +
+14: Traffic Data
+| (S) EN | 0, 1
+
+2+| Reported Date | (SORDAT) 3+| | (S) TD | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_5.2.1]]
+==== General
+
+Where a complex attribute has all its sub-attributes optional (e.g.,
+multiplicity 0..1 or 0..*), at least one of the sub-attributes must
+be populated.
+
+The _AdditionalInformation_ association to a *NauticalInfomation*
+object can be used to attach an additional chunk of information to
+a feature, and there is no applicable specific information type or
+association. This should be used sparingly if at all.
+
+The _PermissionType_ association is used to encode permission information
+(e.g., whether use or entry is prohibited, etc) for vessels with different
+characteristics, if such permissions or requirements exist for a feature.
+
+The _AssociatedRxN_ association allows (mostly) textual information
+pertaining to regulations, etc., to be associated to features.
+
+[underline]#Remarks:#
+
+* The complex attribute _rxNCode_ when bound to a feature allows features
+to be tagged with keywords that make it easier for software queries
+to search for features relevant to particular subjects or to particular
+kinds of vessel operations. See <<sec_9.1>> for guidance on encoding
+values of _rxNCode_ sub-attributes.
+* Regulations, recommendations, restrictions, or general nautical
+information must be encoded in the appropriate associated information
+type (see <<sec_9.3;and!sec_10>>). The ability to encode _rxNCode_
+and _textContent_ as attributes of features must not be used to avoid
+encoding instances of *Regulations*, *Restrictions*, *Recommendations*,
+or *NauticalInformation,* because encoding the same type of information
+using different methods or different structures in the same dataset
+or data product makes it more difficult for the mariner to find information.
+* When encoding text information in the complex attribute _textContent_,
+it is not necessary to encode the entire content in a single instance
+of the _information_ sub-attribute. Instead, the information should
+be organized so that each instance of _information_ deals with a distinct
+topic or sub-topic, each with an appropriate heading in the _headline_
+attribute. This will make it easier for readers to find a topic. Part,
+chapter, section and sub-section headings in the source material may
+be used in either verbatim or condensed form, ordered according to
+the hierarchy in the source.
+* Multiple instances of _textContent_ should be used when the encoded
+material bears different relationships to the source (abstract/extract
+vs. summary vs. full text).
+* Multiple instances of _textContent_ may be used to distinguish information
+available purely as an external reference (in the _onlineResource_
+sub-attribute) from information encoded within the dataset (in the
+_information.text_ sub-attribute or in a support file).
+* In general, encoders may use the multiplicities of _textContent_
+and its sub-attributes to organize textual information so as to facilitate
+structuring text by topic, avoid flooding end-user screens with large
+blocks of unorganized text, and improve its accessibility to the mariner.
+
+[underline]#Distinction:#
+
+8+h| Feature/Information associations
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Permission Type | | | | *Applicability* | permission | 0, ++*++
+| association | Associated RxN | | | | *AbstractRxN* | theRxN | 0, ++*++
+| association | Additional Information | | | | *NauticalInformation* | providesInformation | 0, ++*++
+| Asso | Text Association | *FeatureType* | identifies | 0, ++*++ | *TextPlacement* 3+| positions | 0, 1
+
+|===
+
+[[sec_5.3]]
+=== Organization Contact Area
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# A feature often associated with contact
+information for an organization that exercises a management role or
+offers a service in the location.
+8+| *[underline]#S-10x Geo Feature:# OrganizationContactArea*
+8+| *[underline]#Super Type:# FeatureType (<<sec_5.2>>)*
+8+| *[underline]#Sub-Types:# SupervisedArea (<<sec_5.4>>)*
+8+| *[underline]#Primitives:# noGeometry*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_5.3.1]]
+==== General
+
+If it is necessary to encode contact information related to a particular
+feature, without encoding information about a supervising or controlling
+authority, it should be done using an associated *ContactDetails*
+information type. This can be used when
+
+* information about the supervising authority is unavailable, or,
+* when the contact information pertains to a particular feature, but
+not to all features supervised by the authority. For example, if contact
+details for different terminals are different though they are operated
+by the same operator, the _ServiceContact_ association can be used
+to link particular contact information to particular terminal features.
+[underline]#Remarks:#
+
+* Adds the _ServiceContact_ association to *ContactDetails* for any
+sub-feature class.
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association | Service Contact | | | | *ContactDetails* | theContactDetails | 0, ++*++
+
+|===
+
+[[sec_5.4]]
+=== Supervised Area
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# A location which may be supervised
+by a responsible or controlling authority.
+8+| *[underline]#S-10x Geo Feature:# Supervised Area*
+8+| *[underline]#Super Type:# OrganizationContactArea (<<sec_5.3>>)*
+8+| *[underline]#Sub-Types:# HarbourPhysicalInfrastructure (<<sec_5.5>>), Layout (<<sec_5.6>>)*
+8+| *[underline]#Primitives:# noGeometry*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute h| S-57 Acronym 3+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_5.4.1]]
+==== General
+
+If it is necessary to encode information a controlling authority or
+organization for a particular location, it should be done using an
+associated *Authority* information type. Contact details for the organization
+should be encoded in a *ContactDetails* associated to the *Authority*.
+
+For example, information about terminal operators may be encoded in
+an *Authority* information type associated to the feature via a _ServiceControl_
+association. The Harbourmaster's office should be encoded as an *Authority*
+associated to the whole port area, represented by a *HarbourAreaAdministrative*
+feature
+
+[underline]#Remarks:#
+
+* Adds the _ServiceControl_ association to *Authority* for any sub
+feature class.
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| association 2+| Service Control | | | | *Authority* | controlAuthority | 0, 1
+
+|===
+
+[[sec_5.5]]
+=== Harbour Physical Infrastructure
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered"]
+|===
+8+| [underline]#IHO Definition:# The physical installations and facilities
+that support operations in a port or harbour.
+8+| *[underline]#S-10x Geo Feature:# Harbour Physical Infrastructure*
+8+| *[underline]#Super Type:# SupervisedArea (<<sec_5.4>>)*
+8+| *[underline]#Sub-Types:# DryDock (<<sec_7.2>>), FloatingDock (<<sec_7.3>>),
+Gridiron (<<sec_7.4>>), HarbourFacility (<<sec_7.5>>)*
+8+| *[underline]#Primitives:# point, surface*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-10x Attribute h| S-57 Acronym 3+h| Allowable Encoding Value h| Type h| Multiplicity
+
+2+| Vertical Clearance Value | (VERCLR)
+
+(VERCCL)
+
+(VERCOP)
+
+(VERCSA)
+3+| | RE | 0, 1
+
+8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_5.5.1]]
+==== General
+
+This feature type is the immediate supertype for all physical infrastructure
+features and defines a single optional attribute for the clearance
+value.
+
+The _Infrastructure_ association to the Terminal feature type is intended
+for encoding the infrastructure (represented by the sub-types of
+*HarbourPhysicalInfrastructure*) available in a *Terminal*. For example,
+if it is necessary to indicate that a particular terminal has dry
+dock facilities, it should be done by encoding a *DryDock* feature
+and associating it to the *Terminal* feature by the _Infrastructure_
+association.
+
+[underline]#Remarks:#
+
+[underline]#Distinction:#
+
+8+h| [underline]#Feature/Information associations#
+.2+h| Type .2+h| Association Name 6+h| Association Ends
+h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+| Asso | Infrastructure | *HarbourPhysicalInfrastructure* | hasInfrastructure | 0, ++*++ | *Terminal* | infrastructureLocation | 0, 1
+
+|===
+
+[[sec_5.6]]
+=== Layout
+
+[cols="a,a,a,a,a",options="unnumbered"]
+|===
+5+| [underline]#IHO Definition:# The spatial arrangement of areas
+and other types of locations that are designated for specified purposes
+or otherwise distinguished from other areas and locations.
+5+| *[underline]#S-10x Geo Feature:# Layout*
+5+| *[underline]#Super Type:# SupervisedArea (<<sec_5.4>>)*
+5+| *[underline]#Sub-Types:# AnchorageArea (<<sec_6.3>>), AnchorBerth
+(<<sec_6.2>>), Berth (<<sec_6.4>>), BerthPosition (<<sec_6.5>>), DockArea
+(<<sec_6.6>>), DumpingGround (<<sec_6.7>>), HarbourAreaAdministrative
+(<<sec_6.8>>), HarbourAreaSection (<<sec_6.9>>), HarbourBasin (<<sec_6.10>>),
+MooringWarpingFacility (<<sec_6.11>>), OuterLimit (<<sec_6.12>>),
+PilotBoardingPlace (<<sec_6.13>>), SeaplaneLandingArea (<<sec_6.14>>),
+Terminal (<<sec_6.15>>), TurningBasin (<<sec_6.16>>), WaterwayArea
+(<<sec_6.17>>)*
+5+| *[underline]#Primitives:# noGeometry*
+
+| _Real World_ 2+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_5.6.1]]
+==== General
+
+Layout features describe the layout of the harbour area. The *Layout*
+abstract type serves as the supertype for all the layout features
+in S-131.
+
+[underline]#Remarks:#
+
+[underline]#Distinction:#
+
+|===

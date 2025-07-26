@@ -1,0 +1,396 @@
+
+[[sec_4]]
+== Metadata Features
+
+[[sec_4.1]]
+=== Introduction
+
+Meta-features are used to reduce the need to code quality and datum
+attributes in individual features, as well as to delimit the extent
+of data in the dataset. In a base dataset, some meta-features are
+mandatory (<<sec_4.2>>).
+
+Horizontal and vertical uncertainties that apply to the majority of
+features are encoded as attributes of one or more *QualityOfNonBathymetricData*
+features together covering the same extent as the spatial union of
+the *DataCoverage* features in the dataset. (Typically, there would
+be one *DataCoverage* feature and one *QualityOfNonBathymetricData*
+feature, having the same spatial extent.) Exceptional horizontal and
+vertical uncertainties are encoded in a *SpatialAccuracy* information
+type associated to particular spatial primitives.
+
+[[sec_4.2]]
+=== Mandatory meta features
+
+The mandatory meta features are:
+
+* DataCoverage
+* QualityOfNonBathymetricData
+* SoundingDatum
+* VerticalDatumOfData
+
+[[sec_4.3]]
+=== Maximum and minimum display scales
+
+Maximum and minimum values for the display scale attributes are specified
+in <<table_4.1>>. These are the same as in S-101 except that the empty
+(null) value is not used in S-131.
+
+[[table_4.1]]
+.Maximum and minimum display scale values (from S-101 DCEG)
+[cols="a,a"]
+|===
+h| maximum display scale h| minimum display scale
+
+| 10,000,000 | [strike]#empty (null)#
+| 3,500,000 | 10,000,000
+| 1,500,000 | 3,500,000
+| 700,000 | 1,500,000
+| 350,000 | 700,000
+| 180,000 | 350,000
+| 90,000 | 180,000
+| 45,000 | 90,000
+| 22,000 | 45,000
+| 12,000 | 22,000
+| 8,000 | 12,000
+| 4,000 | 8,000
+| 3,000 | 4,000
+| 2,000 | 3,000
+| 1,000 | 2,000
+|===
+
+[[sec_4.4]]
+=== Data coverage meta feature
+
+*DataCoverage*: In order to assist in data discovery, the meta feature
+*DataCoverage* must be used to provide the area of coverage of the
+S-131 dataset. This means that *DataCoverage* expresses where the
+presence or absence of S-131 geographic features is asserted. Unlike
+S-101 datasets, there is no 'skin of the earth' principle in S-131
+and there may be regions covered by a *DataCoverage* but where no
+geographic S-131 feature is present.
+
+[cols="a,a,a,a,a",options="unnumbered"]
+|===
+5+| [underline]#IHO Definition:# A geographical area that describes
+the coverage and extent of spatial objects.
+5+| *[underline]#S-10x Metadata Feature:# DataCoverage (M_COVR)*
+5+| *[underline]#Super Type:#*
+5+| *[underline]#Primitives:# surface*
+
+| _Real World_ 2+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+
+| Maximum Display Scale | | (see <<table_4.1>>) | IN | 1, 1
+| Minimum Display Scale | | (see <<table_4.1>>) | IN | 1, 1
+
+5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_4.4.1]]
+==== General
+
+The meta feature *DataCoverage* encodes the area covered by the dataset.
+In S-131, this feature is also used to harmonize dataset loading and
+unloading in relation to the underlying ENC(s).
+
+There must be a minimum of one *DataCoverage* feature in a dataset.
+*DataCoverage* features must cover at least the total extent of all
+geographic features in the dataset, and must not overlap.
+
+The mandatory attribute _maximumDisplayScale_ is used to indicate
+the largest intended viewing scale for the data.
+
+The mandatory attribute _minimumDisplayScale_ is used to indicate
+the smallest intended viewing scale for the data.
+
+The values of maximum and minimum display scales should be harmonized
+with comparable base layer S-101 datasets. (See <<sec_2.8.3>> for
+the definition of "comparable".) This serves to harmonize the loading
+strategy of S-131 port information with that for the underlying ENCs.
+However, use of the same values as S-101 datasets is not mandatory
+in S-131.
+
+Given that S-131 data will overlay ENC and possibly other datasets,
+the conditions described in the S-101 DCEG "Data Coverage" clause
+for displaying overscale warnings and setting the viewing scale may
+be overridden by interoperability constraints or the presence of higher-priority
+datasets. The specification of such behaviour is out of scope for
+this document (the S-100 interoperability specification should address
+it for ECDIS).
+
+Typically, only a single *DataCoverage* feature should be used in
+a dataset. However, if the maximum display scale is different for
+discrete areas within a single MHI dataset, this must be indicated
+by encoding separate, non-overlapping *DataCoverage* features, each
+having a different value populated for _maximumDisplayScale_. Producing
+Authorities are to note, however, that excessive use of multiple *DataCoverage*
+features having different values of _maximumDisplayScale_ within a
+single dataset should be avoided. Where different values of
+_maximumDisplayScale_ are used, this should be restricted only to
+data compiled in order to achieve the intended navigational purpose
+of the entire dataset. Datasets must have the same value for
+_minimumDisplayScale_ for all *DataCoverage* features in the dataset.
+
+[underline]#Remarks:#
+
+* This meta feature is intended to support an indication of coverage.
+
+* Where a dataset consists of only one *DataCoverage* feature, the
+value for the maximum display scale populated in the dataset discovery
+metadata must be the same as the value populated for maximum display
+scale on the *DataCoverage*.
+
+* For any *DataCoverage* feature, maximum display scale < minimum
+display scale.
+
+* S-131 does not use the NULL value, which is permitted in S-101 for
+_minimumDisplayScale_ when _maximumDisplayScale_=10,000,000. An appropriate
+greater value may be used instead.
+
+[underline]#Distinction:# None
+
+|===
+
+[[sec_4.5]]
+=== Quality of Non-Bathymetric Data
+
+[cols="a,a,a,a,a",options="unnumbered"]
+|===
+5+| [underline]#IHO Definition:# An area within which a uniform assessment
+of the quality of the non-bathymetric data exists.
+5+| *[underline]#S-10x Metadata Feature:# QualityOfNonBathymetricData (M_ACCY)*
+5+| *[underline]#Super Type:#*
+5+| *[underline]#Primitives:# surface*
+
+| _Real World_ 2+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+
+| Category of Temporal Variation |
+|
+1: Extreme Event +
+2: Likely to Change and Significant Shoaling Expected +
+3: Likely to Change But Significant Shoaling Not Expected +
+4: Likely to Change +
+5: Unlikely to Change +
+6: Unassessed
+| EN | 0, 1
+
+| Horizontal Distance Uncertainty | (HORACC) | | RE | 0, 1
+| Horizontal Position Uncertainty | (POSACC) | | C | 1, 1
+| Uncertainty Fixed
+| (POSACC)
+
+(SOUACC)
+
+(VERACC)
+| | (S) RE | 1, 1
+| Uncertainty Variable Factor | | | (S) RE | 0, 1
+| Orientation Uncertainty | | | RE | 0, 1
+| Survey Date Range | | | C | 0, 1
+| Date Start | (DATSTA) | | (S) TD | 0, 1
+| Date End | (DATEND) | | (S) TD | 1, 1
+| Vertical Uncertainty | (VERACC) | | C | 0, 1
+| Uncertainty Fixed
+| (POSACC)
+
+(SOUACC)
+
+(VERACC)
+| | (S) RE | 1, 1
+| Uncertainty Variable Factor | | | (S) RE | 0, 1
+| Information | | | C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+| Text
+| (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+
+5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_4.5.1]]
+==== Quality of positions
+
+The meta feature *QualityOfNonBathymetricData* may be used to provide
+an indication of the overall uncertainty of position for all non-bathymetric
+features. It must not be used to provide the uncertainty of bathymetric
+information.
+
+The attribute _horizontalPositionUncertainty_ may be applied to any
+spatial type, in order to qualify the location of a feature.
+
+The attributes _horizontalDistanceUncertainty_ and _horizontalPositionUncertainty_
+must not be applied to the spatial type of any geo feature if they
+are identical to the _horizontalDistanceUncertainty_ and
+_horizontalPositionUncertainty_ values of the underlying meta feature.
+
+Position uncertainty on the *QualityOfNonBathymetricData* applies
+to non-bathymetric data situated within the area, while position uncertainty
+on the associated spatial types qualifies the location of the *QualityOfNonBathymetricData* feature itself.
+
+[underline]#Remarks:#
+
+[underline]#Distinction:#
+
+|===
+
+[cols="a,a,a,a,a",options="unnumbered"]
+|===
+5+| [underline]#IHO Definition:# The horizontal plane or tidal datum
+to which soundings have been reduced. Also called datum for sounding
+reduction.
+5+| *[underline]#S-10x Metadata Feature:# SoundingDatum (M_SDAT)*
+5+| *[underline]#Super Type:#*
+5+| *[underline]#Primitives:# surface*
+
+| _Real World_ 2+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+
+| Vertical Datum
+| (VERDAT)
+
+(Datum Level)
+
+(Reference Plane)
+
+(Levelling Datum)
+
+(Datum for Sounding Reduction)
+
+(Datum for Heights)
+|
+1: Mean Low Water Springs +
+2: Mean Lower Low Water Springs +
+3: Mean Sea Level +
+4: Lowest Low Water +
+5: Mean Low Water +
+6: Lowest Low Water Springs +
+7: Approximate Mean Low Water Springs +
+8: Indian Spring Low Water +
+9: Low Water Springs +
+10: Approximate Lowest Astronomical Tide +
+11: Nearly Lowest Low Water +
+12: Mean Lower Low Water +
+13: Low Water +
+14: Approximate Mean Low Water +
+15: Approximate Mean Lower Low Water +
+19: Approximate Mean Sea Level +
+22: Equinoctial Spring Low Water +
+23: Lowest Astronomical Tide +
+24: Local Datum +
+25: International Great Lakes Datum 1985 +
+26: Mean Water Level +
+27: Lower Low Water Large Tide +
+44: Baltic Sea Chart Datum 2000
+| EN | 1, 1
+
+| Information | | | C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+| Text
+| (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+
+5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_4.5.2]]
+==== General
+
+There must be only one *SoundingDatum* feature in an S-131 dataset,
+providing the datum for all depth values encoded in any feature. Given
+the relatively small extent of S-131 datasets and the importance of
+uniform datums in the same port, it is not anticipated that depths
+in different features will be referred to different datums; however,
+if this is the case in the sources, values must be converted to the
+same datum before encoding in the dataset.
+
+[underline]#Remarks:#
+
+[underline]#Distinction:# *VerticalDatumOfData*
+
+|===
+
+[[sec_4.6]]
+=== Vertical Datum of Data
+
+[cols="a,a,a,a,a",options="unnumbered"]
+|===
+5+| [underline]#IHO Definition:# Any level surface (for example Mean
+Sea Level) taken as a surface of reference to which the elevations
+within a data set are reduced. Also called datum level, reference
+level, reference plane, levelling datum, datum for heights.
+5+| *[underline]#S-10x Metadata Feature:# VerticalDatumOfData (M_VDAT)*
+5+| *[underline]#Super Type:#*
+5+| *[underline]#Primitives:# surface*
+
+| _Real World_ 2+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+
+| Vertical Datum | (VERDAT)
+
+(Datum Level)
+
+(Reference Plane)
+
+(Levelling Datum)
+
+(Datum for Sounding Reduction)
+
+(Datum for Heights)
+|
+3: Mean Sea Level +
+16: Mean High Water +
+17: Mean High Water Springs +
+18: High Water +
+19: Approximate Mean Sea Level +
+20: High Water Springs +
+21: Mean Higher High Water +
+24: Local Datum +
+25: International Great Lakes Datum 1985 +
+26: Mean Water Level +
+28: Higher High Water Large Tide +
+29: Nearly Highest High Water +
+30: Highest Astronomical Tide +
+44: Baltic Sea Chart Datum 2000
+| EN | 1, 1
+
+| Information | | | C | 0, ++*++
+| File Locator | | | (S) TE | 0, 1
+| File Reference | (TXTDSC) | | (S) TE | 0, 1
+| Headline | | | (S) TE | 0, ++*++ (ordered)
+| Language | | | (S) TE | 0, 1
+| Text
+| (INFORM)
+
+(NINFOM)
+| | (S) TE | 0, 1
+
+5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+
+[[sec_4.6.1]]
+==== General
+
+There must be only one *VerticalDatumOfData* feature in an S-131 dataset,
+providing the datum for all elevation values encoded in any feature.
+Given the relatively small extent of S-131 datasets and the importance
+of uniform datums in the same port, it is not anticipated that elevations
+in different features will be referred to different datums; however,
+if this is the case in the sources, values must be converted to the
+same datum before encoding in the dataset.
+
+[underline]#Remarks:#
+
+[underline]#Distinction:# *SoundingDatum*
+
+|===
