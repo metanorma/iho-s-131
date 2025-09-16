@@ -496,7 +496,7 @@ h| Class h| Role h| Mult h| Class h| Role h| Mult
 | association | Service Availability | | | | *AvailablePortServices* | serviceDescriptionReference | 0, 1
 | association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
 | Asso | Demarcation | *Berth* | demarcatedFeature | 1, 1 | *BerthPosition* | demarcationIndicator | 0, ++*++
-| Aggr | Layout Division | *Berth* | layoutUnit | 0, ++*++ | *HarbourAreaSection, Terminal* 3+| componentOf | 1, 1
+| Aggr | Layout Division | *Berth* | layoutUnit | 0, ++*++ | *HarbourAreaSection, Terminal* | componentOf | 1, 1
 
 |===
 
@@ -516,14 +516,14 @@ where a vessel may be moored or anchored.
 2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
 
 2+| Available Berthing Length 2+| 2+| | RE | 0, 1
-2+| Bollard Description 2+| 2+| | TE | 0, 1
-2+| Bollard Pull 2+| 2+| | RE | 0, 1
-2+| Bollard Number 2+| 2+| | TE | 0, 2 (ordered)
-2+| GLN Extension 2+| 2+| | TE | 0, 1
-2+| Metre Mark Number 2+| 2+| | TE | 0, 2 (ordered)
-2+| Manifold Number 2+| 2+| | TE | 0, 2 (ordered)
-2+| Ramp Number 2+| 2+| | TE | 0, 1
-2+| Location by Text 2+| 2+| | TE | 0, 1
+2+| Bollard Description       2+| 2+| | TE | 0, 1
+2+| Bollard Pull              2+| 2+| | RE | 0, 1
+2+| Bollard Number            2+| 2+| | TE | 0, 2 (ordered)
+2+| GLN Extension             2+| 2+| | TE | 0, 1
+2+| Metre Mark Number         2+| 2+| | TE | 0, 2 (ordered)
+2+| Manifold Number           2+| 2+| | TE | 0, 2 (ordered)
+2+| Ramp Number               2+| 2+| | TE | 0, 1
+2+| Location by Text          2+| 2+| | TE | 0, 1
 
 |===
 
