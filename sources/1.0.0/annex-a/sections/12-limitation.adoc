@@ -335,7 +335,9 @@ vessel through an area.
 9: Suez Canal Net Tonnage
 | (S) EN | 1, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_12.5.1]]
 ==== General
@@ -399,6 +401,9 @@ date ranges should be encoded in the regulation or feature instance
 instead).
 
 [underline]#Distinction:#
+
+[cols="8",options="unnumbered"]
+|===
 
 8+h| [underline]#Feature/Information associations#
 

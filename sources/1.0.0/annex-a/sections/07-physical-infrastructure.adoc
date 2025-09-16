@@ -42,7 +42,9 @@ out to expose the vessel's bottom. Also called graving dock.
 
 2+| Sill Depth | 3+| | RE | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_7.2.1]]
 ==== General
@@ -65,12 +67,13 @@ the surface spatial primitive of the S-131 *DockArea*.
 
 [underline]#Distinction:# DockArea; FloatingDock
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
 
 | association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
-
 |===
 
 [[sec_7.3]]
@@ -92,7 +95,9 @@ out the water so that the vessel's bottom can be exposed.
 
 2+| Sill Depth | 3+| | RE | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_7.3.1]]
 ==== General
@@ -112,12 +117,13 @@ for the dock as a real attribute.
 
 [underline]#Distinction:#
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
 
 | association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
-
 |===
 
 [[sec_7.4]]
@@ -138,7 +144,9 @@ work on the exposed portion of the vessel's hull.
 
 2+| Sill Depth | 3+| | RE | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_7.4.1]]
 ==== General
@@ -149,12 +157,13 @@ work on the exposed portion of the vessel's hull.
 
 [underline]#Distinction:# DryDock; FloatingDock
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
 
 | association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
-
 |===
 
 [[sec_7.5]]
@@ -177,7 +186,9 @@ or commercial operation of public interest.
 13: Straddle Carrier
 | EN | 1, ++*++
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_7.5.1]]
 ==== General
@@ -189,10 +200,11 @@ locations of ship lifts and straddle carriers.
 
 [underline]#Distinction:#
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
 
 | association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
-
 |===

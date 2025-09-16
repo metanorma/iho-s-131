@@ -35,7 +35,9 @@ to optimize text positioning in ECDIS.
 2+| Text Type | 3+| 1: Name | EN | 0, 1
 2+| Scale Minimum | (SCAMIN) 3+| | IN | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_8.1.1]]
 ==== General
@@ -80,10 +82,11 @@ than the value (if any) populated for the associated feature.
 
 [underline]#Distinction:#
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
 
 | Asso | Text Association | *TextPlacement* | positions | 0, 1 | *FeatureType* | identifies | 1,1
-
 |===

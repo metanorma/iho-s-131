@@ -85,7 +85,9 @@ h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multip
 | Maximum Display Scale | | (see <<table_4.1>>) | IN | 1, 1
 | Minimum Display Scale | | (see <<table_4.1>>) | IN | 1, 1
 
-5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_4.4.1]]
 ==== General
@@ -150,8 +152,6 @@ greater value may be used instead.
 
 [underline]#Distinction:# None
 
-|===
-
 [[sec_4.5]]
 === Quality of Non-Bathymetric Data
 
@@ -211,7 +211,9 @@ h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multip
 (NINFOM)
 | | (S) TE | 0, 1
 
-5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_4.5.1]]
 ==== Quality of positions
@@ -236,8 +238,6 @@ on the associated spatial types qualifies the location of the *QualityOfNonBathy
 [underline]#Remarks:#
 
 [underline]#Distinction:#
-
-|===
 
 [cols="a,a,a,a,a",options="unnumbered"]
 |===
@@ -301,7 +301,9 @@ h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multip
 (NINFOM)
 | | (S) TE | 0, 1
 
-5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_4.5.2]]
 ==== General
@@ -317,8 +319,6 @@ same datum before encoding in the dataset.
 [underline]#Remarks:#
 
 [underline]#Distinction:# *VerticalDatumOfData*
-
-|===
 
 [[sec_4.6]]
 === Vertical Datum of Data
@@ -376,7 +376,9 @@ h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multip
 (NINFOM)
 | | (S) TE | 0, 1
 
-5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_4.6.1]]
 ==== General
@@ -392,5 +394,3 @@ same datum before encoding in the dataset.
 [underline]#Remarks:#
 
 [underline]#Distinction:# *SoundingDatum*
-
-|===

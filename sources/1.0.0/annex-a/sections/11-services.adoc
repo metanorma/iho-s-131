@@ -147,7 +147,9 @@ or administrative power and control.
 
 2+| Reported Date | (SORDAT) 3+| | (S) TD | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_11.3]]
 === General
@@ -172,6 +174,9 @@ clause 4.2.1.7 in the main Product Specification).
 [underline]#Remarks:#
 
 [underline]#Distinction:#
+
+[cols="8",options="unnumbered"]
+|===
 
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
@@ -301,7 +306,9 @@ or organisation by postal, internet, telephone, telex and radio systems
 2+| Time of Day Start | 3+| | (S) TI | 0, ++*++ (ordered)
 2+| Time of Day End | 3+| | (S) TI | 0, ++*++ (ordered)
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_11.5]]
 === General
@@ -331,6 +338,9 @@ service, office, etc.) should be encoded in the _featureName_ attribute,
 which is inherited from *InformationType*.
 
 [underline]#Distinction:#
+
+[cols="8",options="unnumbered"]
+|===
 
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
@@ -389,7 +399,9 @@ and known exceptions.
 (NINFOM)
 2+| | (S) TE | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_11.6.1]]
 ==== General
@@ -400,6 +412,9 @@ Seasonal variations in service hours can be encoded using multiple
 [underline]#Remarks:#
 
 [underline]#Distinction:#
+
+[cols="8",options="unnumbered"]
+|===
 
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends

@@ -153,7 +153,9 @@ a vessel, sea plane, etc., may anchor.
 2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
 
 2+h| S-10x Attribute 2+h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_6.2.1]]
 ==== General
@@ -191,6 +193,8 @@ _textContent_ complex attribute with the headline "Swinging Circle"
 
 [underline]#Distinction:# AnchorageArea; Berth; MooringWarpingFacility
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
@@ -198,7 +202,6 @@ h| Class h| Role h| Mult h| Class h| Role h| Mult
 | association | Service Availability | | | | *AvailablePortServices* | serviceDescriptionReference | 0, 1
 | association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
 | association | Primary/Auxiliary Facility | *AnchorBerth* | primaryFacility | 0,1 | *MooringWarpingFacility* | auxiliaryFacility | 0,*
-
 |===
 
 [[sec_6.3]]
@@ -344,7 +347,9 @@ anchor or may anchor.
 3: ISPS Level 3
 | EN | 0, 1
 
-8+| [underline]#INT 1 Reference:# (see S-4 -- B-431.1; B-431.3 and B-431.7)
+|===
+
+[underline]#INT 1 Reference:# (see S-4 -- B-431.1; B-431.3 and B-431.7)
 
 [[sec_6.3.1]]
 ==== General
@@ -400,13 +405,14 @@ or one of the boundaries of an area.
 
 [underline]#Distinction:#
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
 
 | association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
 | aggregation | LayoutDivision | *AnchorageArea* | layoutUnit | 0,* | *HarbourAreaSection* | componentOf | 1,1
-
 |===
 
 [[sec_6.4]]
@@ -461,7 +467,9 @@ h| Class h| Role h| Mult h| Class h| Role h| Mult
 2+| UN Location Code 2+| 2+| | TE | 1, 1
 2+| Terminal Identifier 2+| 2+| | TE | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_6.4.1]]
 ==== General
@@ -479,6 +487,8 @@ of what is used at the berth.
 
 [underline]#Distinction:# AnchorBerth; DockArea; MooringWarpingFacility
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
@@ -515,7 +525,9 @@ where a vessel may be moored or anchored.
 2+| Ramp Number 2+| 2+| | TE | 0, 1
 2+| Location by Text 2+| 2+| | TE | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_6.5.1]]
 ==== General
@@ -532,12 +544,13 @@ at the berth position.
 
 [underline]#Distinction:#
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
 | Comp | Demarcation | *BerthPosition* | demarcationIndicator | 0, ++*++ | *Berth* | demarcatedFeature | 1, 1
 | Asso | Primary/Auxiliary Facility | *BerthPosition* | primaryFacility | 0, 1 | *MooringWarpingFacility* | auxiliaryFacility | 0, ++*++
-
 |===
 
 [[sec_6.6]]
@@ -683,7 +696,9 @@ which ships may moor and which may have gates to regulate water level.
 3: ISPS Level 3
 | EN | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_6.6.1]]
 ==== General
@@ -738,6 +753,8 @@ or one of the boundaries of an area.
 
 [underline]#Distinction:#
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
@@ -745,7 +762,6 @@ h| Class h| Role h| Mult h| Class h| Role h| Mult
 | association | Service Availability | | | | *AvailablePortServices* | serviceDescriptionReference | 0, 1
 | association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
 | aggregation | Layout Division | *DockArea* | layoutUnit | 0,* | *HarbourAreaSection* | componentOf | 1,1
-
 |===
 
 [[sec_6.7]]
@@ -892,7 +908,9 @@ chemical waste, is deliberately deposited.
 3: ISPS Level 3
 | EN | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_6.7.1]]
 ==== General
@@ -907,13 +925,14 @@ or one of the boundaries of an area.
 
 [underline]#Distinction:#
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
 
 | association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
 | aggregation | Layout Division | *DumpingGround* | layoutUnit | 0,* | *HarbourBasin* | componentOf | 1,1
-
 |===
 
 [[sec_6.8]]
@@ -1345,7 +1364,9 @@ h| S-10x Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multip
 
 | Reported Date | (SORDAT) | | (S) TD | 0, 1
 
-5+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_6.8.1]]
 ==== General
@@ -1401,30 +1422,14 @@ in these attributes.
 
 [underline]#Distinction:#
 
-|===
-
 [cols="a,a,a,a,a,a,a,a",options="unnumbered"]
 |===
 8+h| Feature/Information associations
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
 
-| association | Service Availability | | |
-
-| *AvailablePortServices* | serviceDescriptionReference | 0, 1
-
-| association
-| Location Hours
-|
-
-|
-
-|
-
-| *ServiceHours*
-| location_srvHrs
-| 0, 1
-
+| association | Service Availability | | | | *AvailablePortServices* | serviceDescriptionReference | 0, 1
+| association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
 | Asso | Jurisdictional Limit | *HarbourAreaAdministrative* | limitReference | 1, 1 | *OuterLimit* | limitExtent | 0, 1
 | Asso | Layout Division | *HarbourAreaAdministrative* | componentOf | 0, 1 | *HarbourAreaSection* | layoutUnit | 0, ++*++
 
@@ -1530,7 +1535,9 @@ area over which a harbour authority has jurisdiction.
 
 2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_6.9.1]]
 ==== General
@@ -1571,6 +1578,9 @@ which are not controlled by the port authority, for example naval
 bases or civic waterfronts.
 
 [underline]#Distinction:#
+
+[cols="8",options="unnumbered"]
+|===
 
 8+h| Feature/Information associations
 
@@ -1732,7 +1742,9 @@ from and to ships.
 3: ISPS Level 3
 | EN | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_6.10.1]]
 ==== General
@@ -1747,6 +1759,9 @@ used to demarcate the location, for example, by marking a limit line,
 or one of the boundaries of an area.
 
 [underline]#Distinction:#
+
+[cols="8",options="unnumbered"]
+|===
 
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
@@ -1786,7 +1801,9 @@ secure a vessel.
 2+| Bollard Pull 2+| 2+| | RE | 0, 1
 2+| Heaving Lines From Shore 2+| 2+| | BO | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_6.11.1]]
 ==== General
@@ -1798,6 +1815,9 @@ if any, must be encoded in the _iDCode_ attribute.
 [underline]#Remarks:#
 
 [underline]#Distinction:#
+
+[cols="8",options="unnumbered"]
+|===
 
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
@@ -2168,7 +2188,9 @@ provisions of International Law.
 
 2+| Reported Date 2+| (SORDAT) 2+| | (S) TD | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_6.12.1]]
 ==== General
@@ -2185,6 +2207,9 @@ used to demarcate the location, for example, by marking a limit line,
 or one of the boundaries of an area.
 
 [underline]#Distinction:#
+
+[cols="8",options="unnumbered"]
+|===
 
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
@@ -2336,7 +2361,9 @@ may board a vessel in preparation to piloting it through local waters.
 3: ISPS Level 3
 | EN | 0, 1
 
-8+| [underline]#INT 1 Reference: T 1.1-4#
+|===
+
+[underline]#INT 1 Reference: T 1.1-4#
 
 [[sec_6.13.1]]
 ==== General
@@ -2373,6 +2400,9 @@ used to demarcate the location, for example, by marking a limit line,
 or one of the boundaries of an area.
 
 [underline]#Distinction:#
+
+[cols="8",options="unnumbered"]
+|===
 
 8+h| [underline]#Feature/Information associations#
 
@@ -2529,7 +2559,9 @@ the landing and take-off of seaplanes.
 3: ISPS Level 3
 | EN | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_6.14.1]]
 ==== General
@@ -2544,13 +2576,14 @@ or one of the boundaries of an area.
 
 [underline]#Distinction:# WaterwayArea
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
 
 | association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
 | aggregation | Layout Division | *SeaplaneLandingArea* | layoutUnit | 0,* | *HarbourAreaSection* | componentOf | 1,1
-
 |===
 
 [[sec_6.15]]
@@ -2621,7 +2654,9 @@ or passengers from and to ships.
 2+| SMDG Terminal Code 2+| 2+| | TE | 0, 1
 2+| UN Location Code 2+| 2+| | TE | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_6.15.1]]
 ==== General
@@ -2637,6 +2672,8 @@ features may be located in water areas.
 
 [underline]#Distinction:#
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
@@ -2646,7 +2683,6 @@ h| Class h| Role h| Mult h| Class h| Role h| Mult
 | Asso | Layout Division | *Terminal* | componentOf | 1, 1 | *Berth* | layoutUnit | 0, ++*++
 | Aggr | Layout Division | *Terminal* | layoutUnit | 0,* | *HarbourAreaSection* | componentOf | 1,1
 | Asso | Infrastructure | *Terminal* | infrastructureLocation | 0, 1 | *HarbourPhysicalInfrastructure* | hasInfrastructure | 0, ++*++
-
 |===
 
 [[sec_6.16]]
@@ -2793,7 +2829,9 @@ a channel used for turning vessels.
 3: ISPS Level 3
 | EN | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_6.16.1]]
 ==== General
@@ -2808,13 +2846,14 @@ or one of the boundaries of an area.
 
 [underline]#Distinction:# WaterwayArea; HarbourBasin
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
 
 | association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
 | Aggr | Layout Division | *TurningBasin* | layoutUnit | 0,* | *HarbourAreaSection* | componentOf | 1,1
-
 |===
 
 [[sec_6.17]]
@@ -2964,7 +3003,9 @@ information of the waterway exists.
 
 2+| Reported Date | (SORDAT) 3+| | (S) TD | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_6.17.1]]
 ==== General
@@ -2986,6 +3027,8 @@ or one of the boundaries of an area.
 [underline]#Distinction:# DumpingGround; HarbourBasin; PilotBoardingPlace;
 SeaplaneLandingArea; TurningBasin.
 
+[cols="8",options="unnumbered"]
+|===
 8+h| [underline]#Feature/Information associations#
 
 .2+h| Type .2+h| Association Name 6+h| Association Ends
@@ -2993,5 +3036,4 @@ h| Class h| Role h| Mult h| Class h| Role h| Mult
 
 | association | Location Hours | | | | *ServiceHours* | location_srvHrs | 0, 1
 | Aggr | Layout Division | *WaterwayArea* | layoutUnit | 0, ++*++ | *HarbourAreaSection* | componentOf | 1, 1
-
 |===
