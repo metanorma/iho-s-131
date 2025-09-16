@@ -297,7 +297,7 @@ h| Class h| Role h| Mult h| Class h| Role h| Mult
 | association | Permission Type | | | | *Applicability* | permission | 0, ++*++
 | association | Associated RxN | | | | *AbstractRxN* | theRxN | 0, ++*++
 | association | Additional Information | | | | *NauticalInformation* | providesInformation | 0, ++*++
-| Asso | Text Association | *FeatureType* | identifies | 0, ++*++ | *TextPlacement* 3+| positions | 0, 1
+| Asso | Text Association | *FeatureType* | identifies | 0, ++*++ | *TextPlacement* | positions | 0, 1
 |===
 
 [[sec_5.3]]
@@ -398,7 +398,7 @@ feature class.
 .2+h| Type .2+h| Association Name 6+h| Association Ends
 h| Class h| Role h| Mult h| Class h| Role h| Mult
 
-| association 2+| Service Control | | | | *Authority* | controlAuthority | 0, 1
+| association | Service Control | | | | *Authority* | controlAuthority | 0, 1
 
 |===
 
