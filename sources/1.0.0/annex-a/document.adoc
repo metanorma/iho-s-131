@@ -1,11 +1,13 @@
-= Data Classification and Encoding Guide (Annex A) 
+= Data Classification and Encoding Guide (Annex A)
 :series: S
 :docnumber: 131
+:annex-id: A
 :doctype: standard
 :edition: 1.0.0
 :language: en
 :published-date: 2022-12-31
 :copyright-year: 2022
+:status: in-force
 :committee: ircc
 :workgroup: ibsc
 :mn-document-class: iho
