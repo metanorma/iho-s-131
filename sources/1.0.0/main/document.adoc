@@ -1,5 +1,5 @@
 = IHO Marine Harbour Infrastructure (MHI) Product Specification
-series: S
+:series: S
 :docnumber: 131
 :doctype: standard
 :edition: 1.0.0
