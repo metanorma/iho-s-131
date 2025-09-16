@@ -6,6 +6,7 @@ series: S
 :language: en
 :published-date: 2022-12-31
 :copyright-year: 2022
+:status: in-force
 :committee: ircc
 :workgroup: ibsc
 :mn-document-class: iho
