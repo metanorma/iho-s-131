@@ -115,7 +115,9 @@ Applicability (<<sec_12.1>>), Entrance (<<sec_13.1>>)*
 
 2+| Reported Date | (SORDAT) 3+| | TD | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_9.2.1]]
 ==== General
@@ -164,6 +166,9 @@ type or association. This should be used sparingly if at all.
 [underline]#Remarks:#
 
 [underline]#Distinction:#
+
+[cols="8",options="unnumbered"]
+|===
 
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
@@ -305,7 +310,9 @@ in text or graphic form.
 
 2+| Reported Date | (SORDAT) 3+| | (S) TD | 0, 1
 
-8+| [underline]#INT 1 Reference: pass-format:metanorma[--]#
+|===
+
+[underline]#INT 1 Reference: pass-format:metanorma[--]#
 
 [[sec_9.3.1]]
 ==== Abstract supertype for information from textual sources
@@ -336,6 +343,9 @@ to be used to allow mariners to obtain information relevant to particular
 subjects or to particular kinds of vessel operations.
 
 [underline]#Distinction:#
+
+[cols="8",options="unnumbered"]
+|===
 
 8+h| [underline]#Feature/Information associations#
 .2+h| Type .2+h| Association Name 6+h| Association Ends
