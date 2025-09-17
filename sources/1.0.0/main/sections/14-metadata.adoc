@@ -753,5 +753,5 @@ their original national language using the complex attribute
 *feature name*.
 
 Character strings must be encoded using the character set defined
-in <<ISO 10646-1>>, in Unicode Transformation Format-8 (UTF-8).
+in <<ISO_10646_1>>, in Unicode Transformation Format-8 (UTF-8).
 A BOM (byte order mark) must not be used.
