@@ -422,7 +422,7 @@ the specified product | - | -
 | Attribute | productIdentifier | Machine readable unique identifier of a product type | 1 | CharacterString(Restricted to Product ID values from the IHO Product Specification Register, in the IHO Geospatial Information (GI) Registry) | "S-131" (without quotes)
 | Attribute | number | The number (registry index) used to lookup the product in the Product Specification Register | 1 | Integer | From the Product Specification Register in the IHO Geospatial Information (GI) Registry
 | Attribute | compliancyCategory | The level of compliance of the Product Specification to S-100 | *1* | S100_CompliancyCategory
-a| Needed for S-98 interoperability. 
+a| Needed for S-98 interoperability.
 
 |===
 
@@ -581,7 +581,7 @@ _5_ cancellationDefault is new edition
 | _true_ indicates a compressed resource +
 _false_ indicates an uncompressed resource
 | Attribute | defaultLocale | Default language and character set used in the Catalogue | 0..1 | PT_Locale | In absence of _defaultLocale_ the language is English in UTF-8
-| Attribute | otherLocale | Other languages and character sets used in the Catalogue | 0..++*++ | PT_Locale | 
+| Attribute | otherLocale | Other languages and character sets used in the Catalogue | 0..++*++ | PT_Locale |
 
 |===
 
